@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wander Venture - Travel Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">Wander Venture</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Discover Your Next Adventure</h1>
+      <p>Customized travel packages for every explorer</p>
+      <button onclick="window.location.href='#packages'">Explore Packages</button>
+    </div>
+  </header>
+
+  <!-- PACKAGE SECTION -->
+  <section class="packages" id="packages">
+    <h2>Popular Packages</h2>
+    <div class="package-list">
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rishikesh">
+        <h3>Rishikesh Adventure</h3>
+        <p>Start from ₹2,499</p>
+        <button onclick="window.location.href='rishikesh.html'">View Details</button>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kedarnath">
+        <h3>Kedarnath Yatra</h3>
+        <p>Start from ₹7,999</p>
+        <button onclick="window.location.href='kedarnath.html'">View Details</button>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jim Corbett">
+        <h3>Jim Corbett Safari</h3>
+        <p>Start from ₹3,999</p>
+        <button onclick="window.location.href='jimcorbett.html'">View Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      At Wander Venture, we bring unique travel experiences across India.
+      From adventure rafting to spiritual yatras and wildlife safaris, we help
+      you plan affordable & memorable trips.
+    </p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want a custom itinerary? Get in touch!</p>
+    <p>Email: <a href="mailto:aurav.singh01@gmail.com">aurav.singh01@gmail.com</a></p>
+    <p>Phone: +91-98xxxxx soon</p>
+  </section>
+
+  <!-- TESTIMONIALS CAROUSEL -->
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Travelers Say</h2>
+
+    <div class="carousel-wrapper">
+      <div class="testimonial-track">
+        <div class="testimonial-card">
+          <p>"Wander Venture made our Kedarnath trip unforgettable! The itinerary was perfect."</p>
+          <h4>- Rohan S.</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"The Rishikesh rafting package was thrilling and well-organized. Highly recommended!"</p>
+          <h4>- Priya K.</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Affordable packages and quick support. Jim Corbett safari was amazing!"</p>
+          <h4>- Aarav M.</h4>
+        </div>
+      </div>
+
+      <div class="carousel-buttons">
+        <button class="prev-btn" aria-label="Previous Testimonial">&#10094;</button>
+        <button class="next-btn" aria-label="Next Testimonial">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Wander Venture | <a href="#contact">Contact Us</a> | <a href="#about">About</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
