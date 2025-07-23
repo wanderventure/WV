@@ -384,3 +384,35 @@ form button:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Modern Form Design + Fix Overflow */
+.custom-form {
+  padding: 15px;
+}
+
+.custom-form input,
+.custom-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.custom-form button {
+  width: 100%;
+  background: #28a745;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.custom-form button:hover {
+  background: #218838;
+}
