@@ -327,3 +327,60 @@ form button:hover {
   font-size: 0.95rem;
   line-height: 1.5;
 }
+.book-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.3s;
+  z-index: 1000;
+}
+.book-btn:hover {
+  background: #e68900;
+  transform: scale(1.1);
+}
+.story-popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.story-popup h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+.story-popup p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+}
+.close-btn {
+  float: right;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+}
+.close-btn:hover {
+  color: #000;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
