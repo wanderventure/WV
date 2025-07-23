@@ -1,83 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Varanasi Experience - Wander Venture</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .img-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .img-gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .package-detail {
-      padding: 20px;
-      line-height: 1.6;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varanasi Spiritual Tour - WanderVenture</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Wander Venture</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#packages">Packages</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" style="background:url('https://images.unsplash.com/photo-1581595220892-b0739db3ab21?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1596814860465-3d42b4212a4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
     <div class="hero-content">
-      <h1>Varanasi Experience</h1>
-      <p>Spiritual Ghats • Ganga Aarti • Ancient Temples</p>
+      <h1>Varanasi Spiritual Tour</h1>
+      <p>Ganga Aarti • Temples • Boat Rides</p>
     </div>
   </header>
 
   <section class="package-detail">
     <h2>About This Trip</h2>
-    <p><strong>Price:</strong> Starting from ₹5,499 (stay + guided tours).</p>
-    <p>Varanasi is one of the world's oldest cities. Experience the spiritual Ganga Aarti, boat rides, and explore historic temples and local culture.</p>
+    <p><strong>Price:</strong> Starting from ₹3,499 (stay + sightseeing).</p>
+    <p>Experience the spiritual vibes of Varanasi with mesmerizing Ganga Aarti, ancient temples, and serene boat rides along the Ganges.</p>
 
     <h2>Gallery</h2>
     <div class="img-gallery">
-      <img src="https://images.unsplash.com/photo-1617167796663-53ce38afcb0d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi Ghat">
-      <img src="https://images.unsplash.com/photo-1552409905-0aa6a1ff3e4d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti">
-      <img src="https://images.unsplash.com/photo-1570080463938-5c91d8c14813?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temple View">
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti">
+      <img src="https://images.unsplash.com/photo-1596814860465-3d42b4212a4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi Boat">
+      <img src="https://images.unsplash.com/photo-1575014378829-5ec4f1e00b68?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temple in Varanasi">
     </div>
   </section>
 
-  <section class="custom-form-wrapper" id="custom">
-    <h3>Customize / Book Varanasi Experience</h3>
-    <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Varanasi Enquiry - Wander Venture">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thankyou.html">
-
-      <label>Name*</label>
-      <input type="text" name="name" required>
-
-      <label>Phone / WhatsApp*</label>
-      <input type="text" name="phone" required>
-
-      <label>Message</label>
-      <textarea name="message" placeholder="Dates, guided tours, hotel preference..."></textarea>
-
-      <button type="submit">Send Request</button>
-    </form>
-  </section>
-
   <footer>
-    <p>© 2025 Wander Venture</p>
+    <p>&copy; 2025 WanderVenture</p>
   </footer>
 </body>
 </html>
