@@ -314,3 +314,16 @@ form button:hover {
 .carousel-buttons button:hover {
   background: #218838;
 }
+/* Reduce font size for 'Start from ₹xxxx' */
+.package-detail p strong,
+.package-detail p {
+  font-size: 0.9rem;   /* Slightly smaller than normal */
+  font-weight: 500;    /* Medium weight for visibility */
+}
+
+/* Reduce details font size slightly */
+.package-detail p,
+.package-detail li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
