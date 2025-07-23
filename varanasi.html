@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Varanasi Spiritual Tour - Wander Venture</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Varanasi Experience - Wander Venture</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .img-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .img-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .package-detail {
+      padding: 20px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -17,33 +35,33 @@
     </ul>
   </nav>
 
-  <header class="hero" style="background:url('https://images.unsplash.com/photo-1606890737304-57a1c2f8b7cf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1581595220892-b0739db3ab21?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
     <div class="hero-content">
-      <h1>Varanasi Spiritual Tour</h1>
-      <p>Ganga Aarti • Kashi Vishwanath • Sunrise Boat Ride</p>
+      <h1>Varanasi Experience</h1>
+      <p>Spiritual Ghats • Ganga Aarti • Ancient Temples</p>
     </div>
   </header>
 
   <section class="package-detail">
-    <h2>About This Tour</h2>
-    <p><strong>Price:</strong> Starting from ₹3,499 (basic stay + guided Aarti).</p>
-    <p>Discover the spiritual vibes of Varanasi, enjoy boat rides on the Ganges, and witness the magical evening Ganga Aarti.</p>
+    <h2>About This Trip</h2>
+    <p><strong>Price:</strong> Starting from ₹5,499 (stay + guided tours).</p>
+    <p>Varanasi is one of the world's oldest cities. Experience the spiritual Ganga Aarti, boat rides, and explore historic temples and local culture.</p>
 
     <h2>Gallery</h2>
     <div class="img-gallery">
-      <img src="https://images.unsplash.com/photo-1606890737304-57a1c2f8b7cf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti">
-      <img src="https://images.unsplash.com/photo-1608734163569-fcddacbee7ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi Sunrise">
-      <img src="https://images.unsplash.com/photo-1608725940272-0ec1f8dca238?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Boat Ride">
+      <img src="https://images.unsplash.com/photo-1617167796663-53ce38afcb0d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi Ghat">
+      <img src="https://images.unsplash.com/photo-1552409905-0aa6a1ff3e4d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti">
+      <img src="https://images.unsplash.com/photo-1570080463938-5c91d8c14813?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temple View">
     </div>
   </section>
 
   <section class="custom-form-wrapper" id="custom">
-    <h3>Customize / Book Varanasi Tour</h3>
+    <h3>Customize / Book Varanasi Experience</h3>
     <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Varanasi Enquiry - Wander Venture">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+      <input type="hidden" name="_next" value="thankyou.html">
 
       <label>Name*</label>
       <input type="text" name="name" required>
@@ -52,7 +70,7 @@
       <input type="text" name="phone" required>
 
       <label>Message</label>
-      <textarea name="message" placeholder="Preferred dates? spiritual sites?"></textarea>
+      <textarea name="message" placeholder="Dates, guided tours, hotel preference..."></textarea>
 
       <button type="submit">Send Request</button>
     </form>

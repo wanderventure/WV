@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Mumbai Getaway - Wander Venture</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mumbai Getaway - Wander Venture</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .img-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .img-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .package-detail {
+      padding: 20px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -43,7 +61,7 @@
       <input type="hidden" name="_subject" value="Mumbai Enquiry - Wander Venture">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+      <input type="hidden" name="_next" value="thankyou.html">
 
       <label>Name*</label>
       <input type="text" name="name" required>
@@ -52,7 +70,7 @@
       <input type="text" name="phone" required>
 
       <label>Message</label>
-      <textarea name="message" placeholder="Dates? sightseeing? stay type?"></textarea>
+      <textarea name="message" placeholder="Dates, hotel preference, sightseeing..."></textarea>
 
       <button type="submit">Send Request</button>
     </form>
