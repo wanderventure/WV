@@ -48,19 +48,44 @@
 <section class="custom-form-wrapper" id="custom">
   <h3>Customize / Book Varanasi Tour</h3>
   <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="Varanasi Enquiry - Wander Venture">
+    <input type="hidden" name="_subject" value="Varanasi Tour Enquiry - Wander Venture">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
 
     <label>Name*</label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" placeholder="Your Name" required>
 
     <label>Phone / WhatsApp*</label>
-    <input type="text" name="phone" required>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
 
     <label>Message</label>
-    <textarea name="message" placeholder="Your requirements (dates, sightseeing, pickup...)"></textarea>
+    <textarea name="message" placeholder="Hotel preference, number of pax, special request..." rows="4"></textarea>
 
     <button type="submit">Send Request</button>
   </form>
