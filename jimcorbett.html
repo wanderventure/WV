@@ -40,26 +40,51 @@
     </div>
   </section>
 
-  <section class="custom-form-wrapper" id="custom">
-    <h3>Customize / Book Jim Corbett Safari</h3>
-    <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Jim Corbett Enquiry - Wander Venture">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-     <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+ <section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Jim Corbett Safari</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Jim Corbett Enquiry - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
 
-      <label>Name*</label>
-      <input type="text" name="name" required>
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
 
-      <label>Phone / WhatsApp*</label>
-      <input type="text" name="phone" required>
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
 
-      <label>Message</label>
-      <textarea name="message" placeholder="Group size, resort type, no. safaris..."></textarea>
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
 
-      <button type="submit">Send Request</button>
-    </form>
-  </section>
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of safaris, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
 
   <footer>
     <p>© 2025 Wander Venture</p>
