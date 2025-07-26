@@ -37,8 +37,9 @@ a {
 }
 
 .logo-icon {
-  height: 30px;  /* Adjust logo size */
-  margin-right: 8px; /* Space between logo and text */
+  height: 42px;
+  width: auto;
+  margin-right: 10px;
 }
 
 .nav-links {
