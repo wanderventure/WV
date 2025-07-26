@@ -579,3 +579,10 @@ footer a {
 .event-card .button:hover {
   background-color: #e96d00;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  scroll-padding-top: 80px; /* adjust if your navbar height is different */
+}
