@@ -587,3 +587,30 @@ html {
 :root {
   scroll-padding-top: 80px; /* adjust if your navbar height is different */
 }
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer .social-icons {
+  margin-bottom: 15px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+footer .social-icons a img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1); /* Makes icons white */
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+}
