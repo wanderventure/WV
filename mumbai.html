@@ -8,8 +8,8 @@
 </head>
 <body>
 
-  <!-- Navbar -->
- <nav class="navbar">
+<!-- Navbar -->
+<nav class="navbar">
   <div class="logo">
     <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
     Wander Venture
@@ -22,16 +22,15 @@
   </ul>
 </nav>
 
-  <!-- Hero Section -->
-  <header class="hero" style="background:url('https://images.unsplash.com/photo-1562979314-bee7453e911c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
-    <div class="hero-content">
-      <h1>Mumbai Getaway</h1>
-      <p>Gateway of India • Marine Drive • Bollywood Vibes</p>
-    </div>
-  </header>
+<!-- Hero Section -->
+<header class="hero" style="background:url('https://images.unsplash.com/photo-1562979314-bee7453e911c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+  <div class="hero-content">
+    <h1>Mumbai Getaway</h1>
+    <p>Gateway of India • Marine Drive • Bollywood Vibes</p>
+  </div>
+</header>
 
-  <!-- Package Details -->
- <!-- Package Details -->
+<!-- Package Details -->
 <section class="package-detail">
   <h2>About This Trip</h2>
   <p><strong>Base Price:</strong> Starts from ₹4,999 per person (includes basic stay + shared sightseeing). Final price may vary depending on your customization and transport preferences.</p>
@@ -46,15 +45,15 @@
     <strong>Note:</strong> The price mentioned is indicative of the base plan. Final trip cost may change depending on the number of people, hotel category, mode of transport, and specific customizations you select.
   </div>
 
-    <h2>Gallery</h2>
-    <div class="img-gallery">
-      <img src="https://images.unsplash.com/photo-1573143950521-36ef5345dae9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gateway of India">
-      <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Marine Drive">
-      <img src="https://images.unsplash.com/photo-1575261755165-1a9d4370c898?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mumbai city">
-    </div>
-  </section>
+  <h2>Gallery</h2>
+  <div class="img-gallery">
+    <img src="https://images.unsplash.com/photo-1573143950521-36ef5345dae9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gateway of India">
+    <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Marine Drive">
+    <img src="https://images.unsplash.com/photo-1575261755165-1a9d4370c898?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mumbai city">
+  </div>
+</section>
 
- <!-- Contact Form -->
+<!-- Contact Form -->
 <section class="custom-form-wrapper" id="custom">
   <h3>Customize / Book Mumbai trip</h3>
   <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
@@ -76,20 +75,14 @@
     <input type="date" name="travel_date" required>
 
     <label>Number of Days*</label>
-<input type="number" id="daysInput" name="days" min="1" required oninput="updateNightsDays()" placeholder="Enter number of days">
+    <input type="number" id="daysInput" name="days" min="1" required oninput="updateNightsDays()" placeholder="Enter number of days">
 
-<label>Trip Duration</label>
-<input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
+    <label>Trip Duration</label>
+    <input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
 
     <label>Number of People*</label>
-    <select name="people" required>
+    <select name="people" id="peopleSelect" required>
       <option value="">Select</option>
-      <!-- Options 1 to 100 -->
-      <script>
-        for (let i = 1; i <= 100; i++) {
-          document.write(`<option value="${i}">${i}</option>`);
-        }
-      </script>
     </select>
 
     <label>Transportation Type*</label>
@@ -107,11 +100,10 @@
   </form>
 </section>
 
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Wander Venture. All Rights Reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Wander Venture. All Rights Reserved.</p>
+</footer>
 
 <!-- Floating Book Button + Story Popup (Mumbai) -->
 <div class="story-book">
@@ -126,14 +118,13 @@
     </div>
   </div>
 </div>
+
 <script>
   function toggleStory(storyId) {
     const popup = document.getElementById(storyId);
     popup.style.display = (popup.style.display === "block") ? "none" : "block";
   }
-</script>
 
-  <script>
   function updateNightsDays() {
     const days = parseInt(document.getElementById('daysInput').value);
     const output = document.getElementById('nightsDaysOutput');
@@ -144,6 +135,15 @@
     } else {
       output.value = '';
     }
+  }
+
+  // Generate people options 1–100
+  const selectPeople = document.getElementById('peopleSelect');
+  for (let i = 1; i <= 100; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    selectPeople.appendChild(option);
   }
 </script>
 
