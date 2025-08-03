@@ -70,6 +70,19 @@
     <label>Travel Date*</label>
     <input type="date" name="travel_date" required>
 
+    <label>Number of Days*</label>
+<select name="days" id="days" required onchange="updateNights()">
+  <option value="">Select</option>
+  <script>
+    for (let i = 1; i <= 30; i++) {
+      document.write(`<option value="${i}">${i}</option>`);
+    }
+  </script>
+</select>
+
+<label>Duration (Auto-filled)</label>
+<input type="text" name="duration" id="durationDisplay" readonly placeholder="E.g. 3D/2N">
+
     <label>Number of People*</label>
     <select name="people" required>
       <option value="">Select</option>
@@ -116,6 +129,18 @@
   function toggleStory(storyId) {
     const popup = document.getElementById(storyId);
     popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+  <script>
+  function updateNights() {
+    const days = parseInt(document.getElementById('days').value);
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      document.getElementById('durationDisplay').value = `${days}D/${nights}N`;
+    } else {
+      document.getElementById('durationDisplay').value = '';
+    }
   }
 </script>
 
