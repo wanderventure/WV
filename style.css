@@ -254,3 +254,71 @@ footer .social-icons img {
   margin: 0 10px;
   filter: invert(1);
 }
+
+/* Package Detail Page */
+.package-detail .container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.package-detail img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.package-detail p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.package-detail .highlights h2 {
+  margin-bottom: 10px;
+  color: #0f9b0f;
+}
+
+.package-detail .highlights ul {
+  padding: 0;
+  list-style: none;
+}
+
+.package-detail .highlights li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 8px 0;
+  border-left: 4px solid #0f9b0f;
+  border-radius: 6px;
+}
+
+.inquiry-form {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.inquiry-form button {
+  background: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inquiry-form button:hover {
+  background: #1f7a32;
+}
