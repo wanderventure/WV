@@ -1,9 +1,15 @@
 /* Global Reset & Fonts */
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
   background: #f9fafb;
   color: #333;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 {
@@ -25,7 +31,7 @@ a {
   color: white;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
@@ -79,6 +85,11 @@ a {
   margin-bottom: 10px;
 }
 
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
 .hero-content button {
   background: #28a745;
   color: white;
@@ -86,6 +97,8 @@ a {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 .hero-content button:hover {
@@ -119,18 +132,16 @@ a {
   cursor: pointer;
 }
 
-/* Package Cards */
+/* Explore by State Cards */
 .packages {
   padding: 40px 20px;
+  background: #f9fafb;
 }
 
-.state-section {
-  margin-top: 40px;
-}
-
-.state-section h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+.packages h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
   color: #0f9b0f;
 }
 
@@ -144,7 +155,11 @@ a {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -158,31 +173,90 @@ a {
   object-fit: cover;
 }
 
-.package-card h4 {
-  margin: 10px;
-  font-size: 1.1rem;
+.package-card h3 {
+  margin: 15px 10px 5px;
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .package-card p {
-  margin: 0 10px 10px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin: 0 10px 15px;
+  color: #666;
 }
 
 .package-card button {
-  margin: 10px;
-  padding: 8px 16px;
-  background: #ff6600;
-  color: white;
+  margin: 10px auto 15px;
+  padding: 10px 20px;
+  background: #28a745;
   border: none;
-  border-radius: 5px;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* About and Contact */
+.package-card button:hover {
+  background: #1f7a32;
+}
+
+/* State Package Pages Layout (e.g. uttarakhand.html) */
+.state-section {
+  padding: 40px 20px;
+}
+
+.state-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #0f9b0f;
+  text-align: center;
+}
+
+/* Individual Package Detail Page */
+.package-detail {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.package-detail img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.package-detail h1 {
+  font-size: 2rem;
+  color: #0f9b0f;
+  margin-bottom: 10px;
+}
+
+.package-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* About & Contact */
 .about, .contact {
   padding: 30px 20px;
   background: #fff;
   text-align: center;
+}
+
+.about h2, .contact h2 {
+  color: #0f9b0f;
+  margin-bottom: 15px;
+}
+
+.about p, .contact p {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Footer */
@@ -193,11 +267,22 @@ footer {
   padding: 25px 15px;
 }
 
+footer .social-icons {
+  margin-bottom: 15px;
+}
+
 footer .social-icons a {
   margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
 
 footer .social-icons img {
-  width: 24px;
+  width: 28px;
+  height: 28px;
   filter: invert(1);
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
 }
