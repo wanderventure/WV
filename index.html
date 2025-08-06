@@ -1,98 +1,124 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wander Venture - India's #1 Travel Marketplace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wander Venture - Travel Marketplace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- NAVIGATION BAR -->
   <nav class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon" />
+      <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
       Wander Venture
     </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#states">States</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#packages">Packages</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header class="hero" id="home">
+  <!-- HERO -->
+  <header class="hero">
     <div class="hero-content">
-      <h1>India's #1 Travel Marketplace</h1>
-      <p>Discover. Customize. Book. All in one place.</p>
-      <button onclick="document.getElementById('search-section').scrollIntoView({ behavior: 'smooth' })">Start Exploring</button>
+      <h1>Explore India with Verified Agents</h1>
+      <p>Book personalized trips and events, curated for you</p>
+      <button onclick="window.location.href='#packages'">Browse Packages</button>
     </div>
   </header>
 
-  <!-- SEARCH SECTION -->
-  <section class="search-section" id="search-section">
-    <input type="text" id="searchInput" placeholder="Search destination, state or event..." onkeyup="filterCards()" />
+  <!-- SEARCH BAR -->
+  <section class="search-bar">
+    <input type="text" placeholder="Search destinations or states..." />
+    <button>Search</button>
   </section>
 
-  <!-- STATES SECTION -->
-  <section class="packages" id="states">
+  <!-- PACKAGE SECTION -->
+  <section class="packages" id="packages">
     <h2>Explore by State</h2>
-    <div class="package-list" id="cardList">
-      <!-- Uttarakhand Card -->
-      <div class="package-card">
-        <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170" alt="Uttarakhand">
-        <h3>Uttarakhand</h3>
-        <p>Rishikesh, Kedarnath</p>
-        <button onclick="window.location.href='uttarakhand.html'">View Packages</button>
-      </div>
 
-      <!-- Uttar Pradesh Card -->
-      <div class="package-card">
-        <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170" alt="Uttar Pradesh">
-        <h3>Uttar Pradesh</h3>
-        <p>Varanasi, Ayodhya</p>
-        <button onclick="window.location.href='uttarpradesh.html'">View Packages</button>
+    <div class="state-section">
+      <h3>Uttarakhand</h3>
+      <div class="package-list">
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80" alt="Rishikesh">
+          <h4>Rishikesh Adventure</h4>
+          <p>Start from ₹2,499</p>
+          <button onclick="window.location.href='uttarakhand/rishikesh.html'">View</button>
+        </div>
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80" alt="Kedarnath">
+          <h4>Kedarnath Yatra</h4>
+          <p>Start from ₹7,999</p>
+          <button onclick="window.location.href='uttarakhand/kedarnath.html'">View</button>
+        </div>
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80" alt="Jim Corbett">
+          <h4>Jim Corbett Safari</h4>
+          <p>Start from ₹3,999</p>
+          <button onclick="window.location.href='uttarakhand/jimcorbett.html'">View</button>
+        </div>
       </div>
+    </div>
 
-      <!-- Maharashtra Card -->
-      <div class="package-card">
-        <img src="https://images.unsplash.com/photo-1660145416818-b9a2b1a1f193?q=80&w=1170" alt="Maharashtra">
-        <h3>Maharashtra</h3>
-        <p>Mumbai, Lonavala</p>
-        <button onclick="window.location.href='maharashtra.html'">View Packages</button>
+    <div class="state-section">
+      <h3>Uttar Pradesh</h3>
+      <div class="package-list">
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1634920540678-df0e179c5243?q=80" alt="Varanasi">
+          <h4>Varanasi Spiritual Tour</h4>
+          <p>Start from ₹5,999</p>
+          <button onclick="window.location.href='uttar-pradesh/varanasi.html'">View</button>
+        </div>
       </div>
+    </div>
 
-      <!-- More coming soon -->
+    <div class="state-section">
+      <h3>Maharashtra</h3>
+      <div class="package-list">
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1660145416818-b9a2b1a1f193?q=80" alt="Mumbai">
+          <h4>Mumbai Getaway</h4>
+          <p>Start from ₹4,999</p>
+          <button onclick="window.location.href='maharashtra/mumbai.html'">View</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="state-section">
+      <h3>Events</h3>
+      <div class="package-list">
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80" alt="Party">
+          <h4>Night Parties</h4>
+          <p>Start from ₹1,999</p>
+          <button onclick="window.location.href='events/event-party.html'">View</button>
+        </div>
+        <div class="package-card">
+          <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80" alt="Pre-Wedding">
+          <h4>Pre-Wedding Shoot</h4>
+          <p>Location: Rishikesh</p>
+          <button onclick="window.location.href='events/event-prewedding.html'">View</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="about-content">
-      <h2>About Us</h2>
-      <p><strong>Wander Venture</strong> is India’s most trusted travel marketplace — connecting travelers to verified local agents. Whether you're seeking adventure, culture, or luxury, we’ve got custom packages designed for you.</p>
-      <div class="about-columns">
-        <div class="about-box">
-          <h3>Custom Trips</h3>
-          <p>Choose your destination, budget, and vibe. We tailor your trip to match your travel dream.</p>
-        </div>
-        <div class="about-box">
-          <h3>Verified Agents</h3>
-          <p>All our partners are pre-verified for safety, experience, and service quality — so you travel worry-free.</p>
-        </div>
-      </div>
-    </div>
+    <h2>About Wander Venture</h2>
+    <p>Wander Venture is a trusted marketplace to connect travelers with verified local agents across India. Explore spiritual, adventurous, romantic, and cultural journeys — all tailored to your preferences.</p>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
-    <p>Need help planning a trip? Drop us an email:</p>
-    <p>
-      📧 <a href="mailto:info@wanderventure.online">info@wanderventure.online</a><br>
-      💼 <a href="mailto:support@wanderventure.online">support@wanderventure.online</a>
-    </p>
+    <p>Email: <a href="mailto:info@wanderventure.online">info@wanderventure.online</a></p>
   </section>
 
   <!-- FOOTER -->
@@ -105,27 +131,8 @@
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
       </a>
     </div>
-    <p>
-      © 2025 Wander Venture | <a href="#contact">Contact</a> | <a href="#about">About</a> | <a href="privacy-policy.html">Privacy Policy</a>
-    </p>
+    <p>© 2025 Wander Venture. All rights reserved.</p>
   </footer>
 
-  <!-- Smart AI Suggestion Button -->
-  <a href="#contact" class="wanderly-float" title="Need help planning a trip?">
-    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/idea.png" alt="AI Planner">
-  </a>
-
-  <!-- JS Filter Script -->
-  <script>
-    function filterCards() {
-      const input = document.getElementById('searchInput');
-      const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll('.package-card');
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(filter) ? 'block' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
