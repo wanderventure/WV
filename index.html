@@ -5,6 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wander Venture - Explore India by State</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 30px 20px;
+    }
+
+    .state-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .state-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .state-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .state-card h3 {
+      margin: 15px 0 5px;
+      font-size: 1.4rem;
+    }
+
+    .state-card p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .state-card button {
+      background: #28a745;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .state-card button:hover {
+      background: #1f7a32;
+    }
+
+    .packages h2 {
+      margin-top: 60px;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .state-card img {
+        height: 160px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,13 +97,13 @@
     </div>
   </header>
 
-  <!-- EXPLORE BY STATE -->
+  <!-- STATE-WISE SECTION -->
   <section class="packages" id="states">
     <h2>Explore by State</h2>
-    <div class="package-list">
+    <div class="states-grid">
 
       <!-- Uttarakhand -->
-      <div class="package-card">
+      <div class="state-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Himalayas.jpg/640px-Himalayas.jpg" alt="Uttarakhand">
         <h3>Uttarakhand</h3>
         <p>Rishikesh, Kedarnath, Jim Corbett</p>
@@ -45,7 +111,7 @@
       </div>
 
       <!-- Maharashtra -->
-      <div class="package-card">
+      <div class="state-card">
         <img src="https://images.unsplash.com/photo-1597752459297-cfd9c0ec2f64?q=80&w=1170&auto=format&fit=crop" alt="Maharashtra">
         <h3>Maharashtra</h3>
         <p>Mumbai, Lonavala, more</p>
@@ -53,23 +119,25 @@
       </div>
 
       <!-- Uttar Pradesh -->
-      <div class="package-card">
+      <div class="state-card">
         <img src="https://images.unsplash.com/photo-1600508771852-6c92de1c9362?q=80&w=1170&auto=format&fit=crop" alt="Uttar Pradesh">
         <h3>Uttar Pradesh</h3>
         <p>Varanasi, Ayodhya, more</p>
         <button onclick="location.href='uttarpradesh.html'">Explore</button>
       </div>
 
-      <!-- Add more states as you expand -->
+      <!-- Add more states as needed -->
+
     </div>
   </section>
 
-  <!-- ABOUT & CONTACT -->
+  <!-- ABOUT -->
   <section class="about" id="about">
     <h2>About Wander Venture</h2>
     <p>We connect you with trusted travel agents across India. From the Himalayas to the coasts, we customize your travel dream.</p>
   </section>
 
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:info@wanderventure.online">info@wanderventure.online</a></p>
