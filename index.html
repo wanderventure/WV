@@ -38,10 +38,15 @@
     <button onclick="searchFunction()">Search</button>
   </section>
 
-  <!-- STATE PACKAGES -->
-  <section class="packages" id="states">
-    <h2>Explore by State</h2>
-    <div class="state-cards">
+ <!-- STATE PACKAGES -->
+<section class="packages" id="states">
+  <h2>Explore by State</h2>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for a state..." onkeyup="filterStates()" />
+  </div>
+  <div class="state-cards">
+  </div>
+</section>
 
       <!-- Uttarakhand -->
       <div class="state-card">
@@ -124,6 +129,17 @@
     <a href="privacy-policy.html">Privacy Policy</a>
   </p>
 </footer>
+
+  <script>
+  function filterStates() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".package-card");
+    cards.forEach(card => {
+      const stateName = card.querySelector("h3").innerText.toLowerCase();
+      card.style.display = stateName.includes(input) ? "block" : "none";
+    });
+  }
+</script>
 
 </body>
 </html>
