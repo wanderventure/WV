@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Getaway - Wander Venture</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero" style="background:url('https://images.unsplash.com/photo-1562979314-bee7453e911c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+  <div class="hero-content">
+    <h1>Mumbai Getaway</h1>
+    <p>Gateway of India • Marine Drive • Bollywood Vibes</p>
+  </div>
+</header>
+
+<!-- Package Details -->
+<section class="package-detail">
+  <h2>About This Trip</h2>
+  <p><strong>Base Price:</strong> Starts from ₹4,999 per person (includes basic stay + shared sightseeing). Final price may vary depending on your customization and transport preferences.</p>
+
+  <p>Mumbai — the city of dreams — offers a vibrant mix of colonial architecture, Bollywood glamour, coastal vibes, and fast-paced urban culture. In this trip, you can experience the Gateway of India, Marine Drive, Juhu Beach, Bandra Bandstand, Siddhivinayak Temple, Colaba Causeway shopping, and more.</p>
+
+  <p>Our Mumbai package includes hotel bookings (budget to deluxe), sightseeing arrangements (cab or shared), and flexible itinerary options. It's perfect for couples, solo travelers, or groups looking to explore the best of the Maximum City in a planned and comfortable way.</p>
+
+  <p><strong>Customization Options:</strong> Airport/railway pickup, hotel upgrades, Bollywood studio tour, local guide availability, or private cabs for local sightseeing can be added as per your interest.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> The price mentioned is indicative of the base plan. Final trip cost may change depending on the number of people, hotel category, mode of transport, and specific customizations you select.
+  </div>
+
+  <h2>Gallery</h2>
+  <div class="img-gallery">
+    <img src="https://images.unsplash.com/photo-1573143950521-36ef5345dae9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gateway of India">
+    <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Marine Drive">
+    <img src="https://images.unsplash.com/photo-1575261755165-1a9d4370c898?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mumbai city">
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Mumbai trip</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Mumbai trip Enquiry - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+    <input type="number" id="daysInput" name="days" min="1" required oninput="updateNightsDays()" placeholder="Enter number of days">
+
+    <label>Trip Duration</label>
+    <input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
+
+    <label>Number of People*</label>
+    <select name="people" id="peopleSelect" required>
+      <option value="">Select</option>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of pax, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Wander Venture. All Rights Reserved.</p>
+</footer>
+
+<!-- Floating Book Button + Story Popup (Mumbai) -->
+<div class="story-book">
+  <button class="book-btn" onclick="toggleStory('mumbaiStory')">📖</button>
+  <div class="story-popup" id="mumbaiStory">
+    <div class="story-content">
+      <span class="close-btn" onclick="toggleStory('mumbaiStory')">×</span>
+      <h3>Story of Mumbai</h3>
+      <p>
+        Mumbai, the city that never sleeps, is built on seven islands that were once home to fishing communities. Few know that the name ‘Mumbai’ comes from ‘Mumbā Devī,’ the patron goddess of the original Koli fishermen. The city grew into a trading hub during the British era, with the iconic Gateway of India standing as a testament to its colonial history. Today, Mumbai is a blend of dreams and traditions, where high-rises stand beside centuries-old temples. The charm of Marine Drive at sunset and the stories behind its bustling streets make Mumbai not just a city, but an emotion.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleStory(storyId) {
+    const popup = document.getElementById(storyId);
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+
+  function updateNightsDays() {
+    const days = parseInt(document.getElementById('daysInput').value);
+    const output = document.getElementById('nightsDaysOutput');
+
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      output.value = `${days}D/${nights}N`;
+    } else {
+      output.value = '';
+    }
+  }
+
+  // Generate people options 1–100
+  const selectPeople = document.getElementById('peopleSelect');
+  for (let i = 1; i <= 100; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    selectPeople.appendChild(option);
+  }
+</script>
+
+</body>
+</html>

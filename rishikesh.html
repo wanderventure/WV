@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rishikesh Adventure - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+ <nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- HERO -->
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1652594374334-1fcf5150e415?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1>Rishikesh Adventure</h1>
+      <p>Rafting • Yoga • Mountain Escape</p>
+    </div>
+  </header>
+
+ <section class="package-detail">
+  <h2>About This Trip</h2>
+  <p><strong>Base Price:</strong> Starts from ₹2,499 per person (includes basic camp stay + standard rafting stretch). Final price depends on customization and group size.</p>
+
+  <p>Rishikesh is the ultimate destination for those seeking adventure, spirituality, and mountain serenity. Perfect for students, young groups, couples, and budget travelers — this trip offers a blend of adrenaline-pumping experiences and peaceful moments by the Ganges.</p>
+
+  <p>Core inclusions can feature cliff jumping, 10–16 km rafting stretch, riverside camping, yoga sessions, and local café hopping. You can optionally add bungee jumping, zip-lining, or luxurious stays near Laxman Jhula or Tapovan.</p>
+
+  <p><strong>Customization Options:</strong> Choose between riverside tents, dome camps, or premium stays. Select rafting stretch length, add transportation from Haridwar/Delhi, or include adventure park access, Ganga Aarti timing, and nearby waterfall treks.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> The mentioned price is the base starting cost. Final pricing depends on number of people, stay category, transport, and activities selected. We’ll design the perfect plan based on your preferences.
+  </div>
+
+    <h2>Gallery</h2>
+    <div class="img-gallery">
+      <img src="https://images.unsplash.com/photo-1642933196504-62107dac9258?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rishikesh Rafting">
+      <img src="https://images.unsplash.com/photo-1603867106100-0d2039fc8757?q=80&w=1181&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rishikesh River View">
+      <img src="https://images.unsplash.com/photo-1713340546638-5e30e2b7b1fe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti Rishikesh">
+    </div>
+  </section>
+
+  <section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Rishikesh adventure</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Rishikesh adventure form - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+    <input type="number" id="daysInput" name="days" min="1" required oninput="updateNightsDays()" placeholder="Enter number of days">
+
+    <label>Trip Duration</label>
+    <input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      ${[...Array(100).keys()].map(i => `<option value="${i+1}">${i+1}</option>`).join('')}
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of pax, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+  <footer>
+    <p>© 2025 Wander Venture</p>
+  </footer>
+
+  <!-- Floating Book Button + Story Popup -->
+<div class="story-book">
+  <button class="book-btn" onclick="toggleStory('rishikeshStory')">📖</button>
+  <div class="story-popup" id="rishikeshStory">
+    <div class="story-content">
+      <span class="close-btn" onclick="toggleStory('rishikeshStory')">×</span>
+      <h3>Story of Rishikesh</h3>
+      <p>
+        Rishikesh, nestled in the foothills of the Himalayas, is known as the ‘Gateway to the Garhwal Himalayas’ and the ‘Yoga Capital of the World.’ Few know that the Beatles spent time here in 1968, composing many songs in the peaceful ashrams along the Ganges. According to legend, Lord Rama did penance here after defeating Ravana, and the Lakshman Jhula bridge stands at the spot where Lakshman is believed to have crossed the Ganga on a jute rope. The sound of temple bells, the sight of floating diyas, and the chants along the ghats make this city a living canvas of spirituality and adventure.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleStory(storyId) {
+    const popup = document.getElementById(storyId);
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+
+  function updateNightsDays() {
+    const days = parseInt(document.getElementById('daysInput').value);
+    const output = document.getElementById('nightsDaysOutput');
+
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      output.value = `${days}D/${nights}N`;
+    } else {
+      output.value = '';
+    }
+  }
+
+  // Inject number of people options (1 to 100) after DOM loads
+  document.addEventListener("DOMContentLoaded", function () {
+    const select = document.querySelector('select[name="people"]');
+    if (select && select.options.length <= 1) {
+      for (let i = 1; i <= 100; i++) {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.text = i;
+        select.appendChild(opt);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

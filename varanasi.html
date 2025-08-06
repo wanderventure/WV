@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varanasi Spiritual Tour - Wander Venture</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- Hero Section -->
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1>Varanasi Spiritual Tour</h1>
+      <p>Ganga Aarti • Ghats • Temples</p>
+    </div>
+  </header>
+
+  <!-- Package Details -->
+ <section class="package-detail">
+  <h2>About This Trip</h2>
+  <p><strong>Base Price:</strong> Starts from ₹5,999 per person (includes budget stay + local sightseeing). Final pricing depends on customization and number of travelers.</p>
+
+  <p>Explore the timeless essence of Varanasi, one of the oldest cities on Earth. This trip is ideal for families, solo spiritual seekers, photographers, and cultural explorers. Witness the magical Ganga Aarti, explore sacred ghats, and visit ancient temples that carry centuries of spiritual heritage.</p>
+
+  <p><strong>Trip Highlights:</strong> Visit Kashi Vishwanath Temple, enjoy a sunrise boat ride on the Ganges, experience Sarnath’s Buddhist relics, and walk through the old city's alleys packed with history and local flavors.</p>
+
+  <p><strong>Customization Options:</strong> Choose from heritage guesthouses or luxury riverside hotels. Add private boat rides, pandit-guided rituals, photography tours, and cultural activities like classical music or yoga sessions.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> The mentioned price is a starting point. Final costs vary based on the number of people, choice of accommodation, transport, and selected experiences. We design the trip to match your preferences.
+  </div>
+
+    <h2>Gallery</h2>
+    <div class="img-gallery">
+      <img src="https://images.unsplash.com/photo-1597811119369-748db0973125?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ganga Aarti">
+      <img src="https://images.unsplash.com/photo-1699630923504-9a24dbaab37c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi Ghat">
+      <img src="https://images.unsplash.com/photo-1605601528543-75ba6928c19d?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Temple view">
+    </div>
+  </section>
+
+ <!-- Contact Form -->
+<section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Varanasi Tour</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Varanasi Tour Enquiry - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+<input type="number" id="daysInput" name="days" min="1" required oninput="updateNightsDays()" placeholder="Enter number of days">
+
+<label>Trip Duration</label>
+<input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
+
+   <label>Number of People*</label>
+<select name="people" id="peopleDropdown" required>
+  <option value="">Select</option>
+</select>
+<script>
+  // Populate people dropdown from 1 to 100
+  const dropdown = document.getElementById("peopleDropdown");
+  for (let i = 1; i <= 100; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    dropdown.appendChild(option);
+  }
+</script>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of pax, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Wander Venture. All Rights Reserved.</p>
+  </footer>
+
+<!-- Floating Book Button + Story Popup (Varanasi) -->
+<div class="story-book">
+  <button class="book-btn" onclick="toggleStory('varanasiStory')">📖</button>
+  <div class="story-popup" id="varanasiStory">
+    <div class="story-content">
+      <span class="close-btn" onclick="toggleStory('varanasiStory')">×</span>
+      <h3>Story of Varanasi</h3>
+      <p>
+        Varanasi, also called Kashi, is believed to be older than time itself. According to legend, Lord Shiva founded this city, choosing its sacred banks along the Ganges as the place where life and death meet. Few know that under some ghats, buried steps of temples whisper of forgotten centuries. The city’s name comes from the Varuna and Assi rivers, which converge here. The ghats have seen emperors, poets, and saints, while the eternal flame at Manikarnika Ghat is said to have been burning for centuries. Mark Twain once remarked that Varanasi is older than history, tradition, and legend combined. To walk here is to step through the heartbeat of India’s spirituality.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleStory(storyId) {
+    const popup = document.getElementById(storyId);
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+  <script>
+  function updateNightsDays() {
+    const days = parseInt(document.getElementById('daysInput').value);
+    const output = document.getElementById('nightsDaysOutput');
+
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      output.value = `${days}D/${nights}N`;
+    } else {
+      output.value = '';
+    }
+  }
+</script>
+
+</body>
+</html>

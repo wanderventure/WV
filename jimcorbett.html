@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jim Corbett Safari - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1669021820355-7186908380d9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1>Jim Corbett Safari</h1>
+      <p>Wildlife • Jungle Resorts • Jeep Safaris</p>
+    </div>
+  </header>
+
+ <section class="package-detail">
+  <h2>About This Safari</h2>
+  <p><strong>Base Price:</strong> Starts from ₹3,999 per person (includes basic stay + 1 safari). Additional safaris, premium accommodation, or custom requests will affect the price.</p>
+
+  <p>Experience the wild heart of Uttarakhand with our curated Jim Corbett Safari package. Ideal for families, student groups, and corporate getaways, this trip offers the thrill of spotting tigers, elephants, and exotic birds in their natural habitat. You'll stay in jungle-themed resorts with options for adventure activities, bonfires, and guided nature walks.</p>
+
+  <p>Whether you're a nature photographer, wildlife lover, or first-time explorer, Jim Corbett offers a raw and exciting glimpse of India's biodiversity.</p>
+
+  <p><strong>Customization Options:</strong> Multiple safari zones (Bijrani, Dhikala, Jhirna), choice of stay (budget to luxury), group booking discounts, and more.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> This is a base itinerary. Final pricing depends on your custom selections including travel mode, resort category, number of safaris, and group size.
+  </div>
+</section>
+
+    <h2>Gallery</h2>
+    <div class="img-gallery">
+      <img src="https://images.unsplash.com/photo-1475027810313-fda7c2c8e71a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mother nature">
+      <img src="https://images.unsplash.com/photo-1656828059237-add66db82a2b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Explore the nature">
+      <img src="https://images.unsplash.com/photo-1650700100606-4783528385cb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="capture the moments">
+    </div>
+  </section>
+
+ <section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Jim Corbett Safari</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Jim Corbett Enquiry - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+<select name="days" id="days" required onchange="updateNights()">
+  <option value="">Select</option>
+  <script>
+    for (let i = 1; i <= 30; i++) {
+      document.write(`<option value="${i}">${i}</option>`);
+    }
+  </script>
+</select>
+
+<label>Duration (Auto-filled)</label>
+<input type="text" name="duration" id="durationDisplay" readonly placeholder="E.g. 3D/2N">
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of safaris, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+  <footer>
+    <p>© 2025 Wander Venture</p>
+  </footer>
+  <!-- Floating Book Button + Story Popup (Jim Corbett) -->
+<div class="story-book">
+  <button class="book-btn" onclick="toggleStory('corbettStory')">📖</button>
+  <div class="story-popup" id="corbettStory">
+    <div class="story-content">
+      <span class="close-btn" onclick="toggleStory('corbettStory')">×</span>
+      <h3>Story of Jim Corbett</h3>
+      <p>
+        Jim Corbett National Park, India’s first national park established in 1936, is a paradise for wildlife lovers. Few know that it was originally called Hailey National Park, later renamed after Jim Corbett, the legendary hunter-turned-conservationist who fought to protect India’s tigers. The park’s dense sal forests, grasslands, and winding streams hide majestic Bengal tigers, elephants, leopards, and over 600 species of birds. Every sunrise here feels like a page out of a jungle adventure novel, with mist rolling over fields and deer grazing by the water. The forest whispers tales of both survival and the untamed beauty of nature.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleStory(storyId) {
+    const popup = document.getElementById(storyId);
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+  <script>
+  function updateNights() {
+    const days = parseInt(document.getElementById('days').value);
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      document.getElementById('durationDisplay').value = `${days}D/${nights}N`;
+    } else {
+      document.getElementById('durationDisplay').value = '';
+    }
+  }
+</script>
+
+</body>
+</html>
