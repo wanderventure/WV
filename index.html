@@ -1,23 +1,22 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wander Venture - Travel Marketplace</title>
+  <title>Wander Venture - Explore India by State</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+      <img src="images/logo.png" alt="Logo" class="logo-icon">
       Wander Venture
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="#packages">Packages</a></li>
+      <li><a href="#states">Packages</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -26,96 +25,51 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <h1>Explore India with Verified Agents</h1>
-      <p>Book personalized trips and events, curated for you</p>
-      <button onclick="window.location.href='#packages'">Browse Packages</button>
+      <h1>Discover India State by State</h1>
+      <p>Find your perfect travel package</p>
+      <button onclick="document.getElementById('states').scrollIntoView()">Explore Now</button>
     </div>
   </header>
 
-  <!-- SEARCH BAR -->
-  <section class="search-bar">
-    <input type="text" placeholder="Search destinations or states..." />
-    <button>Search</button>
-  </section>
-
-  <!-- PACKAGE SECTION -->
-  <section class="packages" id="packages">
+  <!-- EXPLORE BY STATE -->
+  <section class="packages" id="states">
     <h2>Explore by State</h2>
+    <div class="package-list">
 
-    <div class="state-section">
-      <h3>Uttarakhand</h3>
-      <div class="package-list">
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80" alt="Rishikesh">
-          <h4>Rishikesh Adventure</h4>
-          <p>Start from ₹2,499</p>
-          <button onclick="window.location.href='uttarakhand/rishikesh.html'">View</button>
-        </div>
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80" alt="Kedarnath">
-          <h4>Kedarnath Yatra</h4>
-          <p>Start from ₹7,999</p>
-          <button onclick="window.location.href='uttarakhand/kedarnath.html'">View</button>
-        </div>
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80" alt="Jim Corbett">
-          <h4>Jim Corbett Safari</h4>
-          <p>Start from ₹3,999</p>
-          <button onclick="window.location.href='uttarakhand/jimcorbett.html'">View</button>
-        </div>
+      <!-- Uttarakhand -->
+      <div class="package-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Himalayas.jpg/640px-Himalayas.jpg" alt="Uttarakhand">
+        <h3>Uttarakhand</h3>
+        <p>Rishikesh, Kedarnath, Jim Corbett</p>
+        <button onclick="location.href='uttarakhand.html'">Explore</button>
       </div>
-    </div>
 
-    <div class="state-section">
-      <h3>Uttar Pradesh</h3>
-      <div class="package-list">
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1634920540678-df0e179c5243?q=80" alt="Varanasi">
-          <h4>Varanasi Spiritual Tour</h4>
-          <p>Start from ₹5,999</p>
-          <button onclick="window.location.href='uttar-pradesh/varanasi.html'">View</button>
-        </div>
+      <!-- Maharashtra -->
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1597752459297-cfd9c0ec2f64?q=80&w=1170&auto=format&fit=crop" alt="Maharashtra">
+        <h3>Maharashtra</h3>
+        <p>Mumbai, Lonavala, more</p>
+        <button onclick="location.href='maharashtra.html'">Explore</button>
       </div>
-    </div>
 
-    <div class="state-section">
-      <h3>Maharashtra</h3>
-      <div class="package-list">
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1660145416818-b9a2b1a1f193?q=80" alt="Mumbai">
-          <h4>Mumbai Getaway</h4>
-          <p>Start from ₹4,999</p>
-          <button onclick="window.location.href='maharashtra/mumbai.html'">View</button>
-        </div>
+      <!-- Uttar Pradesh -->
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1600508771852-6c92de1c9362?q=80&w=1170&auto=format&fit=crop" alt="Uttar Pradesh">
+        <h3>Uttar Pradesh</h3>
+        <p>Varanasi, Ayodhya, more</p>
+        <button onclick="location.href='uttarpradesh.html'">Explore</button>
       </div>
-    </div>
 
-    <div class="state-section">
-      <h3>Events</h3>
-      <div class="package-list">
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80" alt="Party">
-          <h4>Night Parties</h4>
-          <p>Start from ₹1,999</p>
-          <button onclick="window.location.href='events/event-party.html'">View</button>
-        </div>
-        <div class="package-card">
-          <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80" alt="Pre-Wedding">
-          <h4>Pre-Wedding Shoot</h4>
-          <p>Location: Rishikesh</p>
-          <button onclick="window.location.href='events/event-prewedding.html'">View</button>
-        </div>
-      </div>
+      <!-- Add more states as you expand -->
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT & CONTACT -->
   <section class="about" id="about">
     <h2>About Wander Venture</h2>
-    <p>Wander Venture is a trusted marketplace to connect travelers with verified local agents across India. Explore spiritual, adventurous, romantic, and cultural journeys — all tailored to your preferences.</p>
+    <p>We connect you with trusted travel agents across India. From the Himalayas to the coasts, we customize your travel dream.</p>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:info@wanderventure.online">info@wanderventure.online</a></p>
@@ -123,15 +77,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/thewanderventure/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-      </a>
-      <a href="https://www.linkedin.com/in/abhisheksingh1772" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-      </a>
-    </div>
-    <p>© 2025 Wander Venture. All rights reserved.</p>
+    <p>© 2025 Wander Venture | <a href="#contact">Contact</a> | <a href="#about">About</a></p>
   </footer>
 
 </body>
