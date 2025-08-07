@@ -164,7 +164,7 @@ Let’s grow together and create journeys people remember for a lifetime.
 
       <div class="checkbox-row">
         <input type="checkbox" name="terms" required>
-        <label>I accept the <a href="terms.html" target="_blank">Terms & Conditions</a></label>
+      <label>I accept the <a href="#" onclick="openTerms()">Terms & Conditions</a></label>
       </div>
 
       <button type="submit">Submit Partnership Request</button>
@@ -188,6 +188,83 @@ Let’s grow together and create journeys people remember for a lifetime.
   <a href="partner.html" class="footer-btn">Partner with Us</a>
 </p>
 </footer>
+<!-- Terms and Conditions Modal -->
+<div id="termsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); z-index: 1000; align-items: center; justify-content: center;">
+  <div style="background: white; padding: 20px; width: 90%; max-width: 600px; border-radius: 8px; max-height: 90vh; overflow-y: auto; position: relative;">
+    <span onclick="closeTerms()" style="position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer;">×</span>
+    <h3>Terms and Conditions</h3>
+    <p>
+      By submitting this partnership form, you agree to the following terms of engagement with Wander Venture.
+    </p>
+
+    <h4>1. Partner Eligibility</h4>
+    <p>
+      Only verified and professional travel agencies, individual travel planners, or tour operators are eligible to partner with us. All applications are subject to basic verification before being listed or considered.
+    </p>
+
+    <h4>2. No Listing or Subscription Fees</h4>
+    <p>
+      We do not charge any listing, subscription, or platform access fees. We may charge a minimal service fee at the time of successful query conversion, which is clearly mentioned during client lead communication.
+    </p>
+
+    <h4>3. Quote Distribution & Competition</h4>
+    <p>
+      For transparency and fair competition, client queries may be shared with multiple partner agencies. Each agency is expected to submit their best quotations. The client then chooses the offer they find most suitable. This encourages healthy competition and ensures value for the customer.
+    </p>
+
+    <h4>4. Lead Flow Disclaimer</h4>
+    <p>
+      We do not guarantee a fixed number of client leads or queries. Leads depend on visitor interest and customer activity on our platform. Your profile visibility, responsiveness, and service quality may influence your chances.
+    </p>
+
+    <h4>5. Use of Trip Content</h4>
+    <p>
+      Wander Venture reserves the right to use any photos, videos, or feedback received from trips booked via our platform on our website and social media handles for marketing and informational purposes.
+    </p>
+
+    <h4>6. Responsibility of Service</h4>
+    <p>
+      As a partner, you are fully responsible for handling the client after the lead is passed to you. This includes transparent pricing, timely communication, safety during trips, and delivering the promised experience.
+    </p>
+
+    <h4>7. Quality & Conduct</h4>
+    <p>
+      Consistent negative feedback, misbehavior, false quotations, or failure to deliver the promised service may result in permanent removal from our partnership program. We hold our partners to high standards.
+    </p>
+
+    <h4>8. Privacy & Data</h4>
+    <p>
+      We do not sell or misuse any personal information provided by the partner or client. Your details are only used for partnership verification and communication purposes.
+    </p>
+
+    <h4>9. Termination Clause</h4>
+    <p>
+      Wander Venture reserves the right to remove or deactivate any partner without prior notice if any violation of terms, unethical conduct, or misuse of platform resources is found.
+    </p>
+
+    <p>
+      By clicking "I Accept", you confirm that you have read, understood, and agreed to these terms. We look forward to a respectful and mutually beneficial collaboration.
+    </p>
+  </div>
+</div>
+<script>
+  function openTerms() {
+    document.getElementById('termsModal').style.display = 'flex';
+  }
+
+  function closeTerms() {
+    document.getElementById('termsModal').style.display = 'none';
+  }
+
+  // Close the modal when clicking outside the modal content
+  window.onclick = function(event) {
+    const modal = document.getElementById('termsModal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
 
 </body>
 </html>
