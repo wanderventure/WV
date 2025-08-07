@@ -2,131 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Partner With Us - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partner with Us - Wander Venture</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .partner-hero {
+      background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80') center/cover no-repeat;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .partner-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .partner-hero p {
+      font-size: 1.2rem;
+    }
+
+    .why-partner {
+      padding: 2rem;
+      background: #f8f8f8;
+    }
+
+    .why-partner h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .why-partner p {
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .partner-form-wrapper {
+      padding: 2rem;
+    }
+
+    .partner-form-wrapper h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    form.partner-form {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .partner-form input, .partner-form select, .partner-form textarea {
+      padding: 0.6rem;
+      font-size: 1rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .partner-form label {
+      font-weight: bold;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    .partner-form button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .partner-form button:hover {
+      background: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .partner-hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<section class="partner-hero">
-  <div class="hero-text">
-    <h1>Partner With Wander Venture</h1>
-    <p>Join our trusted network of travel experts. We grow together.</p>
-  </div>
-</section>
+  <header class="partner-hero">
+    <h1>Partner with Wander Venture</h1>
+    <p>Join us in shaping the future of meaningful travel experiences</p>
+  </header>
 
-<!-- WHY PARTNER WITH US -->
-<section class="why-partner">
-  <h2>Why Partner With Us?</h2>
-  <div class="why-cards">
-    <div class="card">
-      <i class="fas fa-handshake"></i>
-      <h3>Trusted Marketplace</h3>
-      <p>We work with verified agencies and passionate travelers. Your credibility, our visibility.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-bullhorn"></i>
-      <h3>Zero Listing Fees</h3>
-      <p>We list your packages for free. When we send you client queries, we charge a small service fee of 15%–20% based on the trip cost.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-map-marked-alt"></i>
-      <h3>Pan-India Reach</h3>
-      <p>Promote your services to a large and engaged travel audience across the country.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-rocket"></i>
-      <h3>Boosted Leads</h3>
-      <p>We connect you with real, high-intent travelers through direct quotations and brand support.</p>
-    </div>
-  </div>
-</section>
+  <section class="why-partner">
+    <h2>Why Partner with Us?</h2>
+    <p>
+      At Wander Venture, we believe in empowering local travel agencies and tour providers by bringing their best packages to the forefront. 
+      We do not charge any listing fees or subscription costs. Instead, we operate on a minimal service fee basis (usually between 15%–20%) per client, which is clearly shared during client query sharing. 
+      We handle client communication, lead generation, and marketing—your job is to deliver outstanding travel experiences. Partnering with us gives you visibility, credibility, and continuous client opportunities.
+    </p>
+  </section>
 
-<!-- PARTNER FORM -->
-<section class="partner-form-section" id="partner-form">
-  <h2>Become a Travel Partner</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="partner-form">
-    <div class="form-group">
-      <label>Your Name*</label>
-      <input type="text" name="name" required />
-    </div>
+  <section class="partner-form-wrapper">
+    <h2>Fill the Partnership Form</h2>
+    <form class="partner-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+      <!-- Hidden settings for FormSubmit -->
+      <input type="hidden" name="_subject" value="New Partner Submission - Wander Venture">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
 
-    <div class="form-group">
+      <label>Full Name*</label>
+      <input type="text" name="name" required>
+
       <label>Mobile Number*</label>
-      <input type="tel" name="mobile" required />
-    </div>
+      <input type="tel" name="mobile" pattern="[0-9]{10}" required placeholder="10-digit number">
 
-    <div class="form-group">
-      <label>Alternate Number</label>
-      <input type="tel" name="alternate" />
-    </div>
+      <label>Alternate Mobile</label>
+      <input type="tel" name="alternate_mobile" pattern="[0-9]{10}" placeholder="Optional">
 
-    <div class="form-group">
       <label>Company Name*</label>
-      <input type="text" name="company" required />
-    </div>
+      <input type="text" name="company" required>
 
-    <div class="form-group">
-      <label>Instagram Page (optional)</label>
-      <input type="url" name="instagram" />
-    </div>
-
-    <div class="form-group">
-      <label>GST Number (optional)</label>
-      <input type="text" name="gst" />
-    </div>
-
-    <div class="form-group">
       <label>Role in Company*</label>
-      <select name="role" required>
-        <option value="">-- Select --</option>
-        <option value="Founder">Founder</option>
-        <option value="Manager">Manager</option>
-        <option value="HR">HR</option>
-        <option value="Employee">Employee</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
+      <input type="text" name="role" required placeholder="Founder, Employee, Manager...">
 
-    <div class="form-group">
-      <label>Full Address*</label>
-      <textarea name="full_address" rows="3" required></textarea>
-    </div>
+      <label>Instagram Page (optional)</label>
+      <input type="url" name="instagram" placeholder="https://instagram.com/yourpage">
 
-    <div class="form-row">
-      <div class="form-group">
-        <label>City*</label>
-        <input type="text" name="city" required />
+      <label>GST Number (optional)</label>
+      <input type="text" name="gst" placeholder="Optional">
+
+      <label>Company Address*</label>
+      <input type="text" name="full_address" required placeholder="Full address">
+
+      <label>State*</label>
+      <input type="text" name="state" required>
+
+      <label>City*</label>
+      <input type="text" name="city" required>
+
+      <label>Pincode*</label>
+      <input type="text" name="pincode" required pattern="[0-9]{6}">
+
+      <div class="checkbox-row">
+        <input type="checkbox" name="terms" required>
+        <label>I accept the <a href="terms.html" target="_blank">Terms & Conditions</a></label>
       </div>
-      <div class="form-group">
-        <label>State*</label>
-        <input type="text" name="state" required />
-      </div>
-      <div class="form-group">
-        <label>PIN Code*</label>
-        <input type="text" name="pincode" required />
-      </div>
-    </div>
 
-    <div class="form-group checkbox">
-      <input type="checkbox" name="terms" required />
-      <label>I agree to the <a href="terms.html" target="_blank">terms & conditions</a></label>
-    </div>
+      <button type="submit">Submit Partnership Request</button>
+    </form>
+  </section>
 
-    <button type="submit">Become a Partner</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-content">
-    <p>© 2025 Wander Venture. All Rights Reserved.</p>
-    <a href="index.html#contact">Contact</a> |
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </div>
-</footer>
+  <footer>
+    <p>© 2025 Wander Venture</p>
+  </footer>
 
 </body>
 </html>
