@@ -667,3 +667,60 @@ footer .social-icons a:hover {
 .search-container button i {
   font-size: 16px;
 }
+
+/* === TWEAKED MOBILE FONT & SPACING === */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .package-card {
+    padding: 12px;
+    width: 90%;
+  }
+
+  .package-card img {
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .package-card button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .about-box p,
+  .about-box h3 {
+    font-size: 15px;
+  }
+
+  .testimonial-card p {
+    font-size: 14px;
+  }
+
+  .testimonial-card h4 {
+    font-size: 14px;
+  }
+}
