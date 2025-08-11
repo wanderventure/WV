@@ -923,3 +923,27 @@ footer .social-icons a:hover {
   margin: 20px 0;
   border-radius: 10px;
 }
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.badge-trending {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
