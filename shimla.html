@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shimla - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1659972000524-c1c39e29471c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1>Shimla</h1>
+      <p>Mall Road • Kufri Snow Point • Christ Church</p>
+    </div>
+  </header>
+
+ <section class="package-detail">
+  <h2>About This Safari</h2>
+  <p><strong>Base Price:</strong> Starts from ₹5,499 per person (includes budget stay + local sightseeing). Premium hotels, private transfers or additional activities will increase the price.</p>
+
+  <p>Escape to the queen of hills with our curated Shimla package. Perfect for couples, friends, family and weekend getaways, this trip brings you the charm of colonial architecture, breathtaking views and peaceful Himalayan surroundings. Spend time walking on the famous Mall Road, explore Kufri’s snow & adventure park and visit iconic spots like Christ Church and The Ridge.</p>
+<p>Whether you love nature, photography, café hopping or simply a relaxing break from city life — Shimla offers a refreshing experience for every traveller.</p>
+
+  <p><strong>Customization Options:</strong> Choice of hotel category (budget to luxury), private or shared transfers, Kufri adventure activities, honeymoon décor, group discounts and more.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> This is a base itinerary. Final pricing depends on your custom selections including travel mode, hotel category, activities and group size.
+  </div>
+</section>
+
+    <h2>Gallery</h2>
+    <div class="img-gallery">
+      <img src="https://images.unsplash.com/photo-1619417889956-c701044fed86?q=80&w=1076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tara Devi Temple">
+      <img src="https://images.unsplash.com/photo-1650471689517-592c882004d5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Christ Church">
+      <img src="https://images.unsplash.com/photo-1655946907085-65e3538abe0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="
+Viceregal lodge ( Indian institute of advanced studies)">
+    </div>
+  </section>
+
+ <section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Queen of Hills Getaway Shimla</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Shimla - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+<select name="days" id="days" required onchange="updateNights()">
+  <option value="">Select</option>
+  <script>
+    for (let i = 1; i <= 30; i++) {
+      document.write(`<option value="${i}">${i}</option>`);
+    }
+  </script>
+</select>
+
+<label>Duration (Auto-filled)</label>
+<input type="text" name="duration" id="durationDisplay" readonly placeholder="E.g. 3D/2N">
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Hotel preference, number of safaris, special request..." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+  <footer>
+    <p>© 2025 Wander Venture</p>
+  </footer>
+  <!-- Floating Book Button + Story Popup (Jim Corbett) -->
+<div class="story-book">
+  <button class="book-btn" onclick="toggleStory('shimlaStory')">📖</button>
+  <div class="story-popup" id="corbettStory">
+    <div class="story-content">
+      <span class="close-btn" onclick="toggleStory('shimlaStory')">×</span>
+      <h3>Story of Shimla</h3>
+      <p>
+        Most people know Shimla as a peaceful hill station, but very few realise that it actually served as the summer capital of British India and because of this, the British secretly built underground tunnels beneath the town. These tunnels were used to move important officials and confidential documents discreetly in case of unrest or attack.
+Some of these passageways are said to connect major heritage buildings like the Viceregal Lodge, Gaiety Theatre and Scandal Point, and although many of them are now sealed, locals still believe parts of the tunnel network exist below the city and remain unexplored even today.
+It’s one of the most mysterious and lesser-known sides of Shimla!
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleStory(storyId) {
+    const popup = document.getElementById(storyId);
+    popup.style.display = (popup.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+  <script>
+  function updateNights() {
+    const days = parseInt(document.getElementById('days').value);
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      document.getElementById('durationDisplay').value = `${days}D/${nights}N`;
+    } else {
+      document.getElementById('durationDisplay').value = '';
+    }
+  }
+</script>
+
+</body>
+</html>
