@@ -76,15 +76,15 @@
       <input type="text" id="nightsDaysOutput" name="duration" readonly placeholder="E.g. 3D/2N">
 
       <label>Number of People*</label>
-      <select name="people" required>
-        <option value="">Select</option>
-        <!-- Options 1 to 100 -->
-       <script>
-         for (let i + 1; i <=100; i++) {
-           document.write('<option value="${i}">${i}</option>');
-         }
-       </script>
-      </select>
+    <select name="people" required>
+      <option value="">Select</option>
+      <!-- Options 1 to 100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
 
       <label>Transportation Type*</label>
       <select name="transportation" required>
