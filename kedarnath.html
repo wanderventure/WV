@@ -79,8 +79,11 @@
       <select name="people" required>
         <option value="">Select</option>
         <!-- Options 1 to 100 -->
-        <!-- This will be static for reliability -->
-        ${[...Array(100)].map((_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+       <script>
+         for (let i + 1; i <=100; i++) {
+           document.write('<option value="${i}">${i}</option>');
+         }
+       </script>
       </select>
 
       <label>Transportation Type*</label>
