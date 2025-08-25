@@ -39,6 +39,78 @@
   <button><i class="fas fa-search"></i></button>
 </div>
 <!-- Search Box End -->
+  <!-- SERVICE ICONS SECTION -->
+<div class="service-icons">
+  <!-- Hotels: Opens Popup -->
+  <div class="service-card" onclick="openHotelForm()">
+    <i class="fas fa-hotel"></i>
+    <span>Hotels</span>
+  </div>
+
+  <!-- Religious Tours: Redirects to New Page -->
+  <div class="service-card" onclick="window.location.href='religious.html'">
+    <i class="fas fa-place-of-worship"></i>
+    <span>Religious Tours</span>
+  </div>
+
+  <!-- Events: Placeholder -->
+  <div class="service-card">
+    <i class="fas fa-calendar-alt"></i>
+    <span>Events</span>
+  </div>
+</div>
+
+<!-- Hotel Popup Form -->
+<div id="hotelPopup" class="popup-form">
+  <div class="form-content">
+    <span class="close-btn" onclick="closeHotelForm()">&times;</span>
+    <h2>Hotel Enquiry</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" required>
+
+      <label>Email:</label>
+      <input type="email" required>
+
+      <label>Phone:</label>
+      <input type="tel" required>
+
+      <label>Date of Birth:</label>
+      <input type="date">
+
+      <label>No. of Guests:</label>
+      <input type="number" min="1" required>
+
+      <label>City:</label>
+      <input type="text" required>
+
+      <label>Hotel Type:</label>
+      <select>
+        <option>Budget</option>
+        <option>Deluxe</option>
+        <option>Premium</option>
+      </select>
+
+      <label>Budget (Per Room):</label>
+      <div style="display:flex; gap:10px;">
+        <input type="number" placeholder="Min">
+        <input type="number" placeholder="Max">
+      </div>
+
+      <label>No. of Days:</label>
+      <input type="number" min="1" required>
+
+      <label>Check-in Date:</label>
+      <input type="date" required>
+
+      <label>Additional Notes:</label>
+      <textarea rows="3"></textarea>
+
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </div>
+</div>
+
   <!-- PACKAGE SECTION -->
   <section class="packages" id="packages">
     <h2>Popular Packages</h2>
