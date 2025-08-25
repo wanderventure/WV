@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Religious Tours - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    Wander Venture
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <header class="hero" style="background:url('https://images.unsplash.com/photo-1596097825168-c9b773f404ff?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;">
+    <div class="hero-content">
+      <h1>Religious Tours</h1>
+      <p>Ayodhya • Kashi Vishwanath • Golden Temple • Haji Ali Dargah</p>
+    </div>
+  </header>
+
+ <section class="package-detail">
+  <h2>About This Tour</h2>
+  <p><strong>Base Price:</strong> Starts from ₹6,999 per person (includes stay + darshan arrangements). Premium hotels, private transfers or additional activities will increase the price.</p>
+
+  <p>Experience India’s divine heritage with our curated Religious Tours. Perfect for families, senior citizens, spiritual seekers, and cultural enthusiasts, these tours are designed to give you peace of mind along with comfortable travel and stay. We take care of darshan arrangements, transportation, and customized itineraries.</p>
+
+  <p>Whether it’s the eternal ghats of Kashi, the sacred shrines of Char Dham, the holy vibes of Ayodhya, or the golden glow of Amritsar’s Harmandir Sahib — every journey brings blessings and lifelong memories.</p>
+
+  <p><strong>Customization Options:</strong> Choice of multiple darshan places, hotel category, private/shared transfers, group or solo packages, and special arrangements for elderly travellers.</p>
+
+  <div class="note-box" style="margin-top:1rem; padding:1rem; border-left:5px solid #f39c12; background:#fff8e1;">
+    <strong>Note:</strong> Darshan timings are subject to temple rules. We provide guided assistance to ensure a smooth and hassle-free experience.
+  </div>
+</section>
+
+    <h2>Gallery</h2>
+    <div class="img-gallery">
+      <img src="https://images.unsplash.com/photo-1547452377-b2ac40e02ed6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tungnath Temple">
+      <img src="https://images.unsplash.com/photo-1583821017783-4333717df070?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Golden Temple Amritsar">
+      <img src="https://images.unsplash.com/photo-1662376107358-21296a9234f1?q=80&w=1226&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Prem Mandir">
+      <img src="https://images.unsplash.com/photo-1702247413104-05821cf6e8c7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jama Masjid">
+    </div>
+
+ <section class="custom-form-wrapper" id="custom">
+  <h3>Customize / Book Your Religious Tour</h3>
+  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Religious Tour - Wander Venture">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
+
+    <label>Name*</label>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" name="phone" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" required>
+
+    <label>Email*</label>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+
+    <label>Travel Date*</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Days*</label>
+    <select name="days" id="days" required onchange="updateNights()">
+      <option value="">Select</option>
+      <script>
+        for (let i = 1; i <= 30; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Duration (Auto-filled)</label>
+    <input type="text" name="duration" id="durationDisplay" readonly placeholder="E.g. 3D/2N">
+
+    <label>Number of People*</label>
+    <select name="people" required>
+      <option value="">Select</option>
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+
+    <label>Transportation Type*</label>
+    <select name="transportation" required>
+      <option value="">Select</option>
+      <option value="self">Self (Own Vehicle)</option>
+      <option value="public">Public (Bus/Train)</option>
+      <option value="private">Private (Cab or Private Vehicle)</option>
+    </select>
+
+    <!-- NEW SECTION: Choose Package -->
+    <!-- NEW SECTION: Choose Package -->
+<label>Choose Darshan Places (You can select multiple)</label>
+<div class="checkbox-group">
+  <label><input type="checkbox" name="package[]" value="Ayodhya - UP"> Ayodhya (Uttar Pradesh)</label><br>
+  <label><input type="checkbox" name="package[]" value="Kashi Vishwanath - Varanasi"> Kashi Vishwanath (Varanasi, UP)</label><br>
+  <label><input type="checkbox" name="package[]" value="Golden Temple - Amritsar"> Golden Temple (Amritsar, Punjab)</label><br>
+  <label><input type="checkbox" name="package[]" value="Haji Ali Dargah - Mumbai"> Haji Ali Dargah (Mumbai, Maharashtra)</label><br>
+  <label><input type="checkbox" name="package[]" value="Siddhivinayak - Mumbai"> Siddhivinayak Temple (Mumbai, Maharashtra)</label><br>
+  <label><input type="checkbox" name="package[]" value="Joshimath - Uttarakhand"> Joshimath (Uttarakhand)</label><br>
+  <label><input type="checkbox" name="package[]" value="Vaishno Devi - Jammu"> Vaishno Devi (Jammu, J&K)</label><br>
+  <label><input type="checkbox" name="package[]" value="Do Dham"> Do Dham (Kedarnath & Badrinath, Uttarakhand)</label><br>
+  <label><input type="checkbox" name="package[]" value="Char Dham"> Char Dham (Yamunotri, Gangotri, Kedarnath, Badrinath)</label>
+</div>
+
+    <label>Message</label>
+    <textarea name="message" placeholder="Special requests, elderly arrangements, etc." rows="4"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+
+  <footer>
+    <p>© 2025 Wander Venture</p>
+  </footer>
+
+<script>
+  function updateNights() {
+    const days = parseInt(document.getElementById('days').value);
+    if (!isNaN(days) && days > 0) {
+      const nights = days - 1;
+      document.getElementById('durationDisplay').value = `${days}D/${nights}N`;
+    } else {
+      document.getElementById('durationDisplay').value = '';
+    }
+  }
+</script>
+
+</body>
+</html>
