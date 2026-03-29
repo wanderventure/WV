@@ -36,3 +36,10 @@ function openHotelForm() {
 function closeHotelForm() {
   document.getElementById("hotelPopup").style.display = "none";
 }
+function sendWhatsApp(packageName) {
+  const phone = "917007051245";
+
+  const message = `Hi, I am interested in ${packageName} package. Please share full details.`;
+
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+}
