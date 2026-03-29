@@ -97,6 +97,52 @@ With Wander Venture, your Dubai trip isn’t just planned it’s crafted exactly
 
   </div>
 </section>
+  <section class="custom-form-wrapper">
+  <h2>Customize Your Dubai Trip</h2>
+
+  <form class="custom-form">
+
+    <label>Your Name*</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label>Phone / WhatsApp*</label>
+    <input type="tel" id="phone" placeholder="Enter mobile number" required>
+
+    <label>Email*</label>
+    <input type="email" id="email" placeholder="Enter email" required>
+
+    <label>Check-in Date*</label>
+    <input type="date" id="checkin" required>
+
+    <label>Check-out Date*</label>
+    <input type="date" id="checkout" required>
+
+    <label>No. of Travelers*</label>
+    <select id="people" required>
+      <option value="">Select</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3-5</option>
+      <option>5-10</option>
+      <option>10+</option>
+    </select>
+
+    <label>Hotel Category*</label>
+    <select id="hotel" required>
+      <option value="">Select</option>
+      <option>Budget</option>
+      <option>3 Star</option>
+      <option>4 Star</option>
+      <option>5 Star Luxury</option>
+    </select>
+
+    <label>Additional Requirements</label>
+    <textarea id="notes" placeholder="Mention your budget, honeymoon, group trip, special requests..."></textarea>
+
+    <button type="button" onclick="sendDubaiForm()">Get Quote on WhatsApp</button>
+
+  </form>
+</section>
   <footer>
   <div class="social-icons">
     <a href="https://www.instagram.com/thewanderventure/" target="_blank">
