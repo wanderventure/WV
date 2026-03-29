@@ -1043,7 +1043,7 @@ footer .social-icons a:hover {
   background: #fff;
   border-radius: 50%;
   font-size: 22px;
-  color: #3b5cff;
+  color: #ff6600; /* ORANGE */
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
