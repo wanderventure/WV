@@ -1002,3 +1002,59 @@ footer .social-icons a:hover {
 .form-content form button:hover {
   background: #005f86;
 }
+/* INTERNATIONAL SECTION */
+.intl-section {
+  padding: 40px 20px;
+}
+
+.intl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intl-header span {
+  color: #3b5cff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.intl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.intl-item {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intl-item:hover {
+  transform: translateY(-5px);
+}
+
+.intl-item i {
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #3b5cff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.intl-item p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .intl-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
