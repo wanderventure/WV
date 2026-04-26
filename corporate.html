@@ -26,11 +26,8 @@
 <section class="custom-form-wrapper">
   <h3>Register Your Company</h3>
 
-  <form class="custom-form" action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
-
-    <input type="hidden" name="_subject" value="Corporate Registration">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
+  <!-- ❌ formsubmit हटाया -->
+  <form class="custom-form">
 
     <label>Company Name*</label>
     <input type="text" name="company_name" required>
@@ -65,7 +62,7 @@
   <p>© Wander Venture</p>
 </footer>
 
-<!-- 🔥 FIREBASE + EMAIL FIXED SCRIPT -->
+<!-- 🔥 FINAL FIREBASE SCRIPT -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -88,7 +85,6 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   try {
-    // ✅ Firebase save
     await addDoc(collection(db, "companies"), {
       company_name: form.company_name.value,
       company_email: form.company_email.value,
@@ -102,10 +98,8 @@ form.addEventListener("submit", async (e) => {
       createdAt: new Date()
     });
 
-    // ✅ Email send (delay fix)
-    setTimeout(() => {
-      form.submit();
-    }, 300);
+    alert("Company Registered Successfully!");
+    form.reset();
 
   } catch (error) {
     alert("Error: " + error.message);
