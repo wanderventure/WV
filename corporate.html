@@ -126,6 +126,42 @@
 <footer>
   <p>© 2025 Wander Venture</p>
 </footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// 🔥 YOUR CONFIG
+const firebaseConfig = {
+  apiKey: "AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
+  authDomain: "wander-venture.firebaseapp.com",
+  projectId: "wander-venture",
+  storageBucket: "wander-venture.firebasestorage.app",
+  messagingSenderId: "834986747896",
+  appId: "1:834986747896:web:2b13b0dce23a45c3b9d80d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// FORM HANDLE
+const form = document.querySelector(".custom-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "companies"), {
+    company_name: form.company_name.value,
+    company_email: form.company_email.value,
+    company_phone: form.company_phone.value,
+    manager_name: form.manager_name.value,
+    manager_email: form.manager_email.value,
+    createdAt: new Date()
+  });
+
+  alert("Company Registered Successfully!");
+
+  form.submit(); // email bhi jayega
+});
+</script>
 </body>
 </html>
