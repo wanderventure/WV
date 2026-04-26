@@ -74,6 +74,7 @@
 
 <body>
 
+<!-- LOGIN -->
 <div class="login-box" id="loginBox">
   <h2>Admin Login</h2>
   <input type="password" id="password" placeholder="Enter Access Code">
@@ -81,6 +82,7 @@
   <p id="error" style="color:red;"></p>
 </div>
 
+<!-- DASHBOARD -->
 <div class="admin-panel" id="adminPanel">
 
   <h2>Admin Dashboard</h2>
@@ -120,11 +122,13 @@ function login() {
 }
 </script>
 
+<!-- 🔥 FINAL SCRIPT -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, getDocs, collection, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, doc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js";
 
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
   authDomain: "wander-venture.firebaseapp.com",
@@ -137,16 +141,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// EmailJS init
 emailjs.init("TCTkD_0rzOkTYshJk");
 
 const container = document.querySelector(".cards");
 
+// Unique ID
 function generateID(name) {
   return "WV-" + name.replace(/\s+/g,'').toUpperCase().slice(0,4) + "-" + Math.floor(1000 + Math.random()*9000);
 }
 
-async function loadCompanies() {
-  const snapshot = await getDocs(collection(db, "companies"));
+// 🔥 LIVE DATA
+onSnapshot(collection(db, "companies"), (snapshot) => {
 
   let total = 0, approved = 0, pending = 0;
   container.innerHTML = "";
@@ -157,7 +163,7 @@ async function loadCompanies() {
 
     total++;
     if(status === "approved") approved++;
-    else if(status === "pending") pending++;
+    else pending++;
 
     const card = `
       <div class="card">
@@ -180,14 +186,20 @@ async function loadCompanies() {
   document.getElementById("total").innerText = total;
   document.getElementById("approved").innerText = approved;
   document.getElementById("pending").innerText = pending;
-}
+});
 
+// APPROVE
 window.approve = async (id) => {
+
   const ref = doc(db, "companies", id);
-  const snapshot = await getDocs(collection(db, "companies"));
 
   let companyData;
-  snapshot.forEach(d => { if(d.id === id) companyData = d.data(); });
+
+  onSnapshot(collection(db, "companies"), (snapshot) => {
+    snapshot.forEach(d => {
+      if(d.id === id) companyData = d.data();
+    });
+  });
 
   const companyID = generateID(companyData.company_name);
 
@@ -200,15 +212,12 @@ window.approve = async (id) => {
   });
 
   alert("Approved + Email Sent 🚀");
-  loadCompanies();
 };
 
+// REJECT
 window.reject = async (id) => {
   await updateDoc(doc(db, "companies", id), { status: "rejected" });
-  loadCompanies();
 };
-
-loadCompanies();
 </script>
 
 </body>
