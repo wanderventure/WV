@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel - Wander Venture</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Admin Panel - Wander Venture</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      font-family: Arial;
-      background: linear-gradient(135deg,#0f172a,#1e293b);
-      margin:0;
-      color:#fff;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+}
 
-    nav {
-      background:#020617;
-      padding:15px 25px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+/* NAV */
+nav{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  padding:15px 25px;
+  display:flex;
+  justify-content:space-between;
+}
 
-    nav h2 { margin:0; }
+/* LOGIN + PANEL */
+.login-box, .admin-panel{
+  max-width:1100px;
+  margin:40px auto;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:15px;
+}
 
-    .login-box, .admin-panel {
-      max-width:1100px;
-      margin:40px auto;
-      background:#fff;
-      color:#000;
-      padding:30px;
-      border-radius:15px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    }
+/* HIDE */
+.admin-panel{display:none;}
 
-    .admin-panel { display:none; }
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+}
 
-    input {
-      width:100%;
-      padding:12px;
-      margin:10px 0;
-      border-radius:6px;
-      border:1px solid #ccc;
-    }
+/* STATS */
+.stats{
+  display:flex;
+  gap:20px;
+}
 
-    button {
-      padding:10px 16px;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-      margin:5px;
-    }
+.stat-box{
+  flex:1;
+  background:linear-gradient(135deg,#16a34a,#065f46);
+  color:#fff;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
 
-    .btn-green { background:#22c55e; color:#fff; }
-    .btn-red { background:#ef4444; color:#fff; }
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
 
-    .stats {
-      display:flex;
-      gap:20px;
-      margin-bottom:25px;
-      flex-wrap:wrap;
-    }
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+}
 
-    .stat-box {
-      flex:1;
-      background:linear-gradient(135deg,#16a34a,#065f46);
-      color:#fff;
-      padding:20px;
-      border-radius:12px;
-      text-align:center;
-    }
+button{
+  padding:8px 12px;
+  margin-top:10px;
+  cursor:pointer;
+}
 
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
-    }
-
-    .card {
-      background:#f9fafb;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.1);
-    }
-  </style>
+.btn-green{background:green;color:#fff;}
+.btn-red{background:red;color:#fff;}
+</style>
 </head>
 
 <body>
@@ -94,75 +90,62 @@
 
 <!-- LOGIN -->
 <div class="login-box" id="loginBox">
-  <h2>Admin Login</h2>
-  <input type="password" id="password" placeholder="Enter Access Code">
-  <button class="btn-green" onclick="login()">Login</button>
-  <p id="error" style="color:red;"></p>
+  <h2>Login</h2>
+  <input type="password" id="password">
+  <button onclick="login()">Login</button>
 </div>
 
 <!-- DASHBOARD -->
 <div class="admin-panel" id="adminPanel">
 
-  <h2>Dashboard</h2>
+<h2>Dashboard</h2>
 
-  <div class="stats">
-    <div class="stat-box">
-      <h3 id="total">0</h3>
-      <p>Total</p>
-    </div>
-    <div class="stat-box">
-      <h3 id="approved">0</h3>
-      <p>Approved</p>
-    </div>
-    <div class="stat-box">
-      <h3 id="pending">0</h3>
-      <p>Pending</p>
-    </div>
-  </div>
+<div class="stats">
+  <div class="stat-box"><h3 id="total">0</h3>Total</div>
+  <div class="stat-box"><h3 id="approved">0</h3>Approved</div>
+  <div class="stat-box"><h3 id="pending">0</h3>Pending</div>
+</div>
 
-  <div class="cards"></div>
+<div class="cards"></div>
 
 </div>
 
 <script>
 function login(){
-  if(document.getElementById("password").value === "700702001962"){
+  if(document.getElementById("password").value==="700702001962"){
     loginBox.style.display="none";
     adminPanel.style.display="block";
-  } else {
-    error.innerText="Wrong Code!";
   }
 }
 </script>
 
-<!-- 🔥 FINAL SCRIPT -->
+<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, onSnapshot, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js";
+import { getFirestore, collection, onSnapshot, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
-  authDomain: "wander-venture.firebaseapp.com",
-  projectId: "wander-venture"
+  apiKey:"AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
+  authDomain:"wander-venture.firebaseapp.com",
+  projectId:"wander-venture"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-emailjs.init("TCTkD_0rzOkTYshJk");
-
 const container = document.querySelector(".cards");
 
-function generateID(name){
-  return "WV-" + name.replace(/\s+/g,'').slice(0,4).toUpperCase() + "-" + Math.floor(1000+Math.random()*9000);
-}
+// FIXED ELEMENTS
+const totalEl = document.getElementById("total");
+const approvedEl = document.getElementById("approved");
+const pendingEl = document.getElementById("pending");
 
-// 🔥 LIVE DATA (main)
-onSnapshot(collection(db,"companies"), (snapshot)=>{
+// LIVE DATA
+onSnapshot(collection(db,"companies"),(snapshot)=>{
+
   container.innerHTML="";
 
-  let total=0, approved=0, pending=0;
+  let total=0,approved=0,pending=0;
 
   snapshot.forEach(docSnap=>{
     const data = docSnap.data();
@@ -171,50 +154,32 @@ onSnapshot(collection(db,"companies"), (snapshot)=>{
     total++;
     if(status==="approved") approved++; else pending++;
 
-    container.innerHTML += `
-      <div class="card">
-        <h3>${data.company_name}</h3>
-        <p>${data.company_email}</p>
-        <p>Status: ${status}</p>
+    container.innerHTML+=`
+    <div class="card">
+      <h3>${data.company_name}</h3>
+      <p>${data.company_email}</p>
+      <p>Status: ${status}</p>
 
-        ${status==="pending" ? `
-          <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
-          <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
-        ` : ""}
-      </div>
-    `;
+      ${status==="pending" ? `
+      <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
+      <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
+      ` : ""}
+    </div>`;
   });
 
   totalEl.innerText=total;
   approvedEl.innerText=approved;
   pendingEl.innerText=pending;
+
 });
 
-// ✅ FIXED APPROVE
-window.approve = async (id)=>{
-  const ref = doc(db,"companies",id);
-
-  const snap = await getDoc(ref);
-  if(!snap.exists()) return alert("Data not found");
-
-  const data = snap.data();
-  const companyID = generateID(data.company_name);
-
-  await updateDoc(ref,{
-    status:"approved",
-    company_id:companyID
-  });
-
-  await emailjs.send("service_sap44im","template_zdjnl36",{
-    to_email:data.company_email,
-    company_name:data.company_name,
-    company_id:companyID
-  });
-
-  alert("Approved + Email Sent 🚀");
+// APPROVE
+window.approve = async(id)=>{
+  await updateDoc(doc(db,"companies",id),{status:"approved"});
 };
 
-window.reject = async (id)=>{
+// REJECT
+window.reject = async(id)=>{
   await updateDoc(doc(db,"companies",id),{status:"rejected"});
 };
 </script>
