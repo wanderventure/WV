@@ -65,7 +65,7 @@
   <p>© Wander Venture</p>
 </footer>
 
-<!-- 🔥 FIREBASE SCRIPT -->
+<!-- 🔥 FIREBASE + EMAIL FIXED SCRIPT -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -87,22 +87,29 @@ const form = document.querySelector(".custom-form");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  await addDoc(collection(db, "companies"), {
-    company_name: form.company_name.value,
-    company_email: form.company_email.value,
-    company_phone: form.company_phone.value,
-    company_address: form.company_address.value,
-    company_type: form.company_type.value,
-    manager_name: form.manager_name.value,
-    manager_email: form.manager_email.value,
-    manager_phone: form.manager_phone.value,
-    status: "pending", // 🔥 MAIN FIX
-    createdAt: new Date()
-  });
+  try {
+    // ✅ Firebase save
+    await addDoc(collection(db, "companies"), {
+      company_name: form.company_name.value,
+      company_email: form.company_email.value,
+      company_phone: form.company_phone.value,
+      company_address: form.company_address.value,
+      company_type: form.company_type.value,
+      manager_name: form.manager_name.value,
+      manager_email: form.manager_email.value,
+      manager_phone: form.manager_phone.value,
+      status: "pending",
+      createdAt: new Date()
+    });
 
-  alert("Company Registered Successfully!");
+    // ✅ Email send (delay fix)
+    setTimeout(() => {
+      form.submit();
+    }, 300);
 
-  form.submit(); // email bhi jayega
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
 });
 </script>
 
