@@ -106,10 +106,9 @@ function login(){
 }
 </script>
 
-<!-- ✅ EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- ✅ EmailJS (correct version) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, onSnapshot, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -123,7 +122,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-emailjs.init("TCTkD_0rzOkTYshJk"); // ✅ public key
+// ✅ EmailJS init FIXED
+const emailjs = window.emailjs;
+emailjs.init("TCTkD_0rzOkTYshJk");
 
 const container = document.querySelector(".cards");
 
@@ -131,6 +132,7 @@ const totalEl = document.getElementById("total");
 const approvedEl = document.getElementById("approved");
 const pendingEl = document.getElementById("pending");
 
+// 🔥 LIVE DATA
 onSnapshot(collection(db,"companies"),(snapshot)=>{
 
   container.innerHTML="";
@@ -146,17 +148,18 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
 
     container.innerHTML+=`
     <div class="card">
-      <h3>${data.company_name}</h3>
-      <p><b>Email:</b> ${data.company_email}</p>
-      <p><b>Phone:</b> ${data.company_phone}</p>
-      <p><b>Address:</b> ${data.company_address}</p>
-      <p><b>Type:</b> ${data.company_type}</p>
+      <h3>${data.company_name || "N/A"}</h3>
+
+      <p><b>Email:</b> ${data.company_email || "N/A"}</p>
+      <p><b>Phone:</b> ${data.company_phone || "N/A"}</p>
+      <p><b>Address:</b> ${data.company_address || "N/A"}</p>
+      <p><b>Type:</b> ${data.company_type || "N/A"}</p>
 
       <hr>
 
-      <p><b>Manager:</b> ${data.manager_name}</p>
-      <p><b>Manager Email:</b> ${data.manager_email}</p>
-      <p><b>Manager Phone:</b> ${data.manager_phone}</p>
+      <p><b>Manager:</b> ${data.manager_name || "N/A"}</p>
+      <p><b>Manager Email:</b> ${data.manager_email || "N/A"}</p>
+      <p><b>Manager Phone:</b> ${data.manager_phone || "N/A"}</p>
 
       <p><b>Status:</b> ${status}</p>
 
@@ -172,7 +175,7 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
   pendingEl.innerText=pending;
 });
 
-// ✅ APPROVE + EMAIL
+// ✅ APPROVE + EMAIL FINAL
 window.approve = async(id)=>{
   const ref = doc(db,"companies",id);
   const snap = await getDoc(ref);
@@ -184,10 +187,12 @@ window.approve = async(id)=>{
     company_name: data.company_name,
     company_id: id,
     email: data.company_email
-  }).then(()=>{
-    alert("Approved + Email Sent ✅");
-  }).catch(()=>{
-    alert("Approved but Email Failed ❌");
+  }, "TCTkD_0rzOkTYshJk")
+
+  .then(()=> alert("Approved + Email Sent ✅"))
+  .catch((err)=>{
+    console.log(err);
+    alert("Email Failed ❌");
   });
 };
 
