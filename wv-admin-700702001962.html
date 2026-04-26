@@ -87,7 +87,6 @@
 
   <h2>Admin Dashboard</h2>
 
-  <!-- STATS -->
   <div class="stats">
     <div class="stat-box">
       <h3 id="total">0</h3>
@@ -152,9 +151,11 @@ async function loadCompanies() {
 
   snapshot.forEach((docSnap) => {
     const data = docSnap.data();
+    const status = data.status || "pending";
+
     total++;
 
-    if(data.status === "approved") approved++;
+    if(status === "approved") approved++;
     else pending++;
 
     const card = `
@@ -164,10 +165,17 @@ async function loadCompanies() {
         <p><b>Phone:</b> ${data.company_phone || ""}</p>
         <p><b>Manager:</b> ${data.manager_name || ""}</p>
         <p><b>Type:</b> ${data.company_type || ""}</p>
-        <p><b>Status:</b> ${data.status || "pending"}</p>
+        <p><b>Status:</b> ${status}</p>
 
-        <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
-        <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
+        <div>
+          ${status === "pending" ? `
+            <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
+            <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
+          ` : ""}
+
+          ${status === "approved" ? `<span style="color:green;">✔ Approved</span>` : ""}
+          ${status === "rejected" ? `<span style="color:red;">✖ Rejected</span>` : ""}
+        </div>
       </div>
     `;
 
