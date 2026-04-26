@@ -12,7 +12,6 @@ body{
   background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
 }
 
-/* NAV */
 nav{
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
@@ -22,7 +21,6 @@ nav{
   justify-content:space-between;
 }
 
-/* LOGIN + PANEL */
 .login-box, .admin-panel{
   max-width:1100px;
   margin:40px auto;
@@ -32,16 +30,8 @@ nav{
   border-radius:15px;
 }
 
-/* HIDE */
 .admin-panel{display:none;}
 
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-}
-
-/* STATS */
 .stats{
   display:flex;
   gap:20px;
@@ -56,10 +46,9 @@ input{
   text-align:center;
 }
 
-/* CARDS */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
   margin-top:20px;
 }
@@ -88,14 +77,12 @@ button{
   <span>Admin Panel</span>
 </nav>
 
-<!-- LOGIN -->
 <div class="login-box" id="loginBox">
   <h2>Login</h2>
   <input type="password" id="password">
   <button onclick="login()">Login</button>
 </div>
 
-<!-- DASHBOARD -->
 <div class="admin-panel" id="adminPanel">
 
 <h2>Dashboard</h2>
@@ -119,10 +106,13 @@ function login(){
 }
 </script>
 
+<!-- ✅ EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, onSnapshot, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, onSnapshot, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey:"AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
@@ -133,14 +123,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+emailjs.init("TCTkD_0rzOkTYshJk"); // ✅ public key
+
 const container = document.querySelector(".cards");
 
-// FIXED ELEMENTS
 const totalEl = document.getElementById("total");
 const approvedEl = document.getElementById("approved");
 const pendingEl = document.getElementById("pending");
 
-// LIVE DATA
 onSnapshot(collection(db,"companies"),(snapshot)=>{
 
   container.innerHTML="";
@@ -157,12 +147,22 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
     container.innerHTML+=`
     <div class="card">
       <h3>${data.company_name}</h3>
-      <p>${data.company_email}</p>
-      <p>Status: ${status}</p>
+      <p><b>Email:</b> ${data.company_email}</p>
+      <p><b>Phone:</b> ${data.company_phone}</p>
+      <p><b>Address:</b> ${data.company_address}</p>
+      <p><b>Type:</b> ${data.company_type}</p>
+
+      <hr>
+
+      <p><b>Manager:</b> ${data.manager_name}</p>
+      <p><b>Manager Email:</b> ${data.manager_email}</p>
+      <p><b>Manager Phone:</b> ${data.manager_phone}</p>
+
+      <p><b>Status:</b> ${status}</p>
 
       ${status==="pending" ? `
-      <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
-      <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
+        <button class="btn-green" onclick="approve('${docSnap.id}')">Approve</button>
+        <button class="btn-red" onclick="reject('${docSnap.id}')">Reject</button>
       ` : ""}
     </div>`;
   });
@@ -170,12 +170,25 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
   totalEl.innerText=total;
   approvedEl.innerText=approved;
   pendingEl.innerText=pending;
-
 });
 
-// APPROVE
+// ✅ APPROVE + EMAIL
 window.approve = async(id)=>{
-  await updateDoc(doc(db,"companies",id),{status:"approved"});
+  const ref = doc(db,"companies",id);
+  const snap = await getDoc(ref);
+  const data = snap.data();
+
+  await updateDoc(ref,{status:"approved"});
+
+  emailjs.send("service_sap44im","template_zdjnl36",{
+    company_name: data.company_name,
+    company_id: id,
+    email: data.company_email
+  }).then(()=>{
+    alert("Approved + Email Sent ✅");
+  }).catch(()=>{
+    alert("Approved but Email Failed ❌");
+  });
 };
 
 // REJECT
