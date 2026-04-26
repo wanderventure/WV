@@ -14,7 +14,6 @@ body{
 
 nav{
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
   color:#fff;
   padding:15px 25px;
   display:flex;
@@ -76,12 +75,14 @@ button{
   <span>Admin Panel</span>
 </nav>
 
+<!-- LOGIN -->
 <div class="login-box" id="loginBox">
   <h2>Login</h2>
   <input type="password" id="password">
   <button onclick="login()">Login</button>
 </div>
 
+<!-- PANEL -->
 <div class="admin-panel" id="adminPanel">
 
 <h2>Dashboard</h2>
@@ -99,8 +100,8 @@ button{
 <script>
 function login(){
   if(document.getElementById("password").value==="700702001962"){
-    loginBox.style.display="none";
-    adminPanel.style.display="block";
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("adminPanel").style.display="block";
   }
 }
 </script>
@@ -122,7 +123,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const emailjs = window.emailjs;
-emailjs.init("TCTkD_0rzOkTYshJk"); // public key
 
 const container = document.querySelector(".cards");
 const totalEl = document.getElementById("total");
@@ -171,7 +171,7 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
   pendingEl.innerText=pending;
 });
 
-// APPROVE + EMAIL (FINAL)
+// APPROVE + EMAIL FINAL
 window.approve = async(id)=>{
   const ref = doc(db,"companies",id);
   const snap = await getDoc(ref);
@@ -180,8 +180,8 @@ window.approve = async(id)=>{
   await updateDoc(ref,{status:"approved"});
 
   emailjs.send(
-    "service_ywj2hnq",          // ✔ correct service
-    "template_zdjnl36",         // ✔ correct template
+    "service_ywj2hnq",
+    "template_zdjnl36",
     {
       company_name: data.company_name,
       company_id: id,
