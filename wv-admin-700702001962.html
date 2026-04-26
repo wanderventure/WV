@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Wander Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .login-box, .admin-panel {
+      max-width: 500px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .admin-panel { display: none; }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" class="logo-icon">
+    Wander Venture
+  </div>
+</nav>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <h2>Admin Login</h2>
+  <p>Enter Access Code</p>
+
+  <input type="password" id="password" placeholder="Enter Code">
+  <button onclick="login()">Login</button>
+
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <h2>Admin Dashboard</h2>
+
+  <div class="card">
+    <h4>ABC Pvt Ltd</h4>
+    <p>Email: abc@gmail.com</p>
+    <button>Approve</button>
+    <button style="background:red;">Reject</button>
+  </div>
+
+  <div class="card">
+    <h4>XYZ Company</h4>
+    <p>Email: xyz@gmail.com</p>
+    <button>Approve</button>
+    <button style="background:red;">Reject</button>
+  </div>
+
+</div>
+
+<script>
+function login() {
+  const pass = document.getElementById("password").value;
+
+  // 🔐 YOUR SECRET CODE
+  const correctPass = "700702001962";
+
+  if(pass === correctPass){
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Wrong Code!";
+  }
+}
+</script>
+
+</body>
+</html>
