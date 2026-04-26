@@ -170,6 +170,46 @@ function login() {
   }
 }
 </script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
+  authDomain: "wander-venture.firebaseapp.com",
+  projectId: "wander-venture",
+  storageBucket: "wander-venture.firebasestorage.app",
+  messagingSenderId: "834986747896",
+  appId: "1:834986747896:web:2b13b0dce23a45c3b9d80d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const container = document.querySelector(".cards");
+
+async function loadCompanies() {
+  const querySnapshot = await getDocs(collection(db, "companies"));
+
+  container.innerHTML = "";
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+
+    const card = `
+      <div class="card">
+        <h4>${data.company_name}</h4>
+        <p><strong>Email:</strong> ${data.company_email}</p>
+        <p><strong>Phone:</strong> ${data.company_phone}</p>
+        <p><strong>Manager:</strong> ${data.manager_name}</p>
+      </div>
+    `;
+
+    container.innerHTML += card;
+  });
+}
+
+loadCompanies();
+</script>
 </body>
 </html>
