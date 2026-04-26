@@ -1058,3 +1058,11 @@ footer .social-icons a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+footer a {
+  margin: 0 8px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #00bcd4;
+}
