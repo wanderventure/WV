@@ -2,226 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wander Venture - Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wander Venture - Corporate</title>
 
 <style>
 body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 
-/* 🔥 HEADER */
+/* HEADER */
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 25px;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(8px);
-  color:#fff;
+  display:flex;justify-content:space-between;
+  padding:15px 25px;background:#000;color:#fff;
+  align-items:center;
 }
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:28px}
+.nav-links{display:flex;gap:20px}
+.nav-links a{color:#fff;text-decoration:none}
 
-/* LAYOUT */
-.container{display:flex}
-
-/* SIDEBAR */
-.sidebar{
-  width:220px;
-  background:#111;
-  color:#fff;
+/* HERO LOGIN */
+.hero{
   height:100vh;
-  padding:20px;
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+  display:flex;justify-content:center;align-items:center;
 }
-.sidebar div{margin:15px 0;cursor:pointer}
+.hero-box{
+  background:rgba(0,0,0,0.6);
+  padding:30px;border-radius:10px;color:#fff;text-align:center;
+}
+.hero-box input{padding:10px;width:250px}
+.hero-box button{background:#ff7a18;color:#fff;padding:10px;border:none}
 
-/* MAIN */
-.main{flex:1;padding:20px}
+/* ABOUT */
+.about{
+  padding:40px;text-align:center;background:#fff;
+}
 
-/* CARDS */
+/* DASHBOARD */
+.container{max-width:1100px;margin:auto;padding:20px}
 .card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;
 }
 
-/* OFFERS (SMALL) */
-.offer-grid{
+/* TOP MENU */
+.menu{
+  display:flex;gap:10px;margin-bottom:20px;
+}
+.menu button{
+  background:#000;color:#fff;padding:8px 12px;border:none;border-radius:6px;
+}
+
+/* OFFERS */
+.offers{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:10px;
 }
-.offer-grid img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
+.offers img{
+  width:100%;height:120px;object-fit:cover;border-radius:10px;
 }
 
 /* FORM */
 input,select,textarea{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
+  width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;
+}
+.service-box{display:none;background:#f9f9f9;padding:10px;border-radius:8px}
+
+button.submit{background:#ff7a18;color:#fff;border:none;padding:10px}
+
+/* FOOTER */
+footer{
+  background:#000;color:#fff;text-align:center;padding:15px;
 }
 
-.service-box{
-  display:none;
-  background:#f9f9f9;
-  padding:10px;
-  border-radius:8px;
-  margin-top:10px;
-}
-
-button{
-  background:#ff7a18;
-  color:#fff;
-  padding:10px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-/* HIDE */
 .hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-  <h3>Wander Venture</h3>
-</div>
+<!-- HEADER -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/logo.png">
+    Wander Venture
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#packages">Packages</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</nav>
 
 <!-- LOGIN -->
-<div id="loginBox" class="card" style="max-width:400px;margin:50px auto;">
-  <h3>Company Login</h3>
-  <input id="companyId" placeholder="Enter Company ID">
-  <button onclick="login()">Login</button>
+<div id="loginPage">
+<section class="hero">
+  <div class="hero-box">
+    <h2>Corporate Login</h2>
+    <input id="companyId" placeholder="Enter Company ID">
+    <br><br>
+    <button onclick="login()">Login to Dashboard</button>
+  </div>
+</section>
+
+<div class="about">
+  <h2>About Wander Venture</h2>
+  <p>We provide hotels, flights, visa, forex, insurance & corporate travel solutions.</p>
+</div>
 </div>
 
 <!-- DASHBOARD -->
-<div id="app" class="hidden">
+<div id="dashboardPage" class="hidden">
 
 <div class="container">
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <div onclick="show('dashboard')">🏠 Dashboard</div>
-  <div onclick="show('history')">📜 History</div>
-  <div onclick="show('files')">📂 Files</div>
+<div class="card" id="welcome"></div>
+
+<div class="menu">
+  <button onclick="show('main')">Dashboard</button>
+  <button onclick="show('history')">History</button>
 </div>
 
 <!-- MAIN -->
-<div class="main">
+<div id="main">
 
-<!-- DASHBOARD -->
-<div id="dashboard">
-
-<div class="card" id="welcome"></div>
-
-<!-- OFFERS -->
 <div class="card">
-  <h3>🔥 Latest Offers</h3>
-  <div class="offer-grid">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">
-    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=600">
-    <img src="https://images.unsplash.com/photo-1593693401060-9fc28cf9e368?w=600">
-  </div>
+<h3>🔥 Latest Offers</h3>
+<div class="offers">
+  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+  <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+  <img src="https://images.unsplash.com/photo-1593693401060-9fc28cf9e368">
+</div>
 </div>
 
-<!-- FORM -->
 <div class="card">
 <h3>Customize Trip</h3>
 
-<form onsubmit="submitForm(event)">
-
-<input id="name" placeholder="Name *" required>
-<input id="email" type="email" placeholder="Email *" required>
-<input id="phone" placeholder="Mobile *" required>
+<input id="name" placeholder="Name *">
+<input id="email" placeholder="Email *">
+<input id="phone" placeholder="Mobile *">
 
 <select id="service" onchange="showService()">
-  <option value="">Select Service</option>
-  <option value="hotel">Hotel</option>
-  <option value="flight">Flight</option>
-  <option value="forex">Forex</option>
-  <option value="insurance">Insurance</option>
-  <option value="visa">Visa</option>
-  <option value="sim">SIM</option>
+<option value="">Select Service</option>
+<option value="hotel">Hotel</option>
+<option value="flight">Flight</option>
+<option value="forex">Forex</option>
+<option value="insurance">Insurance</option>
+<option value="visa">Visa</option>
+<option value="sim">SIM</option>
 </select>
 
 <!-- HOTEL -->
 <div id="hotel" class="service-box">
-  <h4>Hotel Details</h4>
-  <input type="date" placeholder="Check-in">
-  <input type="date" placeholder="Check-out">
-  <input placeholder="Rooms">
-
-  <select>
-    <option>Double Sharing</option>
-    <option>Triple Sharing</option>
-    <option>Quad Sharing</option>
-  </select>
-
-  <select>
-    <option>Breakfast</option>
-    <option>Breakfast + Lunch</option>
-    <option>Breakfast + Lunch + Dinner</option>
-  </select>
+<input type="date">
+<input type="date">
+<input placeholder="Rooms">
+<select>
+<option>Double</option>
+<option>Triple</option>
+<option>Quad</option>
+</select>
 </div>
 
 <!-- FLIGHT -->
 <div id="flight" class="service-box">
-  <h4>Flight Details</h4>
-  <input type="date">
-
-  <select>
-    <option>One Way</option>
-    <option>Round Trip</option>
-  </select>
-
-  <select>
-    <option>Economy</option>
-    <option>Business</option>
-  </select>
-
-  <select>
-    <option>Window Seat</option>
-    <option>Aisle Seat</option>
-  </select>
-</div>
-
-<!-- FOREX -->
-<div id="forex" class="service-box">
-  <h4>Forex</h4>
-  <input placeholder="Currency">
-  <input placeholder="Amount">
-</div>
-
-<!-- INSURANCE -->
-<div id="insurance" class="service-box">
-  <h4>Insurance</h4>
-  <input placeholder="Country">
-  <input placeholder="Days">
-</div>
-
-<!-- VISA -->
-<div id="visa" class="service-box">
-  <h4>Visa</h4>
-  <input placeholder="Country">
-</div>
-
-<!-- SIM -->
-<div id="sim" class="service-box">
-  <h4>SIM Card</h4>
-  <input placeholder="Country">
-  <input placeholder="Days">
+<input type="date">
+<select><option>One Way</option><option>Round</option></select>
+<select><option>Economy</option><option>Business</option></select>
+<select><option>Window</option><option>Aisle</option></select>
 </div>
 
 <textarea id="message" placeholder="Details..."></textarea>
 
-<button type="submit">Submit</button>
-</form>
+<button class="submit" onclick="submitForm()">Submit</button>
 
 </div>
 
@@ -229,23 +183,20 @@ button{
 
 <!-- HISTORY -->
 <div id="history" class="hidden">
-  <h3>History</h3>
-  <div id="historyList"></div>
-</div>
-
-<!-- FILES -->
-<div id="files" class="hidden">
-  <h3>Files</h3>
-  <p>Coming soon...</p>
+<h3>History</h3>
+<div id="historyList"></div>
 </div>
 
 </div>
 </div>
-</div>
+
+<footer>
+© Wander Venture | All Rights Reserved
+</footer>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, getDoc, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, getDoc, addDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const app = initializeApp({
   apiKey:"AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
@@ -254,7 +205,7 @@ const app = initializeApp({
 });
 
 const db = getFirestore(app);
-let companyId="";
+let cid="";
 
 /* LOGIN */
 window.login = async()=>{
@@ -263,64 +214,55 @@ window.login = async()=>{
 
   if(!snap.exists()){alert("Invalid");return;}
 
-  companyId=id;
+  cid=id;
 
-  loginBox.classList.add("hidden");
-  appDiv.classList.remove("hidden");
+  loginPage.style.display="none";
+  dashboardPage.classList.remove("hidden");
 
-  welcome.innerHTML=`<h2>Welcome ${snap.data().company_name}</h2>`;
-
-  loadHistory();
+  welcome.innerHTML=`
+  <h2>Welcome ${snap.data().company_name}</h2>
+  <p>Company ID: ${cid}</p>`;
 };
 
-const appDiv=document.getElementById("app");
-
-/* NAV */
+/* MENU */
 window.show=(id)=>{
-  dashboard.classList.add("hidden");
+  main.classList.add("hidden");
   history.classList.add("hidden");
-  files.classList.add("hidden");
   document.getElementById(id).classList.remove("hidden");
 };
 
-/* SERVICE SWITCH */
+/* SERVICE */
 window.showService=()=>{
   document.querySelectorAll(".service-box").forEach(x=>x.style.display="none");
   if(service.value) document.getElementById(service.value).style.display="block";
 };
 
 /* SUBMIT */
-window.submitForm = async(e)=>{
-  e.preventDefault();
-
+window.submitForm=async()=>{
   await addDoc(collection(db,"queries"),{
-    companyId,
+    companyId:cid,
     service:service.value,
     message:message.value,
     date:new Date()
   });
 
-  alert("Submitted ✅");
+  alert("Submitted");
   loadHistory();
 };
 
 /* HISTORY */
 async function loadHistory(){
-  const q=query(collection(db,"queries"),where("companyId","==",companyId));
+  const q=query(collection(db,"queries"),where("companyId","==",cid));
   const snap=await getDocs(q);
 
   historyList.innerHTML="";
 
   snap.forEach(doc=>{
     const d=doc.data();
-
     historyList.innerHTML+=`
-      <div class="card">
-        <b>${d.service}</b><br>
-        ${d.message}<br>
-        <small>${new Date(d.date.seconds*1000).toLocaleString()}</small>
-      </div>
-    `;
+    <div class="card">
+    ${d.service}<br>${d.message}
+    </div>`;
   });
 }
 </script>
