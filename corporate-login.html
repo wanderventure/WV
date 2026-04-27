@@ -6,27 +6,169 @@
 <title>Wander Venture - Corporate</title>
 
 <style>
-body{margin:0;font-family:Segoe UI;background:#f4f6fb}
-.navbar{display:flex;justify-content:space-between;padding:15px 25px;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);color:#fff;align-items:center;}
-.logo{display:flex;align-items:center;gap:10px}
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#f4f6fb;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  align-items:center;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
 .logo img{height:28px}
-.nav-links{display:flex;gap:20px}
-.nav-links a{color:#fff;text-decoration:none}
-.hero{height:100vh;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;display:flex;justify-content:center;align-items:center;}
-.hero-box{background:rgba(0,0,0,0.6);padding:30px;border-radius:10px;color:#fff;text-align:center;}
+
+/* 🔥 FIX: DOT REMOVE */
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links li{list-style:none}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-box{
+  background:rgba(0,0,0,0.6);
+  padding:30px;
+  border-radius:10px;
+  color:#fff;
+  text-align:center;
+}
+
 .hero-box input{padding:10px;width:250px}
 .hero-box button{background:#ff7a18;color:#fff;padding:10px;border:none}
-.about{padding:40px;text-align:center;background:#fff}
-.container{max-width:1100px;margin:auto;padding:20px}
-.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px}
-.menu{display:flex;gap:10px;margin-bottom:20px}
-.menu button{background:#ff7a18;color:#fff;padding:8px 14px;border:none;border-radius:20px;cursor:pointer;}
-.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-.offers img{width:100%;height:120px;object-fit:cover;border-radius:10px}
-input,select,textarea{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;}
-.service-box{display:none;background:#f9f9f9;padding:10px;border-radius:8px}
-button.submit{background:#ff7a18;color:#fff;border:none;padding:10px}
-footer{background:#000;color:#fff;text-align:center;padding:15px}
+
+/* ABOUT */
+.about{
+  padding:40px;
+  text-align:center;
+  background:#fff;
+}
+
+/* DASHBOARD */
+#dashboardPage, #loginPage{
+  flex:1;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.menu{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.menu button{
+  background:#ff7a18;
+  color:#fff;
+  padding:8px 14px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* OFFERS */
+.offers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
+
+.offers img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* FORM */
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.service-box{
+  display:none;
+  background:#f9f9f9;
+  padding:10px;
+  border-radius:8px;
+}
+
+button.submit{
+  background:#ff7a18;
+  color:#fff;
+  border:none;
+  padding:10px;
+}
+
+/* 🔥 FIXED FOOTER */
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px 10px;
+}
+
+footer p{
+  margin:10px 0;
+}
+
+.social-icons{
+  margin-bottom:10px;
+}
+
+.social-icons img{
+  width:22px;
+  margin:0 8px;
+  filter:invert(1);
+}
+
 .hidden{display:none}
 </style>
 </head>
@@ -35,9 +177,10 @@ footer{background:#000;color:#fff;text-align:center;padding:15px}
 
 <nav class="navbar">
   <div class="logo">
-    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+    <img src="images/logo.png">
     Wander Venture
   </div>
+
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="index.html#packages">Packages</a></li>
@@ -46,6 +189,7 @@ footer{background:#000;color:#fff;text-align:center;padding:15px}
     <li><a href="blog.html">Blog</a></li>
   </ul>
 </nav>
+
 <div id="loginPage">
 <section class="hero">
   <div class="hero-box">
@@ -58,7 +202,7 @@ footer{background:#000;color:#fff;text-align:center;padding:15px}
 
 <div class="about">
 <h2>About Wander Venture</h2>
-<p>Wander Venture is a modern travel platform built to simplify and elevate corporate and leisure travel experiences. We connect clients with verified travel partners and provide seamless, end-to-end solutions tailored to every requirement.</p>
+<p>Wander Venture is a modern travel platform built to simplify and elevate corporate and leisure travel experiences.</p>
 </div>
 </div>
 
@@ -83,71 +227,6 @@ footer{background:#000;color:#fff;text-align:center;padding:15px}
 </div>
 </div>
 
-<div class="card">
-<h3>Customize Trip</h3>
-
-<form action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST" onsubmit="saveData()">
-
-<input name="name" id="name" placeholder="Name *" required>
-<input name="email" id="email" placeholder="Email *" required>
-<input name="phone" id="phone" placeholder="Mobile *" required>
-
-<select id="service" name="service" onchange="showService()">
-<option value="">Select Service</option>
-<option value="hotel">Hotel</option>
-<option value="flight">Flight</option>
-<option value="forex">Forex Card</option>
-<option value="insurance">Travel Insurance</option>
-<option value="visa">Visa</option>
-<option value="sim">SIM Card</option>
-</select>
-
-<div id="hotel" class="service-box">
-<input type="date" id="checkin" name="checkin">
-<input type="date" id="checkout" name="checkout">
-<input name="rooms" placeholder="Rooms">
-<select name="sharing"><option>Double</option><option>Triple</option><option>Quad</option></select>
-<select name="meal"><option>Breakfast</option><option>Breakfast+Lunch</option><option>Full Meal</option></select>
-</div>
-
-<div id="flight" class="service-box">
-<input type="date" id="flight_date" name="flight_date">
-<select name="trip"><option>One Way</option><option>Round</option></select>
-<select name="class"><option>Economy</option><option>Business</option></select>
-<select name="seat"><option>Window</option><option>Aisle</option></select>
-<input name="passengers" placeholder="Passengers">
-</div>
-
-<div id="forex" class="service-box">
-<input name="currency" placeholder="Currency">
-<input name="amount" placeholder="Amount">
-</div>
-
-<div id="insurance" class="service-box">
-<input name="insurance_country" placeholder="Country">
-<input name="insurance_days" placeholder="Days">
-</div>
-
-<div id="visa" class="service-box">
-<input name="visa_country" placeholder="Country">
-<input name="visa_type" placeholder="Type">
-</div>
-
-<div id="sim" class="service-box">
-<input name="sim_country" placeholder="Country">
-<input name="sim_days" placeholder="Days">
-</div>
-
-<textarea id="message" name="message" placeholder="Details..."></textarea>
-
-<input type="hidden" name="_subject" value="New Corporate Query">
-<input type="hidden" name="_captcha" value="false">
-
-<button type="submit" class="submit">Submit</button>
-</form>
-
-</div>
-
 </div>
 
 <div id="history" class="hidden">
@@ -165,85 +244,16 @@ footer{background:#000;color:#fff;text-align:center;padding:15px}
 
 <footer>
   <div class="social-icons">
-    <a href="https://www.instagram.com/thewanderventure/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-    </a>
-    <a href="https://www.linkedin.com/in/abhisheksingh1772" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-    </a>
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg">
   </div>
-<p>
-  © 2025 Wander Venture |
-  <a href="#contact">Contact Us</a> |
-  <a href="#about">About</a> |
-  <a href="privacy-policy.html">Privacy Policy</a> |
- <a href="partner.html" class="footer-btn">Partner with Us</a> |
-<a href="corporate.html" class="footer-btn">Corporate Travel</a>
-</p>
+
+  <p>
+    © 2025 Wander Venture |
+    <a href="#contact">Contact</a> |
+    <a href="#about">About</a>
+  </p>
 </footer>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, getDoc, addDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const app = initializeApp({
-apiKey:"AIzaSy...",
-authDomain:"wander-venture.firebaseapp.com",
-projectId:"wander-venture"
-});
-
-const db = getFirestore(app);
-let cid="";
-
-window.login = async()=>{
-const id=document.getElementById("companyId").value;
-const snap=await getDoc(doc(db,"companies",id));
-if(!snap.exists()){alert("Invalid");return;}
-cid=id;
-loginPage.style.display="none";
-dashboardPage.classList.remove("hidden");
-welcome.innerHTML=`<h2>${snap.data().company_name}</h2><p>ID: ${cid}</p>`;
-loadHistory();
-};
-
-window.show=(id)=>{
-document.getElementById("main").classList.add("hidden");
-document.getElementById("history").classList.add("hidden");
-document.getElementById("files").classList.add("hidden");
-document.getElementById(id).classList.remove("hidden");
-};
-
-window.showService=()=>{
-document.querySelectorAll(".service-box").forEach(x=>x.style.display="none");
-if(service.value) document.getElementById(service.value).style.display="block";
-};
-
-window.saveData=()=>{
-addDoc(collection(db,"queries"),{
-companyId: cid,
-service: service.value,
-checkin: checkin.value,
-checkout: checkout.value,
-flight_date: flight_date.value,
-message: message.value,
-date: new Date()
-});
-};
-
-async function loadHistory(){
-const q=query(collection(db,"queries"),where("companyId","==",cid));
-const snap=await getDocs(q);
-historyList.innerHTML="";
-snap.forEach(doc=>{
-const d=doc.data();
-historyList.innerHTML+=`
-<div class="card">
-<b>${d.service}</b><br>
-${d.checkin?d.checkin:""} ${d.checkout?d.checkout:""} ${d.flight_date?d.flight_date:""}<br>
-${d.message}
-</div>`;
-});
-}
-</script>
 
 </body>
 </html>
