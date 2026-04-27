@@ -8,7 +8,7 @@
 <style>
 body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 
-/* HEADER (FIXED) */
+/* HEADER */
 .navbar{
   display:flex;
   justify-content:space-between;
@@ -24,7 +24,7 @@ body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 .nav-links{display:flex;gap:20px}
 .nav-links a{color:#fff;text-decoration:none}
 
-/* HERO LOGIN */
+/* HERO */
 .hero{
   height:100vh;
   background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
@@ -38,67 +38,34 @@ body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 .hero-box button{background:#ff7a18;color:#fff;padding:10px;border:none}
 
 /* ABOUT */
-.about{
-  padding:40px;text-align:center;background:#fff;
-}
+.about{padding:40px;text-align:center;background:#fff}
 
 /* DASHBOARD */
 .container{max-width:1100px;margin:auto;padding:20px}
-.card{
-  background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;
-}
+.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px}
 
-/* MENU (FIXED) */
-.menu{
-  display:flex;gap:10px;margin-bottom:20px;
-}
+/* MENU */
+.menu{display:flex;gap:10px;margin-bottom:20px}
 .menu button{
-  background:#ff7a18;
-  color:#fff;
-  padding:8px 14px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-}
-.menu button:hover{
-  background:#ff5e00;
+  background:#ff7a18;color:#fff;padding:8px 14px;border:none;border-radius:20px;cursor:pointer;
 }
 
 /* OFFERS */
-.offers{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:10px;
-}
-.offers img{
-  width:100%;height:120px;object-fit:cover;border-radius:10px;
-}
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.offers img{width:100%;height:120px;object-fit:cover;border-radius:10px}
 
 /* FORM */
 input,select,textarea{
   width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;
 }
 .service-box{
-  display:none;
-  background:#f9f9f9;
-  padding:10px;
-  border-radius:8px
+  display:none;background:#f9f9f9;padding:10px;border-radius:8px
 }
 
-button.submit{
-  background:#ff7a18;
-  color:#fff;
-  border:none;
-  padding:10px;
-}
+button.submit{background:#ff7a18;color:#fff;border:none;padding:10px}
 
 /* FOOTER */
-footer{
-  background:#000;
-  color:#fff;
-  text-align:center;
-  padding:15px;
-}
+footer{background:#000;color:#fff;text-align:center;padding:15px}
 
 .hidden{display:none}
 </style>
@@ -114,9 +81,6 @@ footer{
   </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="index.html#packages">Packages</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
     <a href="blog.html">Blog</a>
   </div>
 </nav>
@@ -128,13 +92,13 @@ footer{
     <h2>Corporate Login</h2>
     <input id="companyId" placeholder="Enter Company ID">
     <br><br>
-    <button onclick="login()">Login to Dashboard</button>
+    <button onclick="login()">Login</button>
   </div>
 </section>
 
 <div class="about">
   <h2>About Wander Venture</h2>
-  <p>We provide hotels, flights, visa, forex, insurance & corporate travel solutions.</p>
+  <p>Hotels, Flights, Visa, Forex, Insurance & Corporate Travel Solutions</p>
 </div>
 </div>
 
@@ -159,48 +123,44 @@ footer{
 <div class="offers">
   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
   <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
-  <img src="https://images.unsplash.com/photo-1593693401060-9fc28cf9e368">
 </div>
 </div>
 
 <div class="card">
 <h3>Customize Trip</h3>
 
-<input id="name" placeholder="Name *">
-<input id="email" placeholder="Email *">
-<input id="phone" placeholder="Mobile *">
+<form action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST" onsubmit="saveData()">
 
-<select id="service" onchange="showService()">
+<input name="name" id="name" placeholder="Name *" required>
+<input name="email" id="email" placeholder="Email *" required>
+<input name="phone" id="phone" placeholder="Mobile *" required>
+
+<select id="service" name="service" onchange="showService()">
 <option value="">Select Service</option>
 <option value="hotel">Hotel</option>
 <option value="flight">Flight</option>
-<option value="forex">Forex</option>
-<option value="insurance">Insurance</option>
-<option value="visa">Visa</option>
-<option value="sim">SIM</option>
 </select>
 
+<!-- HOTEL -->
 <div id="hotel" class="service-box">
-<input type="date">
-<input type="date">
-<input placeholder="Rooms">
-<select>
-<option>Double</option>
-<option>Triple</option>
-<option>Quad</option>
-</select>
+<input type="date" id="checkin" name="checkin">
+<input type="date" id="checkout" name="checkout">
+<input name="rooms" placeholder="Rooms">
 </div>
 
+<!-- FLIGHT -->
 <div id="flight" class="service-box">
-<input type="date">
-<select><option>One Way</option><option>Round</option></select>
-<select><option>Economy</option><option>Business</option></select>
-<select><option>Window</option><option>Aisle</option></select>
+<input type="date" id="flight_date" name="flight_date">
+<select name="trip"><option>One Way</option><option>Round</option></select>
 </div>
 
-<textarea id="message" placeholder="Details..."></textarea>
+<textarea id="message" name="message" placeholder="Details..."></textarea>
 
-<button class="submit" onclick="submitForm()">Submit</button>
+<input type="hidden" name="_subject" value="New Corporate Query">
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit" class="submit">Submit</button>
+</form>
 
 </div>
 
@@ -214,16 +174,14 @@ footer{
 
 <!-- FILES -->
 <div id="files" class="hidden">
-<h3>Files & Documents</h3>
-<p>No files uploaded yet</p>
+<h3>Files</h3>
+<p>No files yet</p>
 </div>
 
 </div>
 </div>
 
-<footer>
-© Wander Venture | All Rights Reserved
-</footer>
+<footer>© Wander Venture</footer>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -238,11 +196,6 @@ const app = initializeApp({
 const db = getFirestore(app);
 let cid="";
 
-/* FIX VARIABLES */
-const main = document.getElementById("main");
-const history = document.getElementById("history");
-const files = document.getElementById("files");
-
 /* LOGIN */
 window.login = async()=>{
   const id=document.getElementById("companyId").value;
@@ -251,7 +204,6 @@ window.login = async()=>{
   if(!snap.exists()){alert("Invalid");return;}
 
   cid=id;
-
   loginPage.style.display="none";
   dashboardPage.classList.remove("hidden");
 
@@ -262,11 +214,11 @@ window.login = async()=>{
   loadHistory();
 };
 
-/* MENU FIX */
+/* NAV */
 window.show=(id)=>{
-  main.classList.add("hidden");
-  history.classList.add("hidden");
-  files.classList.add("hidden");
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("history").classList.add("hidden");
+  document.getElementById("files").classList.add("hidden");
   document.getElementById(id).classList.remove("hidden");
 };
 
@@ -276,17 +228,17 @@ window.showService=()=>{
   if(service.value) document.getElementById(service.value).style.display="block";
 };
 
-/* SUBMIT */
-window.submitForm=async()=>{
-  await addDoc(collection(db,"queries"),{
-    companyId:cid,
-    service:service.value,
-    message:message.value,
-    date:new Date()
+/* SAVE DATA (firebase) */
+window.saveData=()=>{
+  addDoc(collection(db,"queries"),{
+    companyId: cid,
+    service: service.value,
+    checkin: checkin.value,
+    checkout: checkout.value,
+    flight_date: flight_date.value,
+    message: message.value,
+    date: new Date()
   });
-
-  alert("Submitted");
-  loadHistory();
 };
 
 /* HISTORY */
@@ -298,9 +250,14 @@ async function loadHistory(){
 
   snap.forEach(doc=>{
     const d=doc.data();
+
     historyList.innerHTML+=`
     <div class="card">
-    ${d.service}<br>${d.message}
+      <b>${d.service}</b><br>
+      ${d.checkin ? "Check-in: "+d.checkin+"<br>" : ""}
+      ${d.checkout ? "Check-out: "+d.checkout+"<br>" : ""}
+      ${d.flight_date ? "Flight: "+d.flight_date+"<br>" : ""}
+      ${d.message}
     </div>`;
   });
 }
