@@ -12,7 +12,6 @@ body{
   background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
 }
 
-/* 🔥 HEADER SAME STYLE */
 .navbar{
   display:flex;
   justify-content:space-between;
@@ -39,7 +38,6 @@ body{
   font-size:14px;
 }
 
-/* 🔥 LOGIN CENTER PREMIUM */
 .login-box{
   max-width:400px;
   margin:120px auto;
@@ -48,10 +46,6 @@ body{
   border-radius:15px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.login-box h2{
-  margin-bottom:20px;
 }
 
 .login-box input{
@@ -73,7 +67,6 @@ body{
   cursor:pointer;
 }
 
-/* 🔥 ADMIN PANEL */
 .admin-panel{
   display:none;
   max-width:1100px;
@@ -114,7 +107,6 @@ button{padding:8px 12px;margin-top:10px;cursor:pointer;}
 .btn-green{background:green;color:#fff;}
 .btn-red{background:red;color:#fff;}
 
-/* 🔥 FOOTER SAME INDEX STYLE */
 footer{
   background:#111;
   color:#fff;
@@ -127,7 +119,6 @@ footer{
 
 <body>
 
-<!-- ✅ HEADER (INDEX MATCH) -->
 <nav class="navbar">
   <div class="logo">Wander Venture</div>
   <ul class="nav-links">
@@ -136,14 +127,12 @@ footer{
   </ul>
 </nav>
 
-<!-- ✅ LOGIN -->
 <div class="login-box" id="loginBox">
   <h2>Admin Login</h2>
   <input type="password" id="password" placeholder="Enter Password">
   <button onclick="login()">Login</button>
 </div>
 
-<!-- ✅ ADMIN PANEL -->
 <div class="admin-panel" id="adminPanel">
   <h2>Dashboard</h2>
 
@@ -156,7 +145,6 @@ footer{
   <div class="cards"></div>
 </div>
 
-<!-- ✅ FOOTER -->
 <footer>
   <p>© 2025 Wander Venture | All Rights Reserved</p>
 </footer>
@@ -170,7 +158,6 @@ function login(){
 }
 </script>
 
-<!-- 🔥 FIREBASE SAME (NO CHANGE) -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, onSnapshot, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -203,6 +190,9 @@ onSnapshot(collection(db,"companies"),(snapshot)=>{
     container.innerHTML+=`
     <div class="card">
       <h3>${d.company_name || "N/A"}</h3>
+      <p style="color:#ff7a18;font-weight:bold;">
+        Company ID: ${docSnap.id}
+      </p>
 
       <p><b>Email:</b> ${d.company_email || "N/A"}</p>
       <p><b>Phone:</b> ${d.company_phone || "N/A"}</p>
