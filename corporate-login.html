@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Company Dashboard - Wander Venture</title>
+<title>Wander Venture - Corporate Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,13 +14,13 @@ body{
   background:#f4f6fb;
 }
 
-/* 🔥 HEADER SAME AS INDEX */
+/* 🔥 NAVBAR (INDEX STYLE) */
 .navbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 25px;
-  background:#111;
+  padding:15px 30px;
+  background:#000;
   color:#fff;
 }
 
@@ -46,101 +46,109 @@ body{
   text-decoration:none;
 }
 
-/* 🔥 LOGIN */
+/* 🔥 HERO */
+.hero{
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+  padding:90px 20px;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:38px;
+}
+
+/* 🔥 ABOUT */
+.about{
+  padding:40px;
+  background:#fff;
+}
+
+.about-grid{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.about-grid img{
+  width:50%;
+  border-radius:12px;
+}
+
+.about-text{
+  flex:1;
+}
+
+/* 🔐 LOGIN */
 .login-box{
   max-width:400px;
-  margin:120px auto;
+  margin:40px auto;
   background:#fff;
-  padding:35px;
-  border-radius:15px;
+  padding:30px;
+  border-radius:12px;
   text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-.login-box input{
-  width:90%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-.login-box button{
-  width:100%;
-  padding:12px;
-  background:#ff7a18;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* 🔥 DASHBOARD */
+/* DASHBOARD */
 .dashboard{
   display:none;
   padding:30px;
 }
 
-/* TOP HERO */
 .top-card{
-  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  background:linear-gradient(135deg,#0f9d58,#34a853);
   color:#fff;
-  padding:30px;
-  border-radius:15px;
+  padding:25px;
+  border-radius:12px;
   margin-bottom:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* FILE GRID */
-.files{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-/* FILE CARD */
-.file-card{
+/* FORM */
+.form-section{
   background:#fff;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
-  transition:0.3s;
+  padding:30px;
+  border-radius:12px;
 }
 
-.file-card:hover{
-  transform:translateY(-5px);
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
 }
 
-.file-card h3{
-  margin-bottom:10px;
+input,select,textarea{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
 }
 
-.file-card button{
+textarea{
+  grid-column:1/-1;
+}
+
+button{
   background:#ff7a18;
   color:#fff;
+  padding:12px;
   border:none;
-  padding:10px;
   border-radius:8px;
   cursor:pointer;
 }
 
-/* ABOUT */
-.about{
-  margin-top:50px;
-  background:#fff;
-  padding:40px;
-  border-radius:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-/* FOOTER */
+/* FOOTER (INDEX STYLE) */
 footer{
   background:#111;
   color:#fff;
   text-align:center;
   padding:20px;
   margin-top:40px;
+}
+
+footer a{
+  color:#fff;
+  margin:0 8px;
+  text-decoration:none;
 }
 
 .social-icons img{
@@ -152,7 +160,7 @@ footer{
 
 <body>
 
-<!-- 🔥 HEADER -->
+<!-- 🔥 NAVBAR -->
 <nav class="navbar">
   <div class="logo">
     <img src="https://www.wanderventure.online/images/logo.png">
@@ -161,10 +169,32 @@ footer{
 
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#about">About</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
+
+<!-- 🔥 HERO -->
+<div class="hero">
+  <h1>Corporate Travel Dashboard</h1>
+  <p>Plan and manage your corporate trips easily</p>
+</div>
+
+<!-- 🔥 ABOUT -->
+<section class="about">
+  <div class="about-grid">
+    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+    <div class="about-text">
+      <h2>About Wander Venture</h2>
+      <p>
+        Wander Venture is a trusted marketplace connecting verified travel agencies 
+        with corporate clients across India. We provide seamless travel planning, 
+        premium services, and fully customized itineraries.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- 🔐 LOGIN -->
 <div class="login-box" id="loginBox">
@@ -178,17 +208,45 @@ footer{
 
   <div class="top-card" id="topCard"></div>
 
-  <h2>📂 Files & Offers</h2>
-  <div class="files" id="filesContainer"></div>
+  <div class="form-section">
+    <h2>Customize Your Corporate Trip</h2>
 
-  <!-- 🔥 ABOUT -->
-  <div class="about">
-    <h2>About Wander Venture</h2>
-    <p>
-      Wander Venture is a trusted travel marketplace connecting verified travel agencies 
-      with clients across India. Our platform enables seamless partnerships, smart 
-      collaboration, and premium travel experiences.
-    </p>
+    <form action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
+
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Company Name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="phone" placeholder="Mobile *" required>
+
+        <select name="trip_type">
+          <option>Domestic</option>
+          <option>International</option>
+        </select>
+
+        <input type="text" name="destination" placeholder="Destination">
+
+        <select name="category">
+          <option>Standard</option>
+          <option>Premium</option>
+          <option>Luxury</option>
+        </select>
+
+        <input type="number" name="days" placeholder="Days">
+        <input type="number" name="people" placeholder="People">
+
+        <select name="activities">
+          <option>General</option>
+          <option>Cruise</option>
+          <option>Adventure</option>
+        </select>
+
+        <textarea name="message" placeholder="Customize your trip..."></textarea>
+      </div>
+
+      <br>
+      <button type="submit">Get Quotation</button>
+
+    </form>
   </div>
 
 </div>
@@ -199,18 +257,19 @@ footer{
     <a href="https://www.instagram.com/thewanderventure/" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
     </a>
-    <a href="https://www.linkedin.com/in/abhisheksingh1772" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg">
-    </a>
   </div>
 
-  <p>© 2025 Wander Venture | All Rights Reserved</p>
+  <p>
+    © 2025 Wander Venture |
+    <a href="index.html#contact">Contact</a> |
+    <a href="index.html#about">About</a>
+  </p>
 </footer>
 
-<!-- 🔥 FIREBASE -->
+<!-- 🔥 FIREBASE LOGIN -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey:"AIzaSyCkczeRthFs-O8r4PAB5hGfHd3fm_waqQI",
@@ -221,68 +280,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let currentCompanyId = "";
-
-// LOGIN
 window.login = async()=>{
   const id = document.getElementById("companyId").value;
 
-  if(!id){
-    alert("Enter Company ID");
-    return;
-  }
+  const snap = await getDoc(doc(db,"companies",id));
 
-  const ref = doc(db,"companies",id);
-  const snap = await getDoc(ref);
-
-  if(!snap.exists()){
-    alert("Invalid ID ❌");
-    return;
-  }
-
-  const data = snap.data();
-
-  if(data.status !== "approved"){
+  if(!snap.exists() || snap.data().status !== "approved"){
     alert("Access Denied ❌");
     return;
   }
-
-  currentCompanyId = id;
 
   document.getElementById("loginBox").style.display="none";
   document.getElementById("dashboard").style.display="block";
 
   document.getElementById("topCard").innerHTML = `
-    <h2>Welcome, ${data.company_name}</h2>
+    <h2>Welcome, ${snap.data().company_name}</h2>
     <p>Your Company ID: ${id}</p>
   `;
-
-  loadFiles();
 };
-
-// LOAD FILES
-function loadFiles(){
-  const container = document.getElementById("filesContainer");
-
-  onSnapshot(collection(db,"files"),(snapshot)=>{
-    container.innerHTML="";
-
-    snapshot.forEach(docSnap=>{
-      const f = docSnap.data();
-
-      if(f.companyId==="all" || f.companyId===currentCompanyId){
-        container.innerHTML += `
-          <div class="file-card">
-            <h3>${f.title}</h3>
-            <a href="${f.link}" target="_blank">
-              <button>View / Download</button>
-            </a>
-          </div>
-        `;
-      }
-    });
-  });
-}
 </script>
 
 </body>
