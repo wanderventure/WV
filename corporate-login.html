@@ -8,10 +8,14 @@
 <style>
 body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 
-/* HEADER */
+/* 🔥 HEADER */
 .navbar{
-  display:flex;justify-content:space-between;
-  padding:15px 25px;background:#000;color:#fff;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  color:#fff;
 }
 
 /* LAYOUT */
@@ -19,32 +23,63 @@ body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 
 /* SIDEBAR */
 .sidebar{
-  width:220px;background:#111;color:#fff;
-  height:100vh;padding:20px;
+  width:220px;
+  background:#111;
+  color:#fff;
+  height:100vh;
+  padding:20px;
 }
-
-.sidebar div{
-  margin:15px 0;cursor:pointer;
-}
+.sidebar div{margin:15px 0;cursor:pointer}
 
 /* MAIN */
 .main{flex:1;padding:20px}
 
 /* CARDS */
 .card{
-  background:#fff;padding:20px;
-  border-radius:10px;margin-bottom:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* OFFERS (SMALL) */
+.offer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
+.offer-grid img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 /* FORM */
 input,select,textarea{
-  width:100%;padding:10px;margin:8px 0;
-  border-radius:6px;border:1px solid #ccc;
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.service-box{
+  display:none;
+  background:#f9f9f9;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
 }
 
 button{
-  background:#ff7a18;color:#fff;
-  padding:10px;border:none;border-radius:6px;
+  background:#ff7a18;
+  color:#fff;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 /* HIDE */
@@ -88,8 +123,11 @@ button{
 <!-- OFFERS -->
 <div class="card">
   <h3>🔥 Latest Offers</h3>
-  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="100%">
-  <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" width="100%">
+  <div class="offer-grid">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">
+    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=600">
+    <img src="https://images.unsplash.com/photo-1593693401060-9fc28cf9e368?w=600">
+  </div>
 </div>
 
 <!-- FORM -->
@@ -102,13 +140,83 @@ button{
 <input id="email" type="email" placeholder="Email *" required>
 <input id="phone" placeholder="Mobile *" required>
 
-<select id="service">
-  <option>Hotel</option>
-  <option>Flight</option>
-  <option>Forex</option>
-  <option>Insurance</option>
-  <option>Visa</option>
+<select id="service" onchange="showService()">
+  <option value="">Select Service</option>
+  <option value="hotel">Hotel</option>
+  <option value="flight">Flight</option>
+  <option value="forex">Forex</option>
+  <option value="insurance">Insurance</option>
+  <option value="visa">Visa</option>
+  <option value="sim">SIM</option>
 </select>
+
+<!-- HOTEL -->
+<div id="hotel" class="service-box">
+  <h4>Hotel Details</h4>
+  <input type="date" placeholder="Check-in">
+  <input type="date" placeholder="Check-out">
+  <input placeholder="Rooms">
+
+  <select>
+    <option>Double Sharing</option>
+    <option>Triple Sharing</option>
+    <option>Quad Sharing</option>
+  </select>
+
+  <select>
+    <option>Breakfast</option>
+    <option>Breakfast + Lunch</option>
+    <option>Breakfast + Lunch + Dinner</option>
+  </select>
+</div>
+
+<!-- FLIGHT -->
+<div id="flight" class="service-box">
+  <h4>Flight Details</h4>
+  <input type="date">
+
+  <select>
+    <option>One Way</option>
+    <option>Round Trip</option>
+  </select>
+
+  <select>
+    <option>Economy</option>
+    <option>Business</option>
+  </select>
+
+  <select>
+    <option>Window Seat</option>
+    <option>Aisle Seat</option>
+  </select>
+</div>
+
+<!-- FOREX -->
+<div id="forex" class="service-box">
+  <h4>Forex</h4>
+  <input placeholder="Currency">
+  <input placeholder="Amount">
+</div>
+
+<!-- INSURANCE -->
+<div id="insurance" class="service-box">
+  <h4>Insurance</h4>
+  <input placeholder="Country">
+  <input placeholder="Days">
+</div>
+
+<!-- VISA -->
+<div id="visa" class="service-box">
+  <h4>Visa</h4>
+  <input placeholder="Country">
+</div>
+
+<!-- SIM -->
+<div id="sim" class="service-box">
+  <h4>SIM Card</h4>
+  <input placeholder="Country">
+  <input placeholder="Days">
+</div>
 
 <textarea id="message" placeholder="Details..."></textarea>
 
@@ -128,7 +236,7 @@ button{
 <!-- FILES -->
 <div id="files" class="hidden">
   <h3>Files</h3>
-  <p>No files yet</p>
+  <p>Coming soon...</p>
 </div>
 
 </div>
@@ -175,26 +283,28 @@ window.show=(id)=>{
   document.getElementById(id).classList.remove("hidden");
 };
 
-/* SUBMIT FORM */
+/* SERVICE SWITCH */
+window.showService=()=>{
+  document.querySelectorAll(".service-box").forEach(x=>x.style.display="none");
+  if(service.value) document.getElementById(service.value).style.display="block";
+};
+
+/* SUBMIT */
 window.submitForm = async(e)=>{
   e.preventDefault();
 
   await addDoc(collection(db,"queries"),{
     companyId,
-    name:name.value,
-    email:email.value,
-    phone:phone.value,
     service:service.value,
     message:message.value,
     date:new Date()
   });
 
   alert("Submitted ✅");
-
   loadHistory();
 };
 
-/* LOAD HISTORY */
+/* HISTORY */
 async function loadHistory(){
   const q=query(collection(db,"queries"),where("companyId","==",companyId));
   const snap=await getDocs(q);
