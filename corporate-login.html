@@ -8,12 +8,17 @@
 <style>
 body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 
-/* HEADER */
+/* HEADER (FIXED) */
 .navbar{
-  display:flex;justify-content:space-between;
-  padding:15px 25px;background:#000;color:#fff;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 25px;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(10px);
+  color:#fff;
   align-items:center;
 }
+
 .logo{display:flex;align-items:center;gap:10px}
 .logo img{height:28px}
 .nav-links{display:flex;gap:20px}
@@ -43,12 +48,20 @@ body{margin:0;font-family:Segoe UI;background:#f4f6fb}
   background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;
 }
 
-/* TOP MENU */
+/* MENU (FIXED) */
 .menu{
   display:flex;gap:10px;margin-bottom:20px;
 }
 .menu button{
-  background:#000;color:#fff;padding:8px 12px;border:none;border-radius:6px;
+  background:#ff7a18;
+  color:#fff;
+  padding:8px 14px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+.menu button:hover{
+  background:#ff5e00;
 }
 
 /* OFFERS */
@@ -65,13 +78,26 @@ body{margin:0;font-family:Segoe UI;background:#f4f6fb}
 input,select,textarea{
   width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;
 }
-.service-box{display:none;background:#f9f9f9;padding:10px;border-radius:8px}
+.service-box{
+  display:none;
+  background:#f9f9f9;
+  padding:10px;
+  border-radius:8px
+}
 
-button.submit{background:#ff7a18;color:#fff;border:none;padding:10px}
+button.submit{
+  background:#ff7a18;
+  color:#fff;
+  border:none;
+  padding:10px;
+}
 
 /* FOOTER */
 footer{
-  background:#000;color:#fff;text-align:center;padding:15px;
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:15px;
 }
 
 .hidden{display:none}
@@ -122,6 +148,7 @@ footer{
 <div class="menu">
   <button onclick="show('main')">Dashboard</button>
   <button onclick="show('history')">History</button>
+  <button onclick="show('files')">Files</button>
 </div>
 
 <!-- MAIN -->
@@ -153,7 +180,6 @@ footer{
 <option value="sim">SIM</option>
 </select>
 
-<!-- HOTEL -->
 <div id="hotel" class="service-box">
 <input type="date">
 <input type="date">
@@ -165,7 +191,6 @@ footer{
 </select>
 </div>
 
-<!-- FLIGHT -->
 <div id="flight" class="service-box">
 <input type="date">
 <select><option>One Way</option><option>Round</option></select>
@@ -185,6 +210,12 @@ footer{
 <div id="history" class="hidden">
 <h3>History</h3>
 <div id="historyList"></div>
+</div>
+
+<!-- FILES -->
+<div id="files" class="hidden">
+<h3>Files & Documents</h3>
+<p>No files uploaded yet</p>
 </div>
 
 </div>
@@ -207,6 +238,11 @@ const app = initializeApp({
 const db = getFirestore(app);
 let cid="";
 
+/* FIX VARIABLES */
+const main = document.getElementById("main");
+const history = document.getElementById("history");
+const files = document.getElementById("files");
+
 /* LOGIN */
 window.login = async()=>{
   const id=document.getElementById("companyId").value;
@@ -222,12 +258,15 @@ window.login = async()=>{
   welcome.innerHTML=`
   <h2>Welcome ${snap.data().company_name}</h2>
   <p>Company ID: ${cid}</p>`;
+
+  loadHistory();
 };
 
-/* MENU */
+/* MENU FIX */
 window.show=(id)=>{
   main.classList.add("hidden");
   history.classList.add("hidden");
+  files.classList.add("hidden");
   document.getElementById(id).classList.remove("hidden");
 };
 
