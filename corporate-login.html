@@ -21,20 +21,12 @@ body{
   justify-content:space-between;
   padding:15px 25px;
   background:rgba(0,0,0,0.8);
-  backdrop-filter:blur(10px);
   color:#fff;
   align-items:center;
 }
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
+.logo{display:flex;align-items:center;gap:10px}
 .logo img{height:28px}
 
-/* 🔥 FIX: DOT REMOVE */
 .nav-links{
   display:flex;
   gap:20px;
@@ -42,9 +34,6 @@ body{
   margin:0;
   padding:0;
 }
-
-.nav-links li{list-style:none}
-
 .nav-links a{
   color:#fff;
   text-decoration:none;
@@ -58,7 +47,6 @@ body{
   justify-content:center;
   align-items:center;
 }
-
 .hero-box{
   background:rgba(0,0,0,0.6);
   padding:30px;
@@ -66,7 +54,6 @@ body{
   color:#fff;
   text-align:center;
 }
-
 .hero-box input{padding:10px;width:250px}
 .hero-box button{background:#ff7a18;color:#fff;padding:10px;border:none}
 
@@ -78,29 +65,11 @@ body{
 }
 
 /* DASHBOARD */
-#dashboardPage, #loginPage{
-  flex:1;
-}
+#dashboardPage, #loginPage{flex:1}
+.container{max-width:1100px;margin:auto;padding:20px}
+.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px}
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
-.card{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-
-.menu{
-  display:flex;
-  gap:10px;
-  margin-bottom:20px;
-}
-
+.menu{display:flex;gap:10px;margin-bottom:20px}
 .menu button{
   background:#ff7a18;
   color:#fff;
@@ -110,64 +79,14 @@ body{
   cursor:pointer;
 }
 
-/* OFFERS */
-.offers{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:10px;
-}
-
-.offers img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
-}
-
-/* FORM */
-input,select,textarea{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
-}
-
-.service-box{
-  display:none;
-  background:#f9f9f9;
-  padding:10px;
-  border-radius:8px;
-}
-
-button.submit{
-  background:#ff7a18;
-  color:#fff;
-  border:none;
-  padding:10px;
-}
-
-/* 🔥 FIXED FOOTER */
+/* FOOTER */
 footer{
   background:#000;
   color:#fff;
   text-align:center;
   padding:20px 10px;
 }
-
-footer p{
-  margin:10px 0;
-}
-
-.social-icons{
-  margin-bottom:10px;
-}
-
-.social-icons img{
-  width:22px;
-  margin:0 8px;
-  filter:invert(1);
-}
+footer a{color:#fff;text-decoration:none}
 
 .hidden{display:none}
 </style>
@@ -175,6 +94,7 @@ footer p{
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
     <img src="images/logo.png">
@@ -184,12 +104,13 @@ footer p{
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="index.html#packages">Packages</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
     <li><a href="blog.html">Blog</a></li>
   </ul>
 </nav>
 
+<!-- LOGIN PAGE -->
 <div id="loginPage">
 <section class="hero">
   <div class="hero-box">
@@ -202,10 +123,11 @@ footer p{
 
 <div class="about">
 <h2>About Wander Venture</h2>
-<p>Wander Venture is a modern travel platform built to simplify and elevate corporate and leisure travel experiences.</p>
+<p>We provide complete travel solutions including hotels, flights, visa, forex and corporate planning.</p>
 </div>
 </div>
 
+<!-- DASHBOARD -->
 <div id="dashboardPage" class="hidden">
 <div class="container">
 
@@ -218,15 +140,10 @@ footer p{
 </div>
 
 <div id="main">
-
 <div class="card">
-<h3>Latest Offers</h3>
-<div class="offers">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+<h3>Welcome to Dashboard</h3>
+<p>Your corporate panel is active.</p>
 </div>
-</div>
-
 </div>
 
 <div id="history" class="hidden">
@@ -242,18 +159,60 @@ footer p{
 </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <div class="social-icons">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg">
-  </div>
-
   <p>
     © 2025 Wander Venture |
-    <a href="#contact">Contact</a> |
-    <a href="#about">About</a>
+    <a href="index.html#contact">Contact</a> |
+    <a href="index.html#about">About</a>
+  </p>
+
+  <p>
+    <a href="https://www.instagram.com/thewanderventure/" target="_blank">Instagram</a> |
+    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
   </p>
 </footer>
+
+<!-- 🔥 JAVASCRIPT FIX (IMPORTANT) -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey:"AIzaSy...",
+  authDomain:"wander-venture.firebaseapp.com",
+  projectId:"wander-venture"
+});
+
+const db = getFirestore(app);
+
+/* LOGIN FIX */
+window.login = async()=>{
+  const id=document.getElementById("companyId").value;
+
+  const snap=await getDoc(doc(db,"companies",id));
+
+  if(!snap.exists()){
+    alert("Invalid ID");
+    return;
+  }
+
+  loginPage.style.display="none";
+  dashboardPage.classList.remove("hidden");
+
+  document.getElementById("welcome").innerHTML=
+  `<h2>Welcome ${snap.data().company_name}</h2>`;
+};
+
+/* NAV SWITCH */
+window.show=(id)=>{
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("history").classList.add("hidden");
+  document.getElementById("files").classList.add("hidden");
+
+  document.getElementById(id).classList.remove("hidden");
+};
+</script>
 
 </body>
 </html>
