@@ -3,23 +3,27 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Wander Venture - Travelers Marketplace</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
+
   <nav class="navbar">
 
     <div class="logo">
-      <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+      <img src="images/logo.png"
+        alt="Wander Venture Logo"
+        class="logo-icon">
+
       Wander Venture
     </div>
 
@@ -35,6 +39,7 @@
   </nav>
 
   <!-- HERO -->
+
   <section class="hero">
 
     <div class="hero-content">
@@ -42,11 +47,13 @@
       <h1>Discover Incredible India</h1>
 
       <p>
-        Unforgettable adventures. Customized trips.
+        Unforgettable adventures.
+        Customized trips.
         Only with Wander Venture.
       </p>
 
-      <a href="#packages" class="cta-button">
+      <a href="#packages"
+        class="cta-button">
         Explore Packages
       </a>
 
@@ -55,6 +62,7 @@
   </section>
 
   <!-- SEARCH -->
+
   <div class="search-container">
 
     <input type="text"
@@ -68,105 +76,46 @@
   </div>
 
   <!-- SERVICES -->
+
   <div class="service-icons">
 
-    <div class="service-card" onclick="openHotelForm()">
+    <div class="service-card"
+      onclick="window.location.href='hotels.html'">
+
       <i class="fas fa-hotel"></i>
+
       <span>Hotels</span>
     </div>
 
     <div class="service-card"
       onclick="window.location.href='religious.html'">
+
       <i class="fas fa-place-of-worship"></i>
+
       <span>Religious Tours</span>
     </div>
 
     <div class="service-card"
       onclick="window.location.href='event-party.html'">
+
       <i class="fas fa-calendar-alt"></i>
+
       <span>Events</span>
     </div>
 
   </div>
 
-  <!-- HOTEL FORM -->
-  <div id="hotelPopup" class="popup-form">
-
-    <div class="form-content">
-
-      <span class="close-btn"
-        onclick="closeHotelForm()">
-        &times;
-      </span>
-
-      <h2>Hotel Enquiry</h2>
-
-      <form action="https://formsubmit.co/info.wanderventure@gmail.com"
-        method="POST">
-
-        <input type="hidden"
-          name="_subject"
-          value="Hotel Enquiry - Wander Venture">
-
-        <input type="hidden"
-          name="_template"
-          value="table">
-
-        <input type="hidden"
-          name="_captcha"
-          value="false">
-
-        <input type="hidden"
-          name="_next"
-          value="https://www.wanderventure.online/thankyou.html">
-
-        <label>Name</label>
-        <input type="text" name="name" required>
-
-        <label>Email</label>
-        <input type="email" name="email" required>
-
-        <label>Phone</label>
-        <input type="tel" name="phone" required>
-
-        <label>No. of Guests</label>
-        <input type="number" name="guests" required>
-
-        <label>City</label>
-        <input type="text" name="city" required>
-
-        <label>Hotel Type</label>
-
-        <select name="hotel_type">
-          <option>Budget</option>
-          <option>Deluxe</option>
-          <option>Premium</option>
-        </select>
-
-        <label>Check-in Date</label>
-        <input type="date" name="checkin" required>
-
-        <label>Additional Notes</label>
-        <textarea name="notes" rows="3"></textarea>
-
-        <button type="submit">
-          Submit Enquiry
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
   <!-- DOMESTIC PACKAGES -->
-  <section class="packages" id="packages">
+
+  <section class="packages"
+    id="packages">
 
     <h2>Popular Packages</h2>
 
     <div class="package-list">
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop"
           alt="Rishikesh">
 
@@ -177,9 +126,11 @@
         <button onclick="window.location.href='rishikesh.html'">
           View Details
         </button>
+
       </div>
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop"
           alt="Kedarnath">
 
@@ -190,9 +141,11 @@
         <button onclick="window.location.href='kedarnath.html'">
           View Details
         </button>
+
       </div>
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop"
           alt="Jim Corbett">
 
@@ -203,9 +156,11 @@
         <button onclick="window.location.href='jimcorbett.html'">
           View Details
         </button>
+
       </div>
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1641735735000-c9719ac2740b?q=80&w=1170&auto=format&fit=crop"
           alt="Shimla">
 
@@ -216,9 +171,11 @@
         <button onclick="window.location.href='shimla.html'">
           View Details
         </button>
+
       </div>
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1591414638143-12980893e46f?q=80&w=1170&auto=format&fit=crop"
           alt="Kerala">
 
@@ -229,6 +186,7 @@
         <button onclick="window.location.href='kerala.html'">
           View Details
         </button>
+
       </div>
 
     </div>
@@ -236,97 +194,144 @@
   </section>
 
   <!-- INTERNATIONAL -->
-  <section class="intl-section" id="international">
+
+  <section class="intl-section"
+    id="international">
 
     <div class="intl-header">
+
       <h2>International Packages</h2>
+
       <span>Explore World</span>
+
     </div>
 
     <div class="intl-grid">
 
       <div class="intl-item"
         onclick="window.location.href='fixed-departure.html'">
+
         <i class="fas fa-plane"></i>
+
         <p>Fixed Departure</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='dubai.html'">
+
         <i class="fas fa-building"></i>
+
         <p>Dubai</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='bali.html'">
+
         <i class="fas fa-umbrella-beach"></i>
+
         <p>Bali</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='malaysia.html'">
+
         <i class="fas fa-globe-asia"></i>
+
         <p>Malaysia</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='vietnam.html'">
+
         <i class="fas fa-landmark"></i>
+
         <p>Vietnam</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='singapore.html'">
+
         <i class="fas fa-city"></i>
+
         <p>Singapore</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='saudi.html'">
+
         <i class="fas fa-mosque"></i>
+
         <p>Saudi</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='japan.html'">
+
         <i class="fas fa-torii-gate"></i>
+
         <p>Japan</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='mauritius.html'">
+
         <i class="fas fa-water"></i>
+
         <p>Mauritius</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='srilanka.html'">
+
         <i class="fas fa-tree"></i>
+
         <p>Sri Lanka</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='europe.html'">
+
         <i class="fas fa-archway"></i>
+
         <p>Europe</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='switzerland.html'">
+
         <i class="fas fa-mountain"></i>
+
         <p>Switzerland</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='nepal.html'">
+
         <i class="fas fa-hill-rockslide"></i>
+
         <p>Nepal</p>
+
       </div>
 
       <div class="intl-item"
         onclick="window.location.href='cruise.html'">
+
         <i class="fas fa-ship"></i>
+
         <p>Cruise</p>
+
       </div>
 
     </div>
@@ -334,6 +339,7 @@
   </section>
 
   <!-- EVENTS -->
+
   <section class="packages">
 
     <h2>Popular Events</h2>
@@ -341,6 +347,7 @@
     <div class="package-list">
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1171&auto=format&fit=crop"
           alt="Event Party">
 
@@ -351,9 +358,11 @@
         <button onclick="window.location.href='event-party.html'">
           View Details
         </button>
+
       </div>
 
       <div class="package-card">
+
         <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80&w=1170&auto=format&fit=crop"
           alt="Pre Wedding">
 
@@ -364,6 +373,7 @@
         <button onclick="window.location.href='event-prewedding.html'">
           View Details
         </button>
+
       </div>
 
     </div>
@@ -371,16 +381,17 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+
+  <section class="about"
+    id="about">
 
     <div class="about-content">
 
       <h2>About Wander Venture</h2>
 
       <p>
-        Wander Venture is a trusted marketplace for travelers across India and beyond.
-        We provide customized trips, verified travel agents,
-        curated travel experiences, and unforgettable adventures.
+        Wander Venture is a trusted marketplace
+        for travelers across India and beyond.
       </p>
 
     </div>
@@ -388,7 +399,9 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
+
+  <section class="contact"
+    id="contact">
 
     <h2>Contact Us</h2>
 
@@ -409,6 +422,7 @@
   </section>
 
   <!-- FOOTER -->
+
   <footer>
 
     <p>
@@ -433,27 +447,23 @@
 
   <script>
 
-    function openHotelForm() {
-      document.getElementById("hotelPopup").style.display = "block";
-    }
-
-    function closeHotelForm() {
-      document.getElementById("hotelPopup").style.display = "none";
-    }
-
     document.addEventListener("DOMContentLoaded", function () {
 
-      const searchInput = document.getElementById("searchInput");
+      const searchInput =
+        document.getElementById("searchInput");
 
-      const cards = document.querySelectorAll(".package-card");
+      const cards =
+        document.querySelectorAll(".package-card");
 
       searchInput.addEventListener("input", function () {
 
-        const query = searchInput.value.toLowerCase();
+        const query =
+          searchInput.value.toLowerCase();
 
         cards.forEach(card => {
 
-          const title = card.querySelector("h3")
+          const title =
+            card.querySelector("h3")
             ?.textContent
             .toLowerCase();
 
@@ -472,5 +482,4 @@
   </script>
 
 </body>
-
 </html>
