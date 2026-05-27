@@ -1,245 +1,158 @@
-/* ====================================
-   FINAL GLOBAL FIX
-==================================== */
+/* =========================
+   INTERNATIONAL PACKAGES FIX
+========================= */
 
-/* Package Cards Fix */
-
-.package-list{
-display:grid !important;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important;
-gap:25px !important;
-align-items:stretch;
+.intl-section{
+  padding:50px 20px;
+  background:#fff;
 }
 
-.package-card{
-background:#fff;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
-display:flex;
-flex-direction:column;
-height:100%;
+.intl-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
 }
 
-.package-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
+.intl-header h2{
+  font-size:2rem;
 }
 
-.package-card h3{
-font-size:1.7rem;
-margin:16px 0 10px;
-padding:0 10px;
+.intl-header span{
+  color:#28a745;
+  font-weight:600;
 }
-
-.package-card p{
-padding:0 10px;
-margin-bottom:15px;
-color:#666;
-}
-
-.package-card button{
-margin:0 auto 20px;
-padding:10px 24px;
-background:#ff6600;
-color:#fff;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
-}
-
-.package-card:hover{
-transform:translateY(-6px);
-}
-
-/* ====================================
-   INTERNATIONAL FIX
-==================================== */
 
 .intl-grid{
-display:grid !important;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr)) !important;
-gap:20px;
-margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:20px;
+  margin-top:20px;
 }
 
 .intl-item{
-text-align:center;
-cursor:pointer;
-transition:0.3s;
-padding:10px;
-}
-
-.intl-item i{
-width:60px;
-height:60px;
-line-height:60px;
-border-radius:50%;
-background:#fff;
-font-size:22px;
-color:#ff6600;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-margin-bottom:10px;
-}
-
-.intl-item p{
-font-size:14px;
-font-weight:600;
-margin-top:5px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .intl-item:hover{
-transform:translateY(-5px);
-}
-
-/* ====================================
-   CORPORATE FORM FIX
-==================================== */
-
-form{
-width:100%;
-}
-
-form input,
-form textarea,
-form select{
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:15px;
-margin-bottom:12px;
-}
-
-.corporate-form,
-.customize-trip form{
-display:grid !important;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-align-items:center;
-}
-
-.corporate-form button,
-.customize-trip button{
-background:#25d366;
-color:#fff;
-border:none;
-padding:13px;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
-}
-
-/* ====================================
-   BLOG FIX
-==================================== */
-
-.blog-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-padding:20px;
-}
-
-.blog-card{
-background:#fff;
-border-radius:14px;
-overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.blog-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.blog-card-content{
-padding:18px;
-}
-
-.blog-card h3{
-font-size:1.3rem;
-margin-bottom:10px;
-}
-
-.blog-card p{
-color:#666;
-line-height:1.6;
-}
-
-.blog-card a{
-display:inline-block;
-margin-top:12px;
-color:#ff6600;
-font-weight:600;
-}
-
-/* ====================================
-   FOOTER FIX
-==================================== */
-
-footer{
-background:#111 !important;
-color:#fff;
-text-align:center;
-padding:22px 15px;
-margin-top:50px;
-}
-
-footer p{
-margin:0;
-font-size:14px;
-line-height:1.8;
-}
-
-footer a{
-color:#fff;
-margin:0 6px;
-transition:0.3s;
-}
-
-footer a:hover{
-color:#00bcd4;
-}
-
-/* ====================================
-   MOBILE FIX
-==================================== */
-
-@media(max-width:768px){
-
-.package-list{
-grid-template-columns:1fr !important;
-}
-
-.intl-grid{
-grid-template-columns:repeat(2,1fr) !important;
+  transform:translateY(-5px);
 }
 
 .intl-item i{
-width:55px;
-height:55px;
-line-height:55px;
-font-size:18px;
+  width:62px;
+  height:62px;
+  line-height:62px;
+  background:#fff;
+  border-radius:50%;
+  font-size:22px;
+  color:#ff6600;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-.hero-content h1{
-font-size:2rem;
+.intl-item p{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:600;
 }
 
-.navbar{
-flex-direction:column;
-gap:12px;
+/* =========================
+   CORPORATE FORM FIX
+========================= */
+
+.corporate-form{
+  max-width:1100px;
+  margin:40px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
 }
 
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
+.corporate-form input,
+.corporate-form textarea,
+.corporate-form select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+  box-sizing:border-box;
 }
+
+.corporate-form button{
+  background:#28a745;
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+/* =========================
+   BLOG CARD FIX
+========================= */
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.blog-card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.blog-card:hover{
+  transform:translateY(-5px);
+}
+
+.blog-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.blog-card-content{
+  padding:18px;
+}
+
+.blog-card h3{
+  margin-bottom:10px;
+  font-size:1.3rem;
+}
+
+.blog-card p{
+  color:#666;
+  line-height:1.6;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media(max-width:768px){
+
+  .intl-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .intl-item i{
+    width:55px;
+    height:55px;
+    line-height:55px;
+    font-size:18px;
+  }
+
+  .corporate-form{
+    grid-template-columns:1fr;
+  }
 
 }
