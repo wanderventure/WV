@@ -442,3 +442,138 @@ footer a:hover{
   }
 
 }
+/* =========================
+   FULL WIDTH FIX
+========================= */
+
+html, body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+
+.hero,
+.navbar,
+footer,
+section{
+  width:100%;
+}
+
+/* =========================
+   CORPORATE PAGE FIX
+========================= */
+
+.corporate-hero,
+.hero{
+  width:100%;
+  margin:0;
+  padding:0;
+  background-size:cover;
+  background-position:center;
+}
+
+.corporate-form,
+.custom-form-wrapper{
+  max-width:700px;
+  margin:40px auto;
+  padding:20px;
+}
+
+.custom-form{
+  background:#fff;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   SERVICE ICON FIX
+========================= */
+
+.service-icons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:25px 15px;
+}
+
+.service-card{
+  width:140px;
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+}
+
+.service-card i{
+  font-size:28px;
+  color:#ff6600;
+  margin-bottom:10px;
+}
+
+.service-card span{
+  display:block;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* =========================
+   FOOTER FIX
+========================= */
+
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:14px 10px !important;
+  margin-top:40px;
+}
+
+footer p{
+  margin:0;
+  line-height:1.6;
+  font-size:14px;
+}
+
+footer a{
+  margin:0 6px;
+  color:#fff;
+}
+
+footer a:hover{
+  color:#00bcd4;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media(max-width:768px){
+
+  .navbar{
+    padding:15px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+
+  .hero-content h1{
+    font-size:2rem;
+  }
+
+  .service-card{
+    width:120px;
+  }
+
+}
