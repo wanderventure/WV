@@ -302,3 +302,143 @@ footer a:hover {
   color: #00bcd4;
 }
 ```
+/* =========================
+   INTERNATIONAL PACKAGES
+========================= */
+
+.intl-section{
+  padding:50px 20px;
+  background:#fff;
+}
+
+.intl-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.intl-header h2{
+  font-size:2rem;
+  margin:0;
+}
+
+.intl-header span{
+  color:#28a745;
+  font-weight:600;
+}
+
+.intl-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:22px;
+  margin-top:20px;
+}
+
+.intl-item{
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.intl-item:hover{
+  transform:translateY(-5px);
+}
+
+.intl-item i{
+  width:62px;
+  height:62px;
+  line-height:62px;
+  border-radius:50%;
+  background:#fff;
+  color:#ff6600;
+  font-size:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom:10px;
+}
+
+.intl-item p{
+  margin-top:8px;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* =========================
+   FOOTER FIX
+========================= */
+
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:18px 12px;
+  margin-top:40px;
+}
+
+footer p{
+  margin:0;
+  line-height:1.7;
+  font-size:14px;
+}
+
+footer a{
+  color:#f1f1f1;
+  margin:0 6px;
+  transition:0.3s;
+}
+
+footer a:hover{
+  color:#00bcd4;
+}
+
+/* =========================
+   BLOG CARDS FIX
+========================= */
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.blog-card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.blog-card:hover{
+  transform:translateY(-5px);
+}
+
+.blog-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.blog-card-content{
+  padding:18px;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media(max-width:768px){
+
+  .intl-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .intl-item i{
+    width:55px;
+    height:55px;
+    line-height:55px;
+    font-size:18px;
+  }
+
+}
