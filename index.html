@@ -1,296 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Wander Venture - Travelers Marketplace</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
-    Wander Venture
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="images/logo.png" alt="Wander Venture Logo" class="logo-icon">
+      Wander Venture
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#international">International</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Discover Incredible India</h1>
+
+      <p>
+        Unforgettable adventures. Customized trips.
+        Only with Wander Venture.
+      </p>
+
+      <a href="#packages" class="cta-button">
+        Explore Packages
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- SEARCH -->
+  <div class="search-container">
+
+    <input type="text"
+      id="searchInput"
+      placeholder="Search packages...">
+
+    <button>
+      <i class="fas fa-search"></i>
+    </button>
+
   </div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="blog.html">Blog</a></li>
-  </ul>
-</nav>
+  <!-- SERVICES -->
+  <div class="service-icons">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Discover Incredible India</h1>
-    <p>Unforgettable adventures. Customized trips. Only with Wander Venture.</p>
+    <div class="service-card" onclick="openHotelForm()">
+      <i class="fas fa-hotel"></i>
+      <span>Hotels</span>
+    </div>
 
-    <a href="#packages" class="cta-button">
-      Explore Packages
-    </a>
-  </div>
-</section>
+    <div class="service-card"
+      onclick="window.location.href='religious.html'">
+      <i class="fas fa-place-of-worship"></i>
+      <span>Religious Tours</span>
+    </div>
 
-<!-- SEARCH -->
-<div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search packages...">
+    <div class="service-card"
+      onclick="window.location.href='event-party.html'">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Events</span>
+    </div>
 
-  <button>
-    <i class="fas fa-search"></i>
-  </button>
-</div>
-
-<!-- SERVICE ICONS -->
-<div class="service-icons">
-
-  <div class="service-card" onclick="openHotelForm()">
-    <i class="fas fa-hotel"></i>
-    <span>Hotels</span>
   </div>
 
-  <div class="service-card" onclick="window.location.href='religious.html'">
-    <i class="fas fa-place-of-worship"></i>
-    <span>Religious Tours</span>
+  <!-- HOTEL FORM -->
+  <div id="hotelPopup" class="popup-form">
+
+    <div class="form-content">
+
+      <span class="close-btn"
+        onclick="closeHotelForm()">
+        &times;
+      </span>
+
+      <h2>Hotel Enquiry</h2>
+
+      <form action="https://formsubmit.co/info.wanderventure@gmail.com"
+        method="POST">
+
+        <input type="hidden"
+          name="_subject"
+          value="Hotel Enquiry - Wander Venture">
+
+        <input type="hidden"
+          name="_template"
+          value="table">
+
+        <input type="hidden"
+          name="_captcha"
+          value="false">
+
+        <input type="hidden"
+          name="_next"
+          value="https://www.wanderventure.online/thankyou.html">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="tel" name="phone" required>
+
+        <label>No. of Guests</label>
+        <input type="number" name="guests" required>
+
+        <label>City</label>
+        <input type="text" name="city" required>
+
+        <label>Hotel Type</label>
+
+        <select name="hotel_type">
+          <option>Budget</option>
+          <option>Deluxe</option>
+          <option>Premium</option>
+        </select>
+
+        <label>Check-in Date</label>
+        <input type="date" name="checkin" required>
+
+        <label>Additional Notes</label>
+        <textarea name="notes" rows="3"></textarea>
+
+        <button type="submit">
+          Submit Enquiry
+        </button>
+
+      </form>
+
+    </div>
+
   </div>
 
-  <div class="service-card">
-    <i class="fas fa-calendar-alt"></i>
-    <span>Events</span>
-  </div>
+  <!-- DOMESTIC PACKAGES -->
+  <section class="packages" id="packages">
 
-</div>
+    <h2>Popular Packages</h2>
 
-<!-- HOTEL POPUP -->
-<div id="hotelPopup" class="popup-form">
+    <div class="package-list">
 
-  <div class="form-content">
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop"
+          alt="Rishikesh">
 
-    <span class="close-btn" onclick="closeHotelForm()">
-      &times;
-    </span>
+        <h3>Rishikesh Adventure</h3>
 
-    <h2>Hotel Enquiry</h2>
+        <p>Starting from ₹2,499</p>
 
-    <form action="https://formsubmit.co/info.wanderventure@gmail.com" method="POST">
-
-      <input type="hidden" name="_subject" value="Hotel Enquiry - Wander Venture">
-
-      <input type="hidden" name="_template" value="table">
-
-      <input type="hidden" name="_captcha" value="false">
-
-      <input type="hidden" name="_next" value="https://wanderventure.github.io/WV/thankyou.html">
-
-      <label>Name:</label>
-      <input type="text" name="name" required>
-
-      <label>Email:</label>
-      <input type="email" name="email" required>
-
-      <label>Phone:</label>
-      <input type="tel" name="phone" required>
-
-      <label>Date of Birth:</label>
-      <input type="date" name="dob">
-
-      <label>No. of Guests:</label>
-      <input type="number" name="guests" min="1" required>
-
-      <label>City:</label>
-      <input type="text" name="city" required>
-
-      <label>Hotel Type:</label>
-
-      <select name="hotel_type">
-        <option>Budget</option>
-        <option>Deluxe</option>
-        <option>Premium</option>
-      </select>
-
-      <label>Budget (Per Room):</label>
-
-      <div style="display:flex; gap:10px;">
-        <input type="number" name="budget_min" placeholder="Min">
-        <input type="number" name="budget_max" placeholder="Max">
+        <button onclick="window.location.href='rishikesh.html'">
+          View Details
+        </button>
       </div>
 
-      <label>No. of Days:</label>
-      <input type="number" name="days" min="1" required>
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop"
+          alt="Kedarnath">
 
-      <label>Check-in Date:</label>
-      <input type="date" name="checkin" required>
+        <h3>Kedarnath Yatra</h3>
 
-      <label>Additional Notes:</label>
-      <textarea name="notes" rows="3"></textarea>
+        <p>Starting from ₹7,999</p>
 
-      <button type="submit">
-        Submit Enquiry
-      </button>
+        <button onclick="window.location.href='kedarnath.html'">
+          View Details
+        </button>
+      </div>
 
-    </form>
-  </div>
-</div>
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop"
+          alt="Jim Corbett">
 
-<!-- PACKAGES -->
-<section class="packages" id="packages">
+        <h3>Jim Corbett Safari</h3>
 
-  <h2>Popular Packages</h2>
+        <p>Starting from ₹3,999</p>
 
-  <div class="package-list">
+        <button onclick="window.location.href='jimcorbett.html'">
+          View Details
+        </button>
+      </div>
 
-    <div class="package-card">
-      <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop" alt="Rishikesh">
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1641735735000-c9719ac2740b?q=80&w=1170&auto=format&fit=crop"
+          alt="Shimla">
 
-      <h3>Rishikesh Adventure</h3>
+        <h3>Shimla Tour</h3>
 
-      <p>Start from ₹2,499</p>
+        <p>Starting from ₹5,499</p>
 
-      <button onclick="window.location.href='rishikesh.html'">
-        View Details
-      </button>
+        <button onclick="window.location.href='shimla.html'">
+          View Details
+        </button>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1591414638143-12980893e46f?q=80&w=1170&auto=format&fit=crop"
+          alt="Kerala">
+
+        <h3>Kerala Tour</h3>
+
+        <p>Starting from ₹9,500</p>
+
+        <button onclick="window.location.href='kerala.html'">
+          View Details
+        </button>
+      </div>
+
     </div>
 
-    <div class="package-card">
-      <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop" alt="Kedarnath">
+  </section>
 
-      <h3>Kedarnath Yatra</h3>
+  <!-- INTERNATIONAL -->
+  <section class="intl-section" id="international">
 
-      <p>Start from ₹7,999</p>
-
-      <button onclick="window.location.href='kedarnath.html'">
-        View Details
-      </button>
+    <div class="intl-header">
+      <h2>International Packages</h2>
+      <span>Explore World</span>
     </div>
 
-    <div class="package-card">
-      <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop" alt="Jim Corbett">
+    <div class="intl-grid">
 
-      <h3>Jim Corbett Safari</h3>
+      <div class="intl-item"
+        onclick="window.location.href='fixed-departure.html'">
+        <i class="fas fa-plane"></i>
+        <p>Fixed Departure</p>
+      </div>
 
-      <p>Start from ₹3,999</p>
+      <div class="intl-item"
+        onclick="window.location.href='dubai.html'">
+        <i class="fas fa-building"></i>
+        <p>Dubai</p>
+      </div>
 
-      <button onclick="window.location.href='jimcorbett.html'">
-        View Details
-      </button>
+      <div class="intl-item"
+        onclick="window.location.href='bali.html'">
+        <i class="fas fa-umbrella-beach"></i>
+        <p>Bali</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='malaysia.html'">
+        <i class="fas fa-globe-asia"></i>
+        <p>Malaysia</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='vietnam.html'">
+        <i class="fas fa-landmark"></i>
+        <p>Vietnam</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='singapore.html'">
+        <i class="fas fa-city"></i>
+        <p>Singapore</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='saudi.html'">
+        <i class="fas fa-mosque"></i>
+        <p>Saudi</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='japan.html'">
+        <i class="fas fa-torii-gate"></i>
+        <p>Japan</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='mauritius.html'">
+        <i class="fas fa-water"></i>
+        <p>Mauritius</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='srilanka.html'">
+        <i class="fas fa-tree"></i>
+        <p>Sri Lanka</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='europe.html'">
+        <i class="fas fa-archway"></i>
+        <p>Europe</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='switzerland.html'">
+        <i class="fas fa-mountain"></i>
+        <p>Switzerland</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='nepal.html'">
+        <i class="fas fa-hill-rockslide"></i>
+        <p>Nepal</p>
+      </div>
+
+      <div class="intl-item"
+        onclick="window.location.href='cruise.html'">
+        <i class="fas fa-ship"></i>
+        <p>Cruise</p>
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<!-- INTERNATIONAL -->
-<section class="intl-section">
+  <!-- EVENTS -->
+  <section class="packages">
 
-  <div class="intl-header">
-    <h2>International Packages</h2>
-    <span>VIEW ALL</span>
-  </div>
+    <h2>Popular Events</h2>
 
-  <div class="intl-grid">
+    <div class="package-list">
 
-    <div class="intl-item" onclick="window.location.href='dubai.html'">
-      <i class="fas fa-building"></i>
-      <p>Dubai</p>
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1171&auto=format&fit=crop"
+          alt="Event Party">
+
+        <h3>Night Parties & Events</h3>
+
+        <p>Starts from ₹1,999</p>
+
+        <button onclick="window.location.href='event-party.html'">
+          View Details
+        </button>
+      </div>
+
+      <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80&w=1170&auto=format&fit=crop"
+          alt="Pre Wedding">
+
+        <h3>Pre Wedding Shoot</h3>
+
+        <p>Location: Rishikesh</p>
+
+        <button onclick="window.location.href='event-prewedding.html'">
+          View Details
+        </button>
+      </div>
+
     </div>
 
-    <div class="intl-item" onclick="window.location.href='bali.html'">
-      <i class="fas fa-place-of-worship"></i>
-      <p>Bali</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="about-content">
+
+      <h2>About Wander Venture</h2>
+
+      <p>
+        Wander Venture is a trusted marketplace for travelers across India and beyond.
+        We provide customized trips, verified travel agents,
+        curated travel experiences, and unforgettable adventures.
+      </p>
+
     </div>
 
-    <div class="intl-item" onclick="window.location.href='malaysia.html'">
-      <i class="fas fa-umbrella-beach"></i>
-      <p>Malaysia</p>
-    </div>
+  </section>
 
-    <div class="intl-item" onclick="window.location.href='vietnam.html'">
-      <i class="fas fa-landmark"></i>
-      <p>Vietnam</p>
-    </div>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
 
-    <div class="intl-item" onclick="window.location.href='singapore.html'">
-      <i class="fas fa-city"></i>
-      <p>Singapore</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-
-  <div class="about-content">
-
-    <h2>About</h2>
+    <h2>Contact Us</h2>
 
     <p>
-      Wander Venture is a trusted marketplace for travelers across India.
+      General Inquiries:
+      <a href="mailto:info@wanderventure.online">
+        info@wanderventure.online
+      </a>
     </p>
 
-  </div>
+    <p>
+      Support:
+      <a href="mailto:support@wanderventure.online">
+        support@wanderventure.online
+      </a>
+    </p>
 
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+  <!-- FOOTER -->
+  <footer>
 
-  <h2>Contact Us</h2>
+    <p>
+      © 2025 Wander Venture |
 
-  <p>
-    General Inquiries:
-    info@wanderventure.online
-  </p>
+      <a href="partner.html">
+        Partner with Us
+      </a> |
 
-</section>
+      <a href="corporate.html">
+        Corporate Travel
+      </a> |
 
-<!-- FOOTER -->
-<footer>
+      <a href="privacy-policy.html">
+        Privacy Policy
+      </a>
+    </p>
 
-  <p>
-    © 2025 Wander Venture |
-    <a href="partner.html">Partner with Us</a> |
-    <a href="corporate.html">Corporate Travel</a>
-  </p>
+  </footer>
 
-</footer>
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
+  <script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    function openHotelForm() {
+      document.getElementById("hotelPopup").style.display = "block";
+    }
 
-  const searchInput = document.getElementById("searchInput");
+    function closeHotelForm() {
+      document.getElementById("hotelPopup").style.display = "none";
+    }
 
-  const cards = document.querySelectorAll(".package-card");
+    document.addEventListener("DOMContentLoaded", function () {
 
-  searchInput.addEventListener("input", function () {
+      const searchInput = document.getElementById("searchInput");
 
-    const query = searchInput.value.toLowerCase();
+      const cards = document.querySelectorAll(".package-card");
 
-    cards.forEach(card => {
+      searchInput.addEventListener("input", function () {
 
-      const title = card.querySelector("h3")?.textContent.toLowerCase();
+        const query = searchInput.value.toLowerCase();
 
-      if (title.includes(query)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+        cards.forEach(card => {
+
+          const title = card.querySelector("h3")
+            ?.textContent
+            .toLowerCase();
+
+          if (title.includes(query)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+
+        });
+
+      });
 
     });
 
-  });
-
-});
-</script>
+  </script>
 
 </body>
+
 </html>
