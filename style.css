@@ -774,3 +774,30 @@ footer a:hover{
   }
 
 }
+.package-card{
+  position:relative;
+}
+
+.kedarnath-badge{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  z-index:2;
+
+  padding:8px 14px;
+
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:30px;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
