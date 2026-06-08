@@ -967,3 +967,244 @@ footer a:hover{
   }
 
 }
+/* ===================================
+   VISA PAGE STYLES
+=================================== */
+
+.visa-hero{
+  min-height:80vh;
+
+  background:
+  linear-gradient(
+  rgba(0,0,0,.55),
+  rgba(0,0,0,.55)
+  ),
+  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop')
+  center/cover no-repeat;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  color:#fff;
+
+  padding:40px 20px;
+}
+
+.visa-hero-content{
+  max-width:850px;
+}
+
+.visa-hero h1{
+  font-size:3.5rem;
+  margin-bottom:20px;
+}
+
+.visa-hero p{
+  font-size:1.15rem;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.visa-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.secondary-btn{
+  padding:12px 24px;
+  border:1px solid #fff;
+  border-radius:8px;
+  color:#fff;
+  transition:.3s;
+}
+
+.secondary-btn:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* SECTION */
+
+.visa-types,
+.visa-countries,
+.documents,
+.visa-form-section,
+.faq{
+  padding:80px 20px;
+}
+
+.visa-types h2,
+.visa-countries h2,
+.documents h2,
+.visa-form-section h2,
+.faq h2{
+  text-align:center;
+  font-size:2.2rem;
+  margin-bottom:40px;
+}
+
+/* VISA CARDS */
+
+.visa-grid{
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.visa-card{
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+  transition:.3s ease;
+}
+
+.visa-card:hover{
+  transform:translateY(-8px);
+}
+
+.visa-card i{
+  font-size:35px;
+  color:#ff6600;
+  margin-bottom:15px;
+}
+
+.visa-card h3{
+  margin-bottom:12px;
+}
+
+.visa-card p{
+  color:#666;
+  line-height:1.7;
+}
+
+/* COUNTRY GRID */
+
+.country-grid{
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.country-card{
+  background:#fff;
+
+  padding:18px;
+
+  text-align:center;
+
+  border-radius:14px;
+
+  font-weight:600;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+  transition:.3s ease;
+}
+
+.country-card:hover{
+  transform:translateY(-5px);
+}
+
+/* DOCUMENTS */
+
+.docs-grid{
+  max-width:1000px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.docs-grid div{
+  background:#fff;
+
+  padding:18px;
+
+  border-radius:12px;
+
+  text-align:center;
+
+  font-weight:600;
+
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+/* FORM */
+
+.visa-form-section{
+  background:#f7f9fc;
+}
+
+.visa-form-section .custom-form{
+  max-width:700px;
+  margin:auto;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:1000px;
+  margin:auto;
+}
+
+.faq-item{
+  background:#fff;
+
+  padding:20px;
+
+  margin-bottom:15px;
+
+  border-radius:12px;
+
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.faq-item h3{
+  margin-bottom:10px;
+}
+
+.faq-item p{
+  color:#666;
+  line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .visa-hero h1{
+    font-size:2.2rem;
+  }
+
+  .visa-hero p{
+    font-size:1rem;
+  }
+
+  .visa-types h2,
+  .visa-countries h2,
+  .documents h2,
+  .visa-form-section h2,
+  .faq h2{
+    font-size:1.8rem;
+  }
+
+}
