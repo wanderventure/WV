@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel insurance guidance by Wander Venture with coverage benefits, claims process, FAQ, and lead inquiry form.">
+  <title>Travel Insurance | Wander Venture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><nav class="navbar" aria-label="Primary navigation"><a class="logo" href="index.html"><img src="images/logo.png" alt="Wander Venture logo" class="logo-icon"><span>Wander Venture</span></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span></button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#packages">Packages</a></li><li><a href="visa.html">Visa</a></li><li><a href="forex.html">Forex</a></li><li><a href="cruise.html">Cruise</a></li><li><a class="nav-cta" href="#insurance-inquiry">Get Covered</a></li></ul></nav></header>
+
+  <main id="main-content">
+    <section class="service-hero" style="--service-hero-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=82')" aria-labelledby="insurance-title">
+      <div class="service-hero-content">
+        <p class="eyebrow">Travel insurance</p>
+        <h1 id="insurance-title">Protect your trip before the first boarding pass.</h1>
+        <p>Get guided on travel insurance options for medical emergencies, trip disruptions, lost baggage, and international entry requirements.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#insurance-inquiry">Request Insurance Help</a><a class="btn btn-light" href="#coverage">View Coverage</a></div>
+      </div>
+      <aside class="service-hero-card"><h2>Designed for travel risk</h2><ul><li><i class="fas fa-check" aria-hidden="true"></i> Medical emergency support</li><li><i class="fas fa-check" aria-hidden="true"></i> Trip delay and baggage guidance</li><li><i class="fas fa-check" aria-hidden="true"></i> Destination-specific requirements</li><li><i class="fas fa-check" aria-hidden="true"></i> Claims process assistance</li></ul></aside>
+    </section>
+
+    <section class="service-section" id="coverage" aria-labelledby="coverage-title">
+      <div class="section-inner">
+        <div class="service-intro"><p class="section-kicker">Coverage benefits</p><h2 id="coverage-title">Travel protection that fits your journey</h2></div>
+        <div class="coverage-grid">
+          <article class="coverage-card"><i class="fas fa-kit-medical" aria-hidden="true"></i><h3>Medical emergencies</h3><p>Guidance for overseas medical coverage options and hospitalization support.</p></article>
+          <article class="coverage-card"><i class="fas fa-suitcase" aria-hidden="true"></i><h3>Baggage protection</h3><p>Plan coverage for baggage delay, loss, or damage during international travel.</p></article>
+          <article class="coverage-card"><i class="fas fa-clock" aria-hidden="true"></i><h3>Trip disruption</h3><p>Understand policy options for delays, interruptions, and cancellation-related risks.</p></article>
+          <article class="coverage-card"><i class="fas fa-passport" aria-hidden="true"></i><h3>Passport support</h3><p>Explore plans that include loss of passport and emergency document assistance.</p></article>
+          <article class="coverage-card"><i class="fas fa-globe" aria-hidden="true"></i><h3>Schengen-ready plans</h3><p>Travel insurance support for destinations that require minimum coverage proof.</p></article>
+          <article class="coverage-card"><i class="fas fa-users" aria-hidden="true"></i><h3>Family and group plans</h3><p>Get options for couples, families, student groups, and corporate travelers.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-section process-section" aria-labelledby="claims-title">
+      <div class="section-inner">
+        <div class="service-intro"><p class="section-kicker">Claims process</p><h2 id="claims-title">Simple claim-ready travel planning</h2></div>
+        <ol class="step-list">
+          <li class="step-item"><span class="step-number">01</span><h3>Choose destination</h3><p>Tell us your country, duration, age group, and travel purpose.</p></li>
+          <li class="step-item"><span class="step-number">02</span><h3>Select coverage</h3><p>Compare coverage needs for medical, baggage, delay, and visa requirements.</p></li>
+          <li class="step-item"><span class="step-number">03</span><h3>Carry policy proof</h3><p>Keep policy documents and emergency numbers ready before departure.</p></li>
+          <li class="step-item"><span class="step-number">04</span><h3>Report incident</h3><p>Notify the insurer quickly and save receipts, reports, and travel proof.</p></li>
+          <li class="step-item"><span class="step-number">05</span><h3>Submit documents</h3><p>Follow claim submission steps with the required evidence and timelines.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="service-section" id="insurance-inquiry" aria-labelledby="insurance-form-title">
+      <div class="section-inner inquiry-layout">
+        <div class="form-copy"><p class="section-kicker">Lead form</p><h2 id="insurance-form-title">Request travel insurance guidance</h2><p>Share your travel profile and our team will help identify suitable coverage questions to consider.</p></div>
+        <form class="quote-form" data-local-success="true">
+          <div class="form-grid">
+            <div class="form-field"><label for="ins-name">Full name</label><input id="ins-name" name="name" required></div>
+            <div class="form-field"><label for="ins-phone">Phone</label><input id="ins-phone" name="phone" type="tel" required></div>
+            <div class="form-field"><label for="ins-email">Email</label><input id="ins-email" name="email" type="email" required></div>
+            <div class="form-field"><label for="ins-destination">Destination</label><input id="ins-destination" name="destination" required></div>
+            <div class="form-field"><label for="ins-date">Travel date</label><input id="ins-date" name="date" type="date" required></div>
+            <div class="form-field"><label for="ins-travelers">Travelers</label><input id="ins-travelers" name="travelers" type="number" min="1" value="1"></div>
+            <div class="form-field full"><label for="ins-notes">Notes</label><textarea id="ins-notes" name="notes" placeholder="Mention age, trip duration, visa requirement, or existing medical conditions if relevant."></textarea></div>
+            <label class="checkbox-field full" for="ins-consent"><input id="ins-consent" type="checkbox" required><span>I agree to be contacted by Wander Venture for insurance assistance.</span></label>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit Insurance Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="service-section faq" aria-labelledby="insurance-faq-title"><div class="section-inner"><div class="service-intro"><p class="section-kicker">FAQ</p><h2 id="insurance-faq-title">Insurance questions</h2></div><div class="faq-list"><details class="faq-item"><summary>Is travel insurance mandatory?</summary><p>Some destinations and visa categories require insurance. Others make it optional but highly recommended.</p></details><details class="faq-item"><summary>Can families get one plan?</summary><p>Family and group options may be available depending on traveler ages, destination, and duration.</p></details><details class="faq-item"><summary>Do you settle claims?</summary><p>Claims are handled by the insurer. Wander Venture can guide travelers on documentation and process awareness.</p></details></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div><a class="footer-brand" href="index.html"><img src="images/logo.png" alt="Wander Venture logo"><span>Wander Venture</span></a><p>Travel marketplace and international services platform.</p></div><div><h3>Services</h3><div class="footer-list"><a href="visa.html">Visa</a><a href="forex.html">Forex</a><a href="cruise.html">Cruise</a><a href="student-trips.html">Student Trips</a></div></div><div><h3>Quick Links</h3><div class="footer-list"><a href="index.html#packages">Packages</a><a href="blog.html">Blog</a><a href="partner.html">Partner</a><a href="privacy-policy.html">Privacy Policy</a></div></div><div><h3>Contact</h3><p>info@wanderventure.online<br>support@wanderventure.online<br>WhatsApp: +91 7007051245</p></div></div><div class="footer-bottom">Copyright 2026 Wander Venture. All rights reserved.</div></footer>
+  <a class="whatsapp-float" href="https://wa.me/917007051245?text=Hi%20Wander%20Venture%2C%20I%20need%20travel%20insurance%20assistance." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
+  <script src="script.js"></script>
+</body>
+</html>

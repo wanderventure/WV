@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium travel forex assistance by Wander Venture with currency converter UI, foreign exchange inquiry form, and destination-wise currency guidance.">
+  <title>Travel Forex | Wander Venture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="logo" href="index.html" aria-label="Wander Venture home">
+        <img src="images/logo.png" alt="Wander Venture logo" class="logo-icon" width="42" height="42">
+        <span>Wander Venture</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#packages">Packages</a></li>
+        <li><a href="visa.html">Visa</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="cruise.html">Cruise</a></li>
+        <li><a class="nav-cta" href="#forex-inquiry">Forex Inquiry</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="service-hero" style="--service-hero-image:url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1800&q=82')" aria-labelledby="forex-title">
+      <div class="service-hero-content">
+        <p class="eyebrow">Travel forex desk</p>
+        <h1 id="forex-title">Get travel money ready before takeoff.</h1>
+        <p>Plan foreign currency, forex cards, cash needs, and destination-wise money support for international trips.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#forex-inquiry"><i class="fas fa-money-bill-wave" aria-hidden="true"></i> Request Forex Quote</a>
+          <a class="btn btn-light" href="#converter">Use Converter</a>
+        </div>
+        <div class="service-stats">
+          <div><strong>8</strong><span>Major currencies</span></div>
+          <div><strong>Fast</strong><span>Travel-ready support</span></div>
+          <div><strong>Secure</strong><span>Guided documentation</span></div>
+        </div>
+      </div>
+
+      <aside class="service-hero-card">
+        <h2>Supported currencies</h2>
+        <ul>
+          <li><i class="fas fa-check" aria-hidden="true"></i> USD, EUR, GBP, AED</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> THB, SGD, AUD, CAD</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Cash and forex card guidance</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Destination-wise planning</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="service-section" id="converter" aria-labelledby="converter-title">
+      <div class="section-inner converter-layout">
+        <div>
+          <p class="section-kicker">Currency converter</p>
+          <h2 id="converter-title">Estimate your travel currency requirement</h2>
+          <p>Use this converter UI for planning. Final forex rates are confirmed by the Wander Venture desk at the time of booking.</p>
+        </div>
+
+        <div class="converter-card" data-converter>
+          <div class="form-grid">
+            <div class="form-field full">
+              <label for="fx-amount">Amount</label>
+              <input id="fx-amount" data-amount type="number" min="1" value="1000">
+            </div>
+            <div class="form-field">
+              <label for="fx-from">From</label>
+              <select id="fx-from" data-from>
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>AED</option>
+                <option>THB</option>
+                <option>SGD</option>
+                <option>AUD</option>
+                <option>CAD</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="fx-to">To</label>
+              <select id="fx-to" data-to>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>AED</option>
+                <option>THB</option>
+                <option>SGD</option>
+                <option>AUD</option>
+                <option>CAD</option>
+                <option>INR</option>
+              </select>
+            </div>
+          </div>
+          <div class="converter-result" data-output>USD 0.00</div>
+          <p class="rate-note" data-rate-stamp>Indicative rate check</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-section" aria-labelledby="forex-benefits">
+      <div class="section-inner">
+        <div class="service-intro">
+          <p class="section-kicker">Benefits</p>
+          <h2 id="forex-benefits">Forex made simpler for international travelers</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card"><i class="fas fa-wallet" aria-hidden="true"></i><h3>Cash planning</h3><p>Know how much currency to carry for meals, cabs, tips, and local spends.</p></article>
+          <article class="benefit-card"><i class="fas fa-credit-card" aria-hidden="true"></i><h3>Forex card guidance</h3><p>Choose card and cash combinations based on destination and spending pattern.</p></article>
+          <article class="benefit-card"><i class="fas fa-file-shield" aria-hidden="true"></i><h3>Document support</h3><p>Get guided on passport, ticket, visa, and identity details needed for forex processing.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-section" id="forex-inquiry" aria-labelledby="forex-form-title">
+      <div class="section-inner inquiry-layout">
+        <div class="form-copy">
+          <p class="section-kicker">Forex inquiry</p>
+          <h2 id="forex-form-title">Request a travel forex callback</h2>
+          <p>Share your destination, travel date, currency, and approximate amount. Our team will guide next steps.</p>
+        </div>
+
+        <form class="quote-form" data-local-success="true">
+          <div class="form-grid">
+            <div class="form-field"><label for="name">Full name</label><input id="name" name="name" type="text" required></div>
+            <div class="form-field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" required></div>
+            <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+            <div class="form-field"><label for="country">Destination country</label><input id="country" name="country" type="text" required></div>
+            <div class="form-field"><label for="currency">Currency required</label><select id="currency" name="currency" required><option value="">Select</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>THB</option><option>SGD</option><option>AUD</option><option>CAD</option></select></div>
+            <div class="form-field"><label for="amount">Amount required</label><input id="amount" name="amount" type="number" min="1" required></div>
+            <div class="form-field"><label for="date">Travel date</label><input id="date" name="date" type="date" required></div>
+            <div class="form-field"><label for="mode">Preferred mode</label><select id="mode" name="mode"><option>Cash</option><option>Forex card</option><option>Cash + card</option></select></div>
+            <div class="form-field full"><label for="notes">Notes</label><textarea id="notes" name="notes" placeholder="Mention trip duration, number of travelers, or urgency."></textarea></div>
+            <label class="checkbox-field full" for="consent"><input id="consent" type="checkbox" required><span>I agree to be contacted by Wander Venture for forex assistance.</span></label>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit Forex Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="service-section faq" aria-labelledby="forex-faq-title">
+      <div class="section-inner">
+        <div class="service-intro"><p class="section-kicker">FAQ</p><h2 id="forex-faq-title">Forex questions</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Are the converter rates final?</summary><p>No. The converter is for planning. Final rates depend on market rates and service confirmation.</p></details>
+          <details class="faq-item"><summary>Which documents are usually required?</summary><p>Passport, visa where applicable, confirmed ticket, PAN or identity proof, and basic traveler details may be required.</p></details>
+          <details class="faq-item"><summary>Can I request both cash and forex card?</summary><p>Yes. Wander Venture can guide a practical combination based on your destination and travel style.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-brand" href="index.html"><img src="images/logo.png" alt="Wander Venture logo"><span>Wander Venture</span></a><p>Premium travel marketplace and services platform.</p></div>
+      <div><h3>Services</h3><div class="footer-list"><a href="visa.html">Visa</a><a href="forex.html">Forex</a><a href="insurance.html">Insurance</a><a href="cruise.html">Cruise</a></div></div>
+      <div><h3>Quick Links</h3><div class="footer-list"><a href="index.html#packages">Packages</a><a href="student-trips.html">Student Trips</a><a href="blog.html">Blog</a><a href="privacy-policy.html">Privacy Policy</a></div></div>
+      <div><h3>Contact</h3><p>info@wanderventure.online<br>support@wanderventure.online<br>WhatsApp: +91 7007051245</p></div>
+    </div>
+    <div class="footer-bottom">Copyright 2026 Wander Venture. All rights reserved.</div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/917007051245?text=Hi%20Wander%20Venture%2C%20I%20need%20forex%20assistance." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
+  <script src="script.js"></script>
+</body>
+</html>

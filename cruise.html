@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury cruise planning by Wander Venture with destination cards, benefits, inquiry form, and cruise travel support.">
+  <title>Luxury Cruises | Wander Venture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><nav class="navbar" aria-label="Primary navigation"><a class="logo" href="index.html"><img src="images/logo.png" alt="Wander Venture logo" class="logo-icon"><span>Wander Venture</span></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span></button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#international">International</a></li><li><a href="visa.html">Visa</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="blog.html">Blog</a></li><li><a class="nav-cta" href="#cruise-inquiry">Cruise Inquiry</a></li></ul></nav></header>
 
+  <main id="main-content">
+    <section class="service-hero" style="--service-hero-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1800&q=82')" aria-labelledby="cruise-title">
+      <div class="service-hero-content">
+        <p class="eyebrow">Luxury cruise desk</p>
+        <h1 id="cruise-title">Sail into a premium holiday experience.</h1>
+        <p>Plan cruise routes, cabins, shore excursions, insurance, visas, and pre/post-cruise stays with Wander Venture.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#cruise-inquiry">Request Cruise Quote</a><a class="btn btn-light" href="#cruise-destinations">Explore Routes</a></div>
+      </div>
+      <aside class="service-hero-card"><h2>What we support</h2><ul><li><i class="fas fa-check" aria-hidden="true"></i> Cabin and route planning</li><li><i class="fas fa-check" aria-hidden="true"></i> Visa and insurance guidance</li><li><i class="fas fa-check" aria-hidden="true"></i> Shore excursion ideas</li><li><i class="fas fa-check" aria-hidden="true"></i> Family, couples, and groups</li></ul></aside>
+    </section>
+
+    <section class="service-section" id="cruise-destinations" aria-labelledby="cruise-destinations-title">
+      <div class="section-inner"><div class="service-intro"><p class="section-kicker">Cruise routes</p><h2 id="cruise-destinations-title">Luxury routes for every travel style</h2></div><div class="destination-grid">
+        <article class="destination-card-lite"><img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=900&auto=format&fit=crop&q=70" alt="Cruise ship deck"><div><h3>Singapore Cruise</h3><p>Short international sailings with city stays and family-friendly experiences.</p></div></article>
+        <article class="destination-card-lite"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&auto=format&fit=crop&q=70" alt="Dubai skyline"><div><h3>Dubai and Middle East</h3><p>Luxury ports, shopping, skyline views, and premium onboard experiences.</p></div></article>
+        <article class="destination-card-lite"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=900&auto=format&fit=crop&q=70" alt="Tropical island"><div><h3>Island Escapes</h3><p>Beach routes, honeymoon sailings, and tropical shore excursions.</p></div></article>
+      </div></div>
+    </section>
+
+    <section class="service-section" aria-labelledby="cruise-benefits"><div class="section-inner"><div class="service-intro"><p class="section-kicker">Benefits</p><h2 id="cruise-benefits">Why book cruises with Wander Venture</h2></div><div class="benefit-grid"><article class="benefit-card"><i class="fas fa-bed" aria-hidden="true"></i><h3>Cabin guidance</h3><p>Choose cabin categories, decks, and packages based on comfort and budget.</p></article><article class="benefit-card"><i class="fas fa-route" aria-hidden="true"></i><h3>Route planning</h3><p>Align sailings with flights, city stays, shore excursions, and visa rules.</p></article><article class="benefit-card"><i class="fas fa-champagne-glasses" aria-hidden="true"></i><h3>Occasion travel</h3><p>Plan honeymoons, anniversaries, family holidays, and premium group sailings.</p></article></div></div></section>
+
+    <section class="service-section" id="cruise-inquiry" aria-labelledby="cruise-form-title"><div class="section-inner inquiry-layout"><div class="form-copy"><p class="section-kicker">Cruise inquiry</p><h2 id="cruise-form-title">Request a cruise plan</h2><p>Tell us your preferred route, month, travelers, cabin style, and occasion. We will help shape the right sailing.</p></div><form class="quote-form" data-local-success="true"><div class="form-grid"><div class="form-field"><label for="cr-name">Full name</label><input id="cr-name" name="name" required></div><div class="form-field"><label for="cr-phone">Phone</label><input id="cr-phone" name="phone" type="tel" required></div><div class="form-field"><label for="cr-email">Email</label><input id="cr-email" name="email" type="email" required></div><div class="form-field"><label for="cr-route">Preferred route</label><select id="cr-route" name="route" required><option value="">Select</option><option>Singapore cruise</option><option>Dubai cruise</option><option>Island cruise</option><option>Open to suggestions</option></select></div><div class="form-field"><label for="cr-month">Travel month</label><input id="cr-month" name="month" type="month"></div><div class="form-field"><label for="cr-travelers">Travelers</label><input id="cr-travelers" name="travelers" type="number" min="1" value="2"></div><div class="form-field"><label for="cr-cabin">Cabin style</label><select id="cr-cabin" name="cabin"><option>Interior</option><option>Ocean view</option><option>Balcony</option><option>Suite</option></select></div><div class="form-field"><label for="cr-occasion">Occasion</label><input id="cr-occasion" name="occasion" placeholder="Family, honeymoon, corporate, group"></div><div class="form-field full"><label for="cr-notes">Notes</label><textarea id="cr-notes" name="notes" placeholder="Mention budget, route preferences, visa needs, or special requests."></textarea></div><label class="checkbox-field full" for="cr-consent"><input id="cr-consent" type="checkbox" required><span>I agree to be contacted by Wander Venture for cruise planning.</span></label></div><button class="btn btn-primary" type="submit">Submit Cruise Inquiry</button></form></div></section>
+
+    <section class="service-section faq" aria-labelledby="cruise-faq-title"><div class="section-inner"><div class="service-intro"><p class="section-kicker">FAQ</p><h2 id="cruise-faq-title">Cruise questions</h2></div><div class="faq-list"><details class="faq-item"><summary>Do cruises need visas?</summary><p>It depends on route, ports, nationality, and cruise rules. Wander Venture can guide the checklist.</p></details><details class="faq-item"><summary>Can you arrange flights and hotels too?</summary><p>Yes. Cruise plans can include flights, pre-cruise hotels, transfers, insurance, and visa support.</p></details><details class="faq-item"><summary>Which cabin is best?</summary><p>It depends on your budget, sailing duration, comfort needs, and whether you prefer views or value.</p></details></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div><a class="footer-brand" href="index.html"><img src="images/logo.png" alt="Wander Venture logo"><span>Wander Venture</span></a><p>Premium travel marketplace and cruise planning desk.</p></div><div><h3>Services</h3><div class="footer-list"><a href="visa.html">Visa</a><a href="forex.html">Forex</a><a href="insurance.html">Insurance</a><a href="student-trips.html">Student Trips</a></div></div><div><h3>Quick Links</h3><div class="footer-list"><a href="index.html#packages">Packages</a><a href="blog.html">Blog</a><a href="partner.html">Partner</a><a href="privacy-policy.html">Privacy Policy</a></div></div><div><h3>Contact</h3><p>info@wanderventure.online<br>support@wanderventure.online<br>WhatsApp: +91 7007051245</p></div></div><div class="footer-bottom">Copyright 2026 Wander Venture. All rights reserved.</div></footer>
+  <a class="whatsapp-float" href="https://wa.me/917007051245?text=Hi%20Wander%20Venture%2C%20I%20need%20cruise%20planning%20help." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
+  <script src="script.js"></script>
+</body>
+</html>

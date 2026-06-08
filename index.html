@@ -1,529 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Wander Venture - Travelers Marketplace</title>
-
-  <link rel="stylesheet" href="style.css"/>
-
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wander Venture is a premium travel marketplace for curated trips, international packages, visa, forex, cruise, insurance, student trips, and corporate travel services.">
+  <title>Wander Venture - Premium Travel Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- NAVBAR -->
-
-  <nav class="navbar">
-
-    <div class="logo">
-      <img src="images/logo.png"
-        alt="Wander Venture Logo"
-        class="logo-icon">
-
-      Wander Venture
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#international">International</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <h1>Discover Incredible India</h1>
-
-      <p>
-        Unforgettable adventures.
-        Customized trips.
-        Only with Wander Venture.
-      </p>
-
-      <a href="#packages"
-        class="cta-button">
-        Explore Packages
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="logo" href="index.html" aria-label="Wander Venture home">
+        <img src="images/logo.png" alt="Wander Venture logo" class="logo-icon" width="42" height="42">
+        <span>Wander Venture</span>
       </a>
 
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#international">International</a></li>
+        <li><a href="visa.html">Visa</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="#packages">Explore Trips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="home-hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">Premium travel marketplace</p>
+        <h1 id="home-hero-title">Plan faster. Travel smarter. Discover more.</h1>
+        <p>
+          Curated Indian escapes, international holidays, visa guidance, forex, cruise, insurance,
+          student groups, and corporate travel support from one trusted Wander Venture desk.
+        </p>
+        <div class="hero-actions">
+          <a class="cta-button" href="#packages">
+            <i class="fas fa-suitcase-rolling" aria-hidden="true"></i>
+            Explore Packages
+          </a>
+          <a class="btn btn-light" href="https://wa.me/917007051245?text=Hi%20Wander%20Venture%2C%20I%20want%20to%20plan%20a%20trip." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Talk to Travel Expert
+          </a>
+        </div>
+
+        <div class="trust-badges" aria-label="Wander Venture highlights">
+          <div class="trust-badge">
+            <strong>40+</strong>
+            <span>Destinations</span>
+          </div>
+          <div class="trust-badge">
+            <strong>1000+</strong>
+            <span>Travelers assisted</span>
+          </div>
+          <div class="trust-badge">
+            <strong>24/7</strong>
+            <span>Trip support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="floating-services" aria-label="Travel services">
+      <div class="floating-item" onclick="window.location.href='visa.html'">
+        <i class="fas fa-passport" aria-hidden="true"></i>
+        <span>Visa</span>
+      </div>
+      <div class="floating-item" onclick="window.location.href='forex.html'">
+        <i class="fas fa-money-bill-wave" aria-hidden="true"></i>
+        <span>Forex</span>
+      </div>
+      <div class="floating-item" onclick="window.location.href='cruise.html'">
+        <i class="fas fa-ship" aria-hidden="true"></i>
+        <span>Cruise</span>
+      </div>
+      <div class="floating-item" onclick="window.location.href='insurance.html'">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        <span>Insurance</span>
+      </div>
+      <div class="floating-item" onclick="window.location.href='fixed-departure.html'">
+        <i class="fas fa-plane" aria-hidden="true"></i>
+        <span>Fixed Trips</span>
+      </div>
+      <div class="floating-item" onclick="window.location.href='student-trips.html'">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <span>Student Trips</span>
+      </div>
+    </section>
+
+    <div class="search-container" role="search">
+      <input type="text" id="searchInput" placeholder="Search trips, cities, events, services..." aria-label="Search packages">
+      <button type="button" aria-label="Search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
     </div>
 
-  </section>
+    <section class="service-icons" aria-label="More services">
+      <div class="service-card" onclick="window.location.href='hotels.html'">
+        <i class="fas fa-hotel" aria-hidden="true"></i>
+        <span>Hotels</span>
+      </div>
+      <div class="service-card" onclick="window.location.href='religious.html'">
+        <i class="fas fa-place-of-worship" aria-hidden="true"></i>
+        <span>Religious Tours</span>
+      </div>
+      <div class="service-card" onclick="window.location.href='event-party.html'">
+        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+        <span>Events</span>
+      </div>
+    </section>
 
-  <div class="floating-services">
+    <section class="packages" id="packages" aria-labelledby="packages-title">
+      <div class="section-intro">
+        <p class="section-kicker">Curated marketplace</p>
+        <h2 id="packages-title">Popular packages built for memorable travel</h2>
+        <p>Choose ready-to-book experiences or customize stays, transfers, activities, and support around your group.</p>
+      </div>
 
-  <div class="floating-item"
-    onclick="window.location.href='visa.html'">
-    <i class="fas fa-passport"></i>
-    <span>Visa</span>
-  </div>
+      <div class="package-list">
+        <article class="package-card">
+          <span class="package-badge orange">Trending</span>
+          <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop" alt="Rishikesh river adventure">
+          <h3>Rishikesh Adventure</h3>
+          <p>Rafting, riverside stays, yoga, and mountain cafes.</p>
+          <p><strong>Starting from Rs. 2,499</strong></p>
+          <button onclick="window.location.href='rishikesh.html'">View Details</button>
+        </article>
 
-  <div class="floating-item"
-    onclick="window.location.href='forex.html'">
-    <i class="fas fa-money-bill-wave"></i>
-    <span>Forex</span>
-  </div>
+        <article class="package-card">
+          <span class="package-badge green">Signature pick</span>
+          <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop" alt="Kedarnath mountain temple">
+          <h3>Kedarnath Yatra</h3>
+          <p>Spiritual routes, transport planning, stays, and guided support.</p>
+          <p><strong>Starting from Rs. 7,999</strong></p>
+          <button onclick="window.location.href='kedarnath.html'">View Details</button>
+        </article>
 
-  <div class="floating-item"
-    onclick="window.location.href='cruise.html'">
-    <i class="fas fa-ship"></i>
-    <span>Cruise</span>
-  </div>
+        <article class="package-card">
+          <span class="package-badge">Popular</span>
+          <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop" alt="Jim Corbett safari landscape">
+          <h3>Jim Corbett Safari</h3>
+          <p>Wildlife safari, nature stays, and weekend getaway planning.</p>
+          <p><strong>Starting from Rs. 3,999</strong></p>
+          <button onclick="window.location.href='jimcorbett.html'">View Details</button>
+        </article>
 
-  <div class="floating-item"
-    onclick="window.location.href='insurance.html'">
-    <i class="fas fa-shield-alt"></i>
-    <span>Insurance</span>
-  </div>
+        <article class="package-card">
+          <span class="package-badge orange">Limited seats</span>
+          <img src="https://images.unsplash.com/photo-1641735735000-c9719ac2740b?q=80&w=1170&auto=format&fit=crop" alt="Shimla hill station">
+          <h3>Shimla Tour</h3>
+          <p>Snow views, Mall Road, Kufri, and family-friendly stays.</p>
+          <p><strong>Starting from Rs. 5,499</strong></p>
+          <button onclick="window.location.href='shimla.html'">View Details</button>
+        </article>
 
-  <div class="floating-item"
-    onclick="window.location.href='fixed-departure.html'">
-    <i class="fas fa-plane"></i>
-    <span>Fixed Trips</span>
-  </div>
+        <article class="package-card">
+          <span class="package-badge green">Luxury escape</span>
+          <img src="https://images.unsplash.com/photo-1591414638143-12980893e46f?q=80&w=1170&auto=format&fit=crop" alt="Kerala backwaters">
+          <h3>Kerala Tour</h3>
+          <p>Backwaters, beaches, hill stations, Ayurveda, and houseboats.</p>
+          <p><strong>Starting from Rs. 9,500</strong></p>
+          <button onclick="window.location.href='kerala.html'">View Details</button>
+        </article>
+      </div>
+    </section>
 
-  <div class="floating-item"
-    onclick="window.location.href='student-trips.html'">
-    <i class="fas fa-users"></i>
-    <span>Student Trips</span>
-  </div>
+    <section class="intl-section" id="international" aria-labelledby="international-title">
+      <div class="intl-header">
+        <div>
+          <p class="section-kicker">Global departures</p>
+          <h2 id="international-title">International packages and travel services</h2>
+        </div>
+        <span>Explore World</span>
+      </div>
 
-</div>
+      <div class="intl-grid">
+        <div class="intl-item" onclick="window.location.href='fixed-departure.html'"><i class="fas fa-plane" aria-hidden="true"></i><p>Fixed Departure</p></div>
+        <div class="intl-item" onclick="window.location.href='dubai.html'"><i class="fas fa-building" aria-hidden="true"></i><p>Dubai</p></div>
+        <div class="intl-item" onclick="window.location.href='bali.html'"><i class="fas fa-umbrella-beach" aria-hidden="true"></i><p>Bali</p></div>
+        <div class="intl-item" onclick="window.location.href='malaysia.html'"><i class="fas fa-globe-asia" aria-hidden="true"></i><p>Malaysia</p></div>
+        <div class="intl-item" onclick="window.location.href='vietnam.html'"><i class="fas fa-landmark" aria-hidden="true"></i><p>Vietnam</p></div>
+        <div class="intl-item" onclick="window.location.href='singapore.html'"><i class="fas fa-city" aria-hidden="true"></i><p>Singapore</p></div>
+        <div class="intl-item" onclick="window.location.href='saudi.html'"><i class="fas fa-mosque" aria-hidden="true"></i><p>Saudi</p></div>
+        <div class="intl-item" onclick="window.location.href='japan.html'"><i class="fas fa-torii-gate" aria-hidden="true"></i><p>Japan</p></div>
+        <div class="intl-item" onclick="window.location.href='mauritius.html'"><i class="fas fa-water" aria-hidden="true"></i><p>Mauritius</p></div>
+        <div class="intl-item" onclick="window.location.href='srilanka.html'"><i class="fas fa-tree" aria-hidden="true"></i><p>Sri Lanka</p></div>
+        <div class="intl-item" onclick="window.location.href='europe.html'"><i class="fas fa-archway" aria-hidden="true"></i><p>Europe</p></div>
+        <div class="intl-item" onclick="window.location.href='switzerland.html'"><i class="fas fa-mountain" aria-hidden="true"></i><p>Switzerland</p></div>
+        <div class="intl-item" onclick="window.location.href='nepal.html'"><i class="fas fa-hill-rockslide" aria-hidden="true"></i><p>Nepal</p></div>
+        <div class="intl-item" onclick="window.location.href='cruise.html'"><i class="fas fa-ship" aria-hidden="true"></i><p>Cruise</p></div>
+      </div>
+    </section>
 
-  <div class="search-container">
+    <section class="packages" aria-labelledby="events-title">
+      <div class="section-intro">
+        <p class="section-kicker">Experiences</p>
+        <h2 id="events-title">Popular events and celebrations</h2>
+        <p>From social nights to pre-wedding shoots, plan experience-led travel with verified support.</p>
+      </div>
 
-    <input type="text"
-      id="searchInput"
-      placeholder="Search packages...">
+      <div class="package-list">
+        <article class="package-card">
+          <span class="package-badge orange">Events</span>
+          <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1171&auto=format&fit=crop" alt="Night party and event travel">
+          <h3>Night Parties and Events</h3>
+          <p>Curated nightlife, group events, venues, and travel coordination.</p>
+          <p><strong>Starts from Rs. 1,999</strong></p>
+          <button onclick="window.location.href='event-party.html'">View Details</button>
+        </article>
 
-    <button>
-      <i class="fas fa-search"></i>
-    </button>
+        <article class="package-card">
+          <span class="package-badge green">Creative trip</span>
+          <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80&w=1170&auto=format&fit=crop" alt="Pre wedding shoot travel">
+          <h3>Pre Wedding Shoot</h3>
+          <p>Location planning, stays, creative travel support, and local coordination.</p>
+          <p><strong>Location: Rishikesh</strong></p>
+          <button onclick="window.location.href='event-prewedding.html'">View Details</button>
+        </article>
+      </div>
+    </section>
 
-  </div>
+    <section class="section" aria-labelledby="why-home-title">
+      <div class="section-inner">
+        <div class="section-intro">
+          <p class="section-kicker">Why Wander Venture</p>
+          <h2 id="why-home-title">One travel marketplace, many expert desks</h2>
+        </div>
 
-  <!-- SERVICES -->
+        <div class="feature-grid">
+          <article class="feature-card">
+            <i class="fas fa-user-check" aria-hidden="true"></i>
+            <h3>Verified planning</h3>
+            <p>Trip planning is aligned with traveler profile, group needs, dates, budget, and comfort level.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <h3>Fast support</h3>
+            <p>WhatsApp-first communication keeps your package, service, and travel updates easy to track.</p>
+          </article>
+          <article class="feature-card">
+            <i class="fas fa-globe-asia" aria-hidden="true"></i>
+            <h3>End-to-end services</h3>
+            <p>Packages, hotels, visa, forex, insurance, cruise, corporate and student trips under one brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <div class="service-icons">
+    <section class="about" id="about">
+      <div class="about-content">
+        <p class="section-kicker">About</p>
+        <h2>About Wander Venture</h2>
+        <p>
+          Wander Venture is a trusted marketplace for travelers across India and beyond.
+          We combine premium travel design, fast service, and practical documentation support
+          to make every journey feel easier from the first inquiry.
+        </p>
+      </div>
+    </section>
 
-    <div class="service-card"
-      onclick="window.location.href='hotels.html'">
+    <section class="contact" id="contact">
+      <p class="section-kicker">Contact</p>
+      <h2>Contact Us</h2>
+      <p>General Inquiries: <a href="mailto:info@wanderventure.online">info@wanderventure.online</a></p>
+      <p>Support: <a href="mailto:support@wanderventure.online">support@wanderventure.online</a></p>
+      <p>WhatsApp: <a href="https://wa.me/917007051245" target="_blank" rel="noopener">+91 7007051245</a></p>
+    </section>
+  </main>
 
-      <i class="fas fa-hotel"></i>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="footer-brand" href="index.html">
+          <img src="images/logo.png" alt="Wander Venture logo" width="40" height="40">
+          <span>Wander Venture</span>
+        </a>
+        <p>Premium travel marketplace for packages, visa, forex, cruise, insurance, events, and group travel.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/thewanderventure/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/abhisheksingh1772" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
 
-      <span>Hotels</span>
+      <div>
+        <h3>Services</h3>
+        <div class="footer-list">
+          <a href="visa.html">Visa Assistance</a>
+          <a href="forex.html">Forex</a>
+          <a href="insurance.html">Travel Insurance</a>
+          <a href="cruise.html">Cruise</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-list">
+          <a href="#packages">Packages</a>
+          <a href="#international">International</a>
+          <a href="blog.html">Blog</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>info@wanderventure.online<br>support@wanderventure.online<br>WhatsApp: +91 7007051245</p>
+      </div>
     </div>
-
-    <div class="service-card"
-      onclick="window.location.href='religious.html'">
-
-      <i class="fas fa-place-of-worship"></i>
-
-      <span>Religious Tours</span>
-    </div>
-
-    <div class="service-card"
-      onclick="window.location.href='event-party.html'">
-
-      <i class="fas fa-calendar-alt"></i>
-
-      <span>Events</span>
-    </div>
-
-  </div>
-
-  <!-- DOMESTIC PACKAGES -->
-
-  <section class="packages"
-    id="packages">
-
-    <h2>Popular Packages</h2>
-
-    <div class="package-list">
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1650341259809-9314b0de9268?q=80&w=1170&auto=format&fit=crop"
-          alt="Rishikesh">
-
-        <h3>Rishikesh Adventure</h3>
-
-        <p>Starting from ₹2,499</p>
-
-        <button onclick="window.location.href='rishikesh.html'">
-          View Details
-        </button>
-
-      </div>
-
-     <div class="package-card">
-
-  <div class="kedarnath-badge">
-    SIGNATURE PICK
-  </div>
-
-  <img src="https://images.unsplash.com/photo-1612438214708-f428a707dd4e?q=80&w=1074&auto=format&fit=crop"
-    alt="Kedarnath">
-
-  <h3>Kedarnath Yatra</h3>
-
-  <p>Starting from ₹7,999</p>
-
-  <button onclick="window.location.href='kedarnath.html'">
-    View Details
-  </button>
-
-</div>
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1573663181141-99d846049a89?q=80&w=1170&auto=format&fit=crop"
-          alt="Jim Corbett">
-
-        <h3>Jim Corbett Safari</h3>
-
-        <p>Starting from ₹3,999</p>
-
-        <button onclick="window.location.href='jimcorbett.html'">
-          View Details
-        </button>
-
-      </div>
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1641735735000-c9719ac2740b?q=80&w=1170&auto=format&fit=crop"
-          alt="Shimla">
-
-        <h3>Shimla Tour</h3>
-
-        <p>Starting from ₹5,499</p>
-
-        <button onclick="window.location.href='shimla.html'">
-          View Details
-        </button>
-
-      </div>
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1591414638143-12980893e46f?q=80&w=1170&auto=format&fit=crop"
-          alt="Kerala">
-
-        <h3>Kerala Tour</h3>
-
-        <p>Starting from ₹9,500</p>
-
-        <button onclick="window.location.href='kerala.html'">
-          View Details
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- INTERNATIONAL -->
-
-  <section class="intl-section"
-    id="international">
-
-    <div class="intl-header">
-
-      <h2>International Packages</h2>
-
-      <span>Explore World</span>
-
-    </div>
-
-    <div class="intl-grid">
-
-      <div class="intl-item"
-        onclick="window.location.href='fixed-departure.html'">
-
-        <i class="fas fa-plane"></i>
-
-        <p>Fixed Departure</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='dubai.html'">
-
-        <i class="fas fa-building"></i>
-
-        <p>Dubai</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='bali.html'">
-
-        <i class="fas fa-umbrella-beach"></i>
-
-        <p>Bali</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='malaysia.html'">
-
-        <i class="fas fa-globe-asia"></i>
-
-        <p>Malaysia</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='vietnam.html'">
-
-        <i class="fas fa-landmark"></i>
-
-        <p>Vietnam</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='singapore.html'">
-
-        <i class="fas fa-city"></i>
-
-        <p>Singapore</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='saudi.html'">
-
-        <i class="fas fa-mosque"></i>
-
-        <p>Saudi</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='japan.html'">
-
-        <i class="fas fa-torii-gate"></i>
-
-        <p>Japan</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='mauritius.html'">
-
-        <i class="fas fa-water"></i>
-
-        <p>Mauritius</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='srilanka.html'">
-
-        <i class="fas fa-tree"></i>
-
-        <p>Sri Lanka</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='europe.html'">
-
-        <i class="fas fa-archway"></i>
-
-        <p>Europe</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='switzerland.html'">
-
-        <i class="fas fa-mountain"></i>
-
-        <p>Switzerland</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='nepal.html'">
-
-        <i class="fas fa-hill-rockslide"></i>
-
-        <p>Nepal</p>
-
-      </div>
-
-      <div class="intl-item"
-        onclick="window.location.href='cruise.html'">
-
-        <i class="fas fa-ship"></i>
-
-        <p>Cruise</p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- EVENTS -->
-
-  <section class="packages">
-
-    <h2>Popular Events</h2>
-
-    <div class="package-list">
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1471967183320-ee018f6e114a?q=80&w=1171&auto=format&fit=crop"
-          alt="Event Party">
-
-        <h3>Night Parties & Events</h3>
-
-        <p>Starts from ₹1,999</p>
-
-        <button onclick="window.location.href='event-party.html'">
-          View Details
-        </button>
-
-      </div>
-
-      <div class="package-card">
-
-        <img src="https://images.unsplash.com/photo-1735052712425-f44a4d4b6cd7?q=80&w=1170&auto=format&fit=crop"
-          alt="Pre Wedding">
-
-        <h3>Pre Wedding Shoot</h3>
-
-        <p>Location: Rishikesh</p>
-
-        <button onclick="window.location.href='event-prewedding.html'">
-          View Details
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section class="about"
-    id="about">
-
-    <div class="about-content">
-
-      <h2>About Wander Venture</h2>
-
-      <p>
-        Wander Venture is a trusted marketplace
-        for travelers across India and beyond.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section class="contact"
-    id="contact">
-
-    <h2>Contact Us</h2>
-
-    <p>
-      General Inquiries:
-      <a href="mailto:info@wanderventure.online">
-        info@wanderventure.online
-      </a>
-    </p>
-
-    <p>
-      Support:
-      <a href="mailto:support@wanderventure.online">
-        support@wanderventure.online
-      </a>
-    </p>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      © 2025 Wander Venture |
-
-      <a href="partner.html">
-        Partner with Us
-      </a> |
-
-      <a href="corporate.html">
-        Corporate Travel
-      </a> |
-
-      <a href="privacy-policy.html">
-        Privacy Policy
-      </a>
-    </p>
-
+    <div class="footer-bottom">Copyright 2026 Wander Venture. All rights reserved.</div>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/917007051245?text=Hi%20Wander%20Venture%2C%20I%20want%20to%20plan%20a%20trip." target="_blank" rel="noopener" aria-label="Chat with Wander Venture on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span>WhatsApp</span>
+  </a>
+
   <script src="script.js"></script>
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const searchInput =
-        document.getElementById("searchInput");
-
-      const cards =
-        document.querySelectorAll(".package-card");
-
-      searchInput.addEventListener("input", function () {
-
-        const query =
-          searchInput.value.toLowerCase();
-
-        cards.forEach(card => {
-
-          const title =
-            card.querySelector("h3")
-            ?.textContent
-            .toLowerCase();
-
-          if (title.includes(query)) {
-            card.style.display = "block";
-          } else {
-            card.style.display = "none";
-          }
-
-        });
-
-      });
-
-    });
-
-  </script>
-<script
-  src="https://cdn.jotfor.ms/agent/embedjs/019e63ccbb1a7c9fac9695c5e75fe10609e1/embed.js?autoOpenChatIn=1">
-</script>
+  <script src="https://cdn.jotfor.ms/agent/embedjs/019e63ccbb1a7c9fac9695c5e75fe10609e1/embed.js?autoOpenChatIn=1"></script>
 </body>
 </html>
