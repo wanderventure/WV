@@ -57,6 +57,10 @@
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             Talk to Travel Expert
           </a>
+          <button id="installBtn" class="cta-button" style="display:none;">
+  <i class="fas fa-download"></i>
+  Install App
+</button>
         </div>
 
         <div class="trust-badges" aria-label="Wander Venture highlights">
@@ -324,37 +328,9 @@
     <div class="footer-bottom">Copyright 2026 Wander Venture. All rights reserved.</div>
   </footer>
 
- 
-<button id="installBtn" class="install-btn" style="display:none;">
-📲 Install App
-</button>
+<script src="script.js"></script>
 
-<script>
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = "block";
-});
-
-installBtn.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
-
-  deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
-
-  deferredPrompt = null;
-  installBtn.style.display = "none";
-});
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js');
-  });
-}
-</script>
+<script src="https://cdn.jotfor.ms/agent/embedjs/019e63ccbb1a7c9fac9695c5e75fe10609e1/embed.js?autoOpenChatIn=1"></script>
 
 </body>
 </html>
