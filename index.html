@@ -325,10 +325,30 @@
   </footer>
 
  
- <script src="script.js"></script>
-<script src="https://cdn.jotfor.ms/agent/embedjs/019e63ccbb1a7c9fac9695c5e75fe10609e1/embed.js?autoOpenChatIn=1"></script>
+<button id="installBtn" class="install-btn" style="display:none;">
+📲 Install App
+</button>
 
 <script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = "block";
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+
+  deferredPrompt = null;
+  installBtn.style.display = "none";
+});
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/service-worker.js');
