@@ -331,6 +331,22 @@
 <script src="script.js"></script>
 
 <script src="https://cdn.jotfor.ms/agent/embedjs/019e63ccbb1a7c9fac9695c5e75fe10609e1/embed.js?autoOpenChatIn=1"></script>
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
 
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = "inline-flex";
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+});
+</script>
 </body>
 </html>
