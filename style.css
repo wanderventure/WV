@@ -1,23 +1,26 @@
 :root {
-  --wv-green: #0f9b0f;
-  --wv-green-dark: #086b08;
-  --wv-green-deep: #064f06;
-  --wv-green-soft: #eaf8ea;
-  --wv-orange: #ff6b00;
-  --wv-orange-dark: #d95a00;
-  --wv-orange-soft: #fff0e5;
-  --wv-dark: #0d1117;
-  --wv-ink: #172033;
+  --wv-green: #081C3A;
+  --wv-green-dark: #0F2D5C;
+  --wv-green-deep: #061A36;
+  --wv-green-soft: #EAF7FB;
+
+  --wv-orange: #FF7A00;
+  --wv-orange-dark: #E86C00;
+  --wv-orange-soft: #FFF4EC;
+
+  --wv-dark: #081C3A;
+  --wv-ink: #1E293B;
   --wv-muted: #667085;
-  --wv-line: #dfe7df;
-  --wv-white: #ffffff;
-  --wv-cloud: #f6faf7;
-  --wv-gold: #f6b84b;
+  --wv-line: #E5E7EB;
+  --wv-white: #FFFFFF;
+  --wv-cloud: #F7FAFC;
+  --wv-gold: #F6B84B;
+
   --wv-radius: 18px;
   --wv-radius-sm: 12px;
   --wv-max: 1180px;
-  --wv-shadow: 0 22px 60px rgba(13, 17, 23, 0.14);
-  --wv-shadow-soft: 0 14px 36px rgba(13, 17, 23, 0.09);
+  --wv-shadow: 0 22px 60px rgba(8, 28, 58, 0.14);
+  --wv-shadow-soft: 0 14px 36px rgba(8, 28, 58, 0.09);
 }
 
 *,
@@ -136,12 +139,12 @@ p {
 .logo-icon {
   width: 60px;
   height: 60px;
-  border: 2px solid rgba(255, 255, 255, 0.68);
-  border-radius: 50%;
   object-fit: contain;
-  background: linear-gradient(135deg, var(--wv-green), #13c213);
-  padding: 5px;
-  box-shadow: 0 12px 28px rgba(15, 155, 15, 0.24);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .nav-links,
