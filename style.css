@@ -2095,30 +2095,72 @@ body > footer:not(.site-footer) p {
    WAVE CARD
 =========================== */
 
+/* ===========================
+   WAVE CARD
+=========================== */
+
 .wave-card{
     max-width:760px;
+    width:100%;
     margin:0 auto;
+    background:#fff;
     border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(8,28,58,.12);
 }
 
 .wave-banner{
     width:100%;
-    height:340px;
+    height:auto;
+    display:block;
     object-fit:contain;
     background:#fff;
-    padding:15px;
-    border-radius:18px;
+    padding:0;
+    margin:0;
+    border-radius:24px 24px 0 0;
+}
+
+.wave-card .package-badge{
+    position:absolute;
+    top:16px;
+    left:16px;
+    z-index:10;
 }
 
 .wave-card h3{
-    font-size:32px;
+    font-size:2rem;
     color:#081C3A;
+    margin:24px 24px 12px;
 }
 
 .wave-card p{
+    color:#5B6475;
     line-height:1.8;
+    margin:0 24px 18px;
+}
+
+.wave-card strong{
+    display:block;
+    margin:0 24px 20px;
+    color:#081C3A;
 }
 
 .wave-card button{
-    width:100%;
+    display:block;
+    width:calc(100% - 48px);
+    margin:0 24px 24px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#FF7A00;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.wave-card button:hover{
+    background:#E66B00;
+    transform:translateY(-2px);
 }
