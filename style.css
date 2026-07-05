@@ -2091,4 +2091,34 @@ body > footer:not(.site-footer) p {
 .whatsapp-float {
     display: none !important;
 }
+/* ===========================
+   WAVE CARD
+=========================== */
 
+.wave-card{
+    max-width:760px;
+    margin:0 auto;
+    border-radius:24px;
+}
+
+.wave-banner{
+    width:100%;
+    height:340px;
+    object-fit:contain;
+    background:#fff;
+    padding:15px;
+    border-radius:18px;
+}
+
+.wave-card h3{
+    font-size:32px;
+    color:#081C3A;
+}
+
+.wave-card p{
+    line-height:1.8;
+}
+
+.wave-card button{
+    width:100%;
+}
