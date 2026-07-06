@@ -445,5 +445,14 @@ installBtn.addEventListener("click", async () => {
   await deferredPrompt.userChoice;
 });
 </script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch(err => console.log(err));
+  });
+}
+</script>
 </body>
 </html>
