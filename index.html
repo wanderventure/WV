@@ -456,5 +456,315 @@ if ("serviceWorker" in navigator) {
   });
 }
 </script>
+  <!-- =====================================================================
+  FESTIVE OVERLAY  |  Navratri + Diwali  |  START
+  PASTE THIS WHOLE BLOCK in index.html, just before </body>
+  (after your last existing <script>).
+
+  TO SWITCH OFF:  set  FESTIVE_ENABLED = false  in the script below
+                  OR delete / comment out everything from START to END.
+  Nothing else on your website is touched.
+====================================================================== -->
+<style id="festive-overlay-css">
+  /* Everything lives inside .festive-overlay. It never receives clicks. */
+  .festive-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;              /* above the sticky header (1000), below WhatsApp/chat/popups (1200+) */
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .festive-overlay,
+  .festive-overlay * {
+    pointer-events: none !important;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  /* ---------- Fairy lights (top edge) ---------- */
+  .festive-overlay .fo-lights {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 26px;
+    transition: opacity .2s ease;
+  }
+  /* keep the mobile menu clean while it is open */
+  body:has(.nav-toggle[aria-expanded="true"]) .festive-overlay .fo-lights { opacity: 0; }
+
+  .festive-overlay .fo-wire {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .festive-overlay .fo-wire path {
+    fill: none;
+    stroke: rgba(176, 124, 38, .55);
+    stroke-width: 1;
+  }
+  .festive-overlay .fo-rosette {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    margin-left: -6.5px;
+    opacity: .92;
+  }
+
+  .festive-overlay .fo-bulb {
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 7px;
+    margin-left: -2.5px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    background: var(--c);
+    animation: fo-twinkle var(--d, 3.6s) ease-in-out var(--t, 0s) infinite;
+    will-change: opacity;
+  }
+  .festive-overlay .fo-bulb.fo-flutter {
+    animation-name: fo-twinkle-b;
+  }
+  .festive-overlay .fo-bulb::after {           /* soft warm glow */
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--g), .55) 0, rgba(var(--g), .2) 40%, rgba(var(--g), 0) 70%);
+  }
+  .festive-overlay .fo-b-g { --c: #FFD36B; --g: 255, 190, 70; }   /* warm gold  */
+  .festive-overlay .fo-b-a { --c: #FFA53A; --g: 255, 150, 40; }   /* saffron    */
+  .festive-overlay .fo-b-r { --c: #F26A9B; --g: 240, 90, 150; }   /* Navratri rose accent */
+
+  @keyframes fo-twinkle {
+    0%, 100% { opacity: .5; }
+    25%      { opacity: 1; }
+    50%      { opacity: .68; }
+    75%      { opacity: .95; }
+  }
+  @keyframes fo-twinkle-b {
+    0%, 100% { opacity: .9; }
+    18%      { opacity: .45; }
+    40%      { opacity: 1; }
+    62%      { opacity: .55; }
+    82%      { opacity: .85; }
+  }
+
+  /* ---------- Diyas + dandiya (bottom-left corner) ---------- */
+  .festive-overlay .fo-corner {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .festive-overlay .fo-diya {
+    position: relative;
+    width: 44px;
+    padding-top: 14px;
+  }
+  .festive-overlay .fo-diya--sm { width: 34px; padding-top: 11px; }
+  .festive-overlay .fo-diya > svg.fo-bowl { display: block; width: 100%; height: auto; }
+
+  .festive-overlay .fo-flame {
+    position: absolute;
+    left: calc(50% - 5px);
+    top: 9px;
+    width: 10px;
+    height: 17px;
+    transform-origin: 50% 100%;
+    animation: fo-flicker var(--fd, 1.3s) ease-in-out var(--ft, 0s) infinite;
+    will-change: transform;
+  }
+  .festive-overlay .fo-diya--sm .fo-flame { top: 7px; width: 8px; height: 14px; left: calc(50% - 4px); }
+
+  .festive-overlay .fo-glow {
+    position: absolute;
+    left: 50%;
+    top: 17px;
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 -35px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 176, 60, .5) 0, rgba(255, 140, 30, .18) 40%, rgba(255, 140, 30, 0) 70%);
+    animation: fo-glow var(--gd, 2.1s) ease-in-out var(--ft, 0s) infinite;
+    will-change: opacity, transform;
+  }
+  .festive-overlay .fo-diya--sm .fo-glow { width: 54px; height: 54px; margin: -27px 0 0 -27px; top: 14px; }
+
+  @keyframes fo-flicker {
+    0%, 100% { transform: scale(1, 1) rotate(0deg); }
+    18%      { transform: scale(.93, 1.08) rotate(-2.5deg); }
+    37%      { transform: scale(1.05, .94) rotate(1.8deg); }
+    58%      { transform: scale(.95, 1.06) rotate(-1.2deg); }
+    79%      { transform: scale(1.03, .97) rotate(2.2deg); }
+  }
+  @keyframes fo-glow {
+    0%, 100% { opacity: .6;  transform: scale(.94); }
+    35%      { opacity: .92; transform: scale(1.04); }
+    65%      { opacity: .72; transform: scale(.98); }
+  }
+
+  .festive-overlay .fo-dandiya { width: 32px; height: auto; opacity: .95; }
+
+  /* ---------- Responsive: fewer / smaller on small screens ---------- */
+  @media (max-width: 1024px) {
+    .festive-overlay .fo-corner   { left: 10px; bottom: 10px; }
+    .festive-overlay .fo-diya--sm { display: none; }
+  }
+  @media (max-width: 600px) {
+    .festive-overlay .fo-dandiya  { display: none; }
+    .festive-overlay .fo-corner   { left: 8px; bottom: 8px; }
+    .festive-overlay .fo-diya     { width: 34px; padding-top: 11px; }
+    .festive-overlay .fo-diya .fo-flame { top: 7px; width: 8px; height: 14px; left: calc(50% - 4px); }
+    .festive-overlay .fo-diya .fo-glow  { width: 54px; height: 54px; margin: -27px 0 0 -27px; top: 14px; }
+    .festive-overlay .fo-bulb::after    { width: 14px; height: 14px; margin: -7px 0 0 -7px; }
+  }
+
+  /* ---------- Accessibility / printing ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .festive-overlay .fo-bulb,
+    .festive-overlay .fo-flame,
+    .festive-overlay .fo-glow { animation: none !important; }
+    .festive-overlay .fo-bulb { opacity: .85; }
+    .festive-overlay .fo-glow { opacity: .75; }
+  }
+  @media print { .festive-overlay { display: none !important; } }
+</style>
+
+<div class="festive-overlay" aria-hidden="true">
+
+  <!-- Fairy lights: built automatically by the script below -->
+  <div class="fo-lights"></div>
+
+  <!-- Diyas + dandiya -->
+  <div class="fo-corner">
+
+    <div class="fo-diya" style="--fd:1.25s; --ft:-.3s; --gd:2.2s">
+      <div class="fo-glow"></div>
+      <svg class="fo-flame" viewBox="0 0 10 18">
+        <path d="M5 18C.6 14.5-.4 9.5 2.2 5.6 3.4 3.8 4.6 2.2 5 0c.5 2.2 1.7 3.8 2.8 5.6C10.4 9.5 9.4 14.5 5 18z" fill="#FF9A1F"/>
+        <path d="M5 17.2C2.9 15.2 2.6 12.4 4 10.4c.5-.7.9-1.4 1-2.4.2 1 .6 1.7 1 2.4 1.4 2 1.1 4.8-1 6.8z" fill="#FFE9A0"/>
+      </svg>
+      <svg class="fo-bowl" viewBox="0 0 64 34">
+        <path d="M2 4C8 4 10 2 15 2h34c5 0 9 2 13 2-2 14-14 26-30 26C17 30 6 18 2 4z" fill="#B85A24"/>
+        <path d="M6 12c6 12 16 18 26 18s20-6 26-18c-3 12-14 20-26 20S9 24 6 12z" fill="#94441A" opacity=".55"/>
+        <ellipse cx="32" cy="3.6" rx="29" ry="4" fill="#E48C3F"/>
+        <ellipse cx="32" cy="4.2" rx="23" ry="2.6" fill="#4A230D"/>
+        <path d="M13 17q19 9 38 0" stroke="#F6B84B" stroke-width="1.3" fill="none" stroke-dasharray="1.6 2.6" stroke-linecap="round"/>
+        <rect x="30.6" y="0" width="2.8" height="5" rx="1.2" fill="#2E1A0E"/>
+      </svg>
+    </div>
+
+    <!-- crossed dandiya sticks (Navratri) -->
+    <svg class="fo-dandiya" viewBox="0 0 40 44" fill="none" stroke-linecap="round">
+      <line x1="8"  y1="40" x2="30" y2="5" stroke="#B5651D" stroke-width="3.4"/>
+      <line x1="8"  y1="40" x2="30" y2="5" stroke="#F6B84B" stroke-width="3.4" stroke-dasharray="1.6 5.4"/>
+      <line x1="32" y1="40" x2="10" y2="5" stroke="#C97A2B" stroke-width="3.4"/>
+      <line x1="32" y1="40" x2="10" y2="5" stroke="#E8508F" stroke-width="3.4" stroke-dasharray="1.6 5.4"/>
+    </svg>
+
+    <div class="fo-diya fo-diya--sm" style="--fd:1.6s; --ft:-.9s; --gd:2.6s">
+      <div class="fo-glow"></div>
+      <svg class="fo-flame" viewBox="0 0 10 18">
+        <path d="M5 18C.6 14.5-.4 9.5 2.2 5.6 3.4 3.8 4.6 2.2 5 0c.5 2.2 1.7 3.8 2.8 5.6C10.4 9.5 9.4 14.5 5 18z" fill="#FF9A1F"/>
+        <path d="M5 17.2C2.9 15.2 2.6 12.4 4 10.4c.5-.7.9-1.4 1-2.4.2 1 .6 1.7 1 2.4 1.4 2 1.1 4.8-1 6.8z" fill="#FFE9A0"/>
+      </svg>
+      <svg class="fo-bowl" viewBox="0 0 64 34">
+        <path d="M2 4C8 4 10 2 15 2h34c5 0 9 2 13 2-2 14-14 26-30 26C17 30 6 18 2 4z" fill="#B85A24"/>
+        <path d="M6 12c6 12 16 18 26 18s20-6 26-18c-3 12-14 20-26 20S9 24 6 12z" fill="#94441A" opacity=".55"/>
+        <ellipse cx="32" cy="3.6" rx="29" ry="4" fill="#E48C3F"/>
+        <ellipse cx="32" cy="4.2" rx="23" ry="2.6" fill="#4A230D"/>
+        <path d="M13 17q19 9 38 0" stroke="#F6B84B" stroke-width="1.3" fill="none" stroke-dasharray="1.6 2.6" stroke-linecap="round"/>
+        <rect x="30.6" y="0" width="2.8" height="5" rx="1.2" fill="#2E1A0E"/>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ====== MAIN SWITCH ====== */
+  var FESTIVE_ENABLED = true;   // true = show decorations, false = hide everything
+  var HIDE_AFTER = "";          // optional auto-off date, e.g. "2026-11-15" (leave "" to keep it always on)
+  /* ========================= */
+
+  var root = document.querySelector(".festive-overlay");
+  if (!root) return;
+
+  var expired = HIDE_AFTER && new Date() > new Date(HIDE_AFTER + "T23:59:59");
+  if (!FESTIVE_ENABLED || expired) {
+    root.parentNode.removeChild(root);
+    var css = document.getElementById("festive-overlay-css");
+    if (css) css.parentNode.removeChild(css);
+    return;
+  }
+
+  var box = root.querySelector(".fo-lights");
+  var lastW = 0;
+
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+
+  function rosette(x) {                         // tiny marigold at each string anchor
+    var petals = "";
+    for (var a = 0; a < 8; a++) {
+      petals += '<circle cx="12" cy="5.2" r="4" transform="rotate(' + a * 45 + ' 12 12)"/>';
+    }
+    return '<svg class="fo-rosette" style="left:' + x.toFixed(1) + 'px;top:0" viewBox="0 0 24 24">' +
+           '<g fill="#F59E0B">' + petals + '</g><circle cx="12" cy="12" r="5" fill="#FBBF24"/>' +
+           '<circle cx="12" cy="12" r="2.4" fill="#B45309"/></svg>';
+  }
+
+  function build() {
+    var W = window.innerWidth;
+    lastW = W;
+    var small = W < 600, mid = W < 1024;
+    var swagW = small ? 110 : mid ? 160 : 200;       // fewer bulbs on small screens
+    var n = Math.max(2, Math.round(W / swagW));
+    var sw = W / n, per = small ? 3 : 4, depth = small ? 6 : 8, y0 = 4;
+    var pattern = ["g", "g", "a", "g", "g", "r", "g", "a"], k = 0;
+    var path = "", bulbs = "", flowers = "";
+
+    for (var i = 0; i < n; i++) {
+      var x0 = i * sw, x1 = x0 + sw;
+      path += "M" + x0.toFixed(1) + "," + y0 + " Q" + (x0 + sw / 2).toFixed(1) + "," + (y0 + depth * 2) + " " + x1.toFixed(1) + "," + y0 + " ";
+      for (var j = 0; j < per; j++) {
+        var t = (j + 0.5) / per;
+        var x = x0 + t * sw;
+        var y = y0 + 4 * depth * t * (1 - t);
+        bulbs += '<i class="fo-bulb fo-b-' + pattern[k % pattern.length] + (k % 3 === 0 ? " fo-flutter" : "") +
+                 '" style="left:' + x.toFixed(1) + "px;top:" + (y + 1).toFixed(1) +
+                 "px;--d:" + rnd(2.2, 5.4).toFixed(2) + "s;--t:-" + rnd(0, 5).toFixed(2) + 's"></i>';
+        k++;
+      }
+    }
+    for (var m = 0; m <= n; m++) {
+      flowers += rosette(Math.min(Math.max(m * sw, 8), W - 8));
+    }
+
+    box.innerHTML = '<svg class="fo-wire" aria-hidden="true"><path d="' + path + '"/></svg>' + flowers + bulbs;
+  }
+
+  build();
+
+  var timer;
+  window.addEventListener("resize", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      if (Math.abs(window.innerWidth - lastW) > 40) build();   // ignore mobile address-bar height changes
+    }, 250);
+  });
+})();
+</script>
+<!-- ===================== FESTIVE OVERLAY  |  END ====================== -->
 </body>
 </html>
