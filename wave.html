@@ -1024,6 +1024,9 @@
       sending = true;
       submitBtn.textContent = "Sending your request…";
       submitBtn.classList.add("is-sending");
+      // Mobile-safe fallback: remember that a successful FormSubmit redirect
+      // should show the custom Thank You state even if the query string is lost.
+      try { sessionStorage.setItem("dnRegistered", "1"); } catch (e) {}
       return true;                                  // allow the native formsubmit.co POST to continue
     });
     window.addEventListener("pageshow", function (e) {   // coming back via the browser Back button
@@ -1099,9 +1102,16 @@
       try { success.focus({ preventScroll: true }); } catch (e) {}
       celebrate();
     }
-    if (/[?&]registered=1(&|$)/.test(window.location.search)) {
+    // FormSubmit normally returns ?registered=1. Some mobile browsers may
+    // return without that parameter, so also check the session fallback.
+    var registeredByUrl = /[?&]registered=1(&|$)/.test(window.location.search);
+    var registeredBySession = false;
+    try { registeredBySession = sessionStorage.getItem("dnRegistered") === "1"; } catch (e) {}
+
+    if (registeredByUrl || registeredBySession) {
+      try { sessionStorage.removeItem("dnRegistered"); } catch (e) {}
       showSuccess();
-      try { history.replaceState(null, "", window.location.pathname); } catch (e) {}   // a refresh won't replay it
+      try { history.replaceState(null, "", window.location.pathname); } catch (e) {}
     }
     var another = $("#dnAnother");
     if (another) another.addEventListener("click", function () {
